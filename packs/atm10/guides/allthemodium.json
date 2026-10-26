@@ -1,0 +1,52 @@
+{
+ "mod": "allthemodium",
+ "checked": "Allthemodium 3.2.1 (branche 1.21.x) + scripts KubeJS et livre de quêtes d'ATM10",
+ "intro": {
+  "fr": "Allthemodium, Vibranium puis Unobtainium : les trois métaux qui rythment la fin de partie d'ATM10. Chaque palier d'équipement demande un template de forge, et chaque template se trouve dans un endroit différent.",
+  "en": "Allthemodium, then Vibranium, then Unobtainium: the three metals that pace ATM10's late game. Each gear tier needs a smithing template, and each template comes from a different place."
+ },
+ "sections": [
+  {
+   "id": "where",
+   "title": {"fr": "Où trouver les templates", "en": "Where to find the templates"},
+   "rules": [
+    {"fr": "Template Allthemodium : en brossant de l'argile suspecte (Suspicious Clay), dans le sol des Ancient Cities. Le bloc le donne à 100 %.", "en": "Allthemodium template: brush Suspicious Clay in the floors of Ancient Cities. The block always gives it."},
+    {"fr": "Template Vibranium : en brossant du sable des âmes suspect (Suspicious Soul Sand), dans les Bastions du Nether. Lui aussi à 100 %.", "en": "Vibranium template: brush Suspicious Soul Sand in Nether Bastions. Also a 100% drop."},
+    {"fr": "Template Unobtainium : pas d'archéologie. Il vient des Trial Spawners des salles « library » du Dungeon, dans la dimension The Other.", "en": "Unobtainium template: no archaeology. It comes from the Trial Spawners in the Dungeon's library rooms, in The Other dimension."},
+    {"fr": "Avec Lootr, les blocs suspects donnent leur loot à chaque joueur, comme les coffres.", "en": "With Lootr, suspicious blocks give their loot to each player, like chests."}
+   ],
+   "sources": [
+    {"label": "loot_table/arch.json, arch2.json, chest/template.json", "url": "https://github.com/AllTheMods/Allthemodium/tree/1.21.x/src/main/resources/data/allthemodium/loot_table"},
+    {"label": "ATM10 quêtes : chapitre Allthemodium", "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/ftbquests/quests/lang/en_us/chapters/allthemodium.snbt"}
+   ]
+  },
+  {
+   "id": "duplicate",
+   "title": {"fr": "Dupliquer un template", "en": "Duplicating a template"},
+   "text": {
+    "fr": ["Une fois le premier template trouvé, on n'en cherche plus : chaque template se copie à l'établi, 1 donne 2. Chacun a sa propre recette."],
+    "en": ["Once you've found the first template, you never need to look again: each one copies at the crafting table, 1 makes 2. Each has its own recipe."]
+   },
+   "chain": [
+    {"machine": {"fr": "Template Allthemodium", "en": "Allthemodium template"}, "in": {"fr": "1 template + 7 lingots de netherite + 1 deepslate", "en": "1 template + 7 netherite ingots + 1 deepslate"}, "out": {"fr": "2 templates", "en": "2 templates"}},
+    {"machine": {"fr": "Template Vibranium", "en": "Vibranium template"}, "in": {"fr": "1 template + 7 lingots d'Allthemodium + 1 Ancient Stone", "en": "1 template + 7 Allthemodium ingots + 1 Ancient Stone"}, "out": {"fr": "2 templates", "en": "2 templates"}},
+    {"machine": {"fr": "Template Unobtainium", "en": "Unobtainium template"}, "in": {"fr": "1 template + 7 lingots de Vibranium + 1 pierre de l'End", "en": "1 template + 7 Vibranium ingots + 1 end stone"}, "out": {"fr": "2 templates", "en": "2 templates"}}
+   ],
+   "sources": [{"label": "recipe/smithing/*_upgrade_smithing_template.json", "url": "https://github.com/AllTheMods/Allthemodium/tree/1.21.x/src/main/resources/data/allthemodium/recipe/smithing"}]
+  },
+  {
+   "id": "upgrade",
+   "title": {"fr": "L'ordre des améliorations", "en": "Upgrade order"},
+   "rules": [
+    {"fr": "Netherite → Allthemodium : outil en netherite + template Allthemodium + lingot d'Allthemodium, à la table de forge.", "en": "Netherite → Allthemodium: netherite tool + Allthemodium template + Allthemodium ingot, at the smithing table."},
+    {"fr": "Allthemodium → Vibranium : outil en Allthemodium + template Vibranium + lingot de Vibranium.", "en": "Allthemodium → Vibranium: Allthemodium tool + Vibranium template + Vibranium ingot."},
+    {"fr": "Vibranium → Unobtainium : outil en Vibranium + template Unobtainium + lingot d'Unobtainium.", "en": "Vibranium → Unobtainium: Vibranium tool + Unobtainium template + Unobtainium ingot."},
+    {"fr": "ATM10 ajoute aussi des « plaques silencieuses » qui passent par les mêmes templates (plaque + template + lingot du palier d'avant).", "en": "ATM10 also adds \"silent plates\" that use the same templates (plate + template + previous tier's ingot)."}
+   ],
+   "sources": [
+    {"label": "recipe/smithing/*_pickaxe_smithing.json", "url": "https://github.com/AllTheMods/Allthemodium/tree/1.21.x/src/main/resources/data/allthemodium/recipe/smithing"},
+    {"label": "ATM10 kubejs/.../Allthemodium/Recipes.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/Allthemodium/Recipes.js"}
+   ]
+  }
+ ]
+}

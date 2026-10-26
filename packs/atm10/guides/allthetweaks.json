@@ -1,0 +1,52 @@
+{
+ "mod": "allthetweaks",
+ "checked": "Scripts KubeJS d'ATM10 (runic_multis/recipes/star_altar.js, controllers.js, startup runic_star_altar.js)",
+ "intro": {
+  "fr": "L'ATM Star, c'est l'objectif final d'ATM10. Dans cette version du pack, elle ne se fait plus à l'établi : tout passe par le Runic Star Altar, un multibloc ajouté par l'équipe ATM.",
+  "en": "The ATM Star is ATM10's final goal. In this version of the pack it's no longer crafted at a table: everything goes through the Runic Star Altar, a multiblock added by the ATM team."
+ },
+ "sections": [
+  {
+   "id": "altar",
+   "title": {"fr": "Le Runic Star Altar", "en": "The Runic Star Altar"},
+   "rules": [
+    {"fr": "C'est une machine électrique multibloc (Modern Industrialization) : chaque recette consomme 2048 EU/t pendant 200 ticks.", "en": "It's an electric multiblock (Modern Industrialization): each recipe draws 2048 EU/t for 200 ticks."},
+    {"fr": "La structure fait 15 × 15 au sol et 8 de haut, en blocs de Forbidden & Arcanus (darkstone, runes, cristaux arcanes, piédestaux, bocal d'Utrem…).", "en": "The structure is 15 × 15 wide and 8 high, made of Forbidden & Arcanus blocks (darkstone, runes, arcane crystals, pedestals, Utrem jar…)."},
+    {"fr": "Les trappes (entrée d'objets, sortie d'objets, énergie) se posent à la place des blocs de darkstone marqués « h » sur les bords.", "en": "Hatches (item input, item output, energy) replace the darkstone blocks marked \"h\" on the edges."},
+    {"fr": "Le contrôleur se fait par un rituel de la Forge d'Héphaïstos (tier 5) : darkstone poli au centre ; autour, un bloc d'Unrealium (ou le sac de butin de la Lunar Monstrosity), 2 Z-Logic Controllers, 2 engrenages en Enderium, 2 Mundabitur Dust et un Quantum Injector ; 5000 d'aureal, 5000 de sang, 100 âmes et 2500 d'XP ; 4 améliorations (Artisan Relic, Elementarium, Divine Pact, Maledictus Pact).", "en": "The controller comes from a Hephaestus Forge ritual (tier 5): polished darkstone in the centre; around it an Unrealium block (or the Lunar Monstrosity loot bag), 2 Z-Logic Controllers, 2 Enderium gears, 2 Mundabitur Dust and a Quantum Injector; 5000 aureal, 5000 blood, 100 souls and 2500 XP; 4 enhancers (Artisan Relic, Elementarium, Divine Pact, Maledictus Pact)."}
+   ],
+   "schematic": "atm10_star_altar",
+   "sources": [
+    {"label": "ATM10 startup runic_star_altar.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/startup_scripts/Modern-Industrialization/multiblocks/runic_star_altar.js"},
+    {"label": "ATM10 runic_multis/controllers.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/modpack/runic_multis/controllers.js"}
+   ]
+  },
+  {
+   "id": "star",
+   "title": {"fr": "La recette de l'ATM Star", "en": "The ATM Star recipe"},
+   "text": {
+    "fr": ["Deux recettes donnent l'ATM Star dans le Star Altar. La première est la grande recette ; la seconde passe par les éclats (shards)."],
+    "en": ["Two Star Altar recipes make the ATM Star. The first is the big recipe; the second goes through shards."]
+   },
+   "rules": [
+    {"fr": "Recette principale : 28 blocs d'alliage Unobtainium-Allthemodium, 15 blocs d'étoile du Nether compressés ×3, 2 blocs d'alliage Unobtainium-Vibranium « éveillés », plus 1 de chacun : Oblivion Shard, Creative Essence, Nexium Emitter, Wither's Compass, Improbable Probability Device, Dragon Soul, Philosopher's Fuel, Pulsating Black Hole, Dimensional Seed et Patrick Star.", "en": "Main recipe: 28 Unobtainium-Allthemodium alloy blocks, 15 3x compressed nether star blocks, 2 \"awakened\" Unobtainium-Vibranium alloy blocks, plus one each of: Oblivion Shard, Creative Essence, Nexium Emitter, Wither's Compass, Improbable Probability Device, Dragon Soul, Philosopher's Fuel, Pulsating Black Hole, Dimensional Seed and Patrick Star."},
+    {"fr": "Bloc d'alliage « éveillé » (aussi au Star Altar) : 1 bloc d'alliage Unobtainium-Vibranium + 4 Awakened Supremium Essence + 4 Awakened Supremium Gemstone + 4 livres Unbreaking I.", "en": "\"Awakened\" alloy block (also at the Star Altar): 1 Unobtainium-Vibranium alloy block + 4 Awakened Supremium Essence + 4 Awakened Supremium Gemstones + 4 Unbreaking I books."},
+    {"fr": "Patrick Star : 13 béton magenta, 11 béton rose, 8 béton vert, 8 poudre de béton verte, 8 poudre de béton magenta, 5 poudre de béton rose et 2 béton vert clair. Il existe aussi en recette de Mechanical Crafter (Create).", "en": "Patrick Star: 13 magenta concrete, 11 pink concrete, 8 green concrete, 8 green concrete powder, 8 magenta concrete powder, 5 pink concrete powder and 2 lime concrete. There's also a Create Mechanical Crafter recipe."}
+   ],
+   "sources": [
+    {"label": "ATM10 runic_multis/recipes/star_altar.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/modpack/runic_multis/recipes/star_altar.js"},
+    {"label": "ATM10 modpack/atm_star.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/modpack/atm_star.js"}
+   ]
+  },
+  {
+   "id": "shards",
+   "title": {"fr": "La voie des éclats", "en": "The shard route"},
+   "chain": [
+    {"machine": {"fr": "Fragments 1 à 5 (Star Altar)", "en": "Fragments 1 to 5 (Star Altar)"}, "in": {"fr": "48 ATM Star Shards + Soul Binding Crystal (fragment 1) ; 52 shards + un prisme pour les suivants : Whirlwind, Smelter, Sea, Terrastomp", "en": "48 ATM Star Shards + Soul Binding Crystal (fragment 1); 52 shards + a prism for the others: Whirlwind, Smelter, Sea, Terrastomp"}, "out": {"fr": "1 fragment chacun", "en": "1 fragment each"}},
+    {"machine": {"fr": "Infused Patrick Star (Star Altar)", "en": "Infused Patrick Star (Star Altar)"}, "in": {"fr": "36 shards + 12 Infused Breath + 4 livres Mending I + les 3 lingots d'alliage + Patrick Star", "en": "36 shards + 12 Infused Breath + 4 Mending I books + the 3 alloy ingots + Patrick Star"}, "out": {"fr": "Infused Patrick Star", "en": "Infused Patrick Star"}},
+    {"machine": {"fr": "ATM Star (Star Altar)", "en": "ATM Star (Star Altar)"}, "in": {"fr": "les 5 fragments + Lens of the Killer + Mundabitur Dust + Corrupti Dust + Infused Patrick Star", "en": "the 5 fragments + Lens of the Killer + Mundabitur Dust + Corrupti Dust + Infused Patrick Star"}, "out": {"fr": "1 ATM Star", "en": "1 ATM Star"}}
+   ],
+   "sources": [{"label": "ATM10 runic_multis/recipes/star_altar.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/modpack/runic_multis/recipes/star_altar.js"}]
+  }
+ ]
+}

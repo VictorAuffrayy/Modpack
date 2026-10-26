@@ -29,6 +29,7 @@ templates/                    gabarits HTML ({{clé}} échappée, {{{clé}}} bru
 static/                       CSS, JS, icône
 scripts/refresh_bee_text.py   met à jour noms/descriptions depuis les fichiers de langue de Productive Bees
 scripts/fetch_modlist.py      relit la liste des mods du pack (réseau)
+scripts/fetch_mi_structures.py  relit les multiblocs Modern Industrialization des scripts du pack (Star Altar)
 scripts/schematics.py         schémas de multiblocs construits à partir des règles du code des mods
 scripts/build_site.py         génère docs/ (aucune dépendance, aucun accès réseau)
 docs/                         le site généré, servi par GitHub Pages
@@ -39,6 +40,7 @@ docs/                         le site généré, servi par GitHub Pages
 ```bash
 python3 scripts/refresh_bee_text.py atm10   # relire les textes officiels du mod (réseau)
 python3 scripts/fetch_modlist.py atm10      # relire la liste des mods (réseau)
+python3 scripts/fetch_mi_structures.py atm10  # relire les structures des multiblocs ATM (réseau)
 python3 scripts/build_site.py               # régénérer docs/
 python3 -m http.server 8000 -d docs         # voir le site sur http://localhost:8000
 ```

@@ -1,0 +1,217 @@
+{
+ "slices": [
+  [
+   "  ssshahahsss  ",
+   "     sssss     ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ],
+  [
+   " ssdddddddddss ",
+   "   sssdgdsss   ",
+   "       o       ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ],
+  [
+   "ssdddddddddddss",
+   "  ssdddddddss  ",
+   "    xsssssx    ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ],
+  [
+   "sddddddddddddds",
+   " ssgdddddddgss ",
+   "   oxrdddrxo   ",
+   "     l   l     ",
+   "     l   l     ",
+   "     l   l     ",
+   "     l   l     ",
+   "     rlklr     "
+  ],
+  [
+   "sddddddddddddds",
+   " sddddddddddds ",
+   "  xxxddgddxxx  ",
+   "       p       ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ],
+  [
+   "hdddddddddddddh",
+   "ssdddddddddddss",
+   "  srdgdddgdrs  ",
+   "   l p   p l   ",
+   "   l       l   ",
+   "   l       l   ",
+   "   l       l   ",
+   "   r       r   "
+  ],
+  [
+   "addddddddddddda",
+   "sddddddddddddds",
+   "  sdddcdcddds  ",
+   "      j j      ",
+   "               ",
+   "               ",
+   "               ",
+   "   l       l   "
+  ],
+  [
+   "hdddddddddddddh",
+   "sgdddddddddddgs",
+   " osdgddgddgdso ",
+   "    p  m  p    ",
+   "               ",
+   "       q       ",
+   "               ",
+   "   k       k   "
+  ],
+  [
+   "addddddddddddda",
+   "sddddddddddddds",
+   "  sdddcdcddds  ",
+   "      j j      ",
+   "               ",
+   "               ",
+   "               ",
+   "   l       l   "
+  ],
+  [
+   "hdddddddddddddh",
+   "ssdddddddddddss",
+   "  srdgdddgdrs  ",
+   "   l p   p l   ",
+   "   l       l   ",
+   "   l       l   ",
+   "   l       l   ",
+   "   r       r   "
+  ],
+  [
+   "sddddddddddddds",
+   " sddddddddddds ",
+   "  xxxddgddxxx  ",
+   "       p       ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ],
+  [
+   "sddddddddddddds",
+   " ssgdddddddgss ",
+   "   oxrdddrxo   ",
+   "     l   l     ",
+   "     l   l     ",
+   "     l   l     ",
+   "     l   l     ",
+   "     rlklr     "
+  ],
+  [
+   "ssdddddddddddss",
+   "  ssdddddddss  ",
+   "    xsssssx    ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ],
+  [
+   " ssdddddddddss ",
+   "   sssdgdsss   ",
+   "       o       ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ],
+  [
+   "  sssha#ahsss  ",
+   "     sssss     ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               ",
+   "               "
+  ]
+ ],
+ "keys": {
+  "s": {
+   "block": "forbidden_arcanus:polished_darkstone_stairs",
+   "hatch": false
+  },
+  "x": {
+   "block": "forbidden_arcanus:polished_darkstone_slab",
+   "hatch": false
+  },
+  "d": {
+   "block": "forbidden_arcanus:polished_darkstone",
+   "hatch": false
+  },
+  "g": {
+   "block": "forbidden_arcanus:gilded_chiseled_polished_darkstone",
+   "hatch": false
+  },
+  "r": {
+   "block": "forbidden_arcanus:rune_block",
+   "hatch": false
+  },
+  "p": {
+   "block": "forbidden_arcanus:darkstone_pedestal",
+   "hatch": false
+  },
+  "l": {
+   "block": "forbidden_arcanus:arcane_polished_darkstone_pillar",
+   "hatch": false
+  },
+  "k": {
+   "block": "forbidden_arcanus:arcane_crystal_block",
+   "hatch": false
+  },
+  "a": {
+   "block": "forbidden_arcanus:arcane_polished_darkstone",
+   "hatch": false
+  },
+  "c": {
+   "block": "forbidden_arcanus:chiseled_arcane_polished_darkstone",
+   "hatch": false
+  },
+  "m": {
+   "block": "forbidden_arcanus:magnetized_darkstone_pedestal",
+   "hatch": false
+  },
+  "q": {
+   "block": "forbidden_arcanus:quantum_injector",
+   "hatch": false
+  },
+  "o": {
+   "block": "forbidden_arcanus:arcane_crystal_obelisk",
+   "hatch": false
+  },
+  "j": {
+   "block": "forbidden_arcanus:essence_utrem_jar",
+   "hatch": false
+  },
+  "h": {
+   "block": "forbidden_arcanus:polished_darkstone",
+   "hatch": true
+  }
+ },
+ "source": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/startup_scripts/Modern-Industrialization/multiblocks/runic_star_altar.js"
+}

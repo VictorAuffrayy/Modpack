@@ -1,0 +1,180 @@
+{
+ "mod": "mysticalagriculture",
+ "checked": "Mystical Agriculture (branche 1.21 ; pack 8.0.28) + config, Mystical Customization et KubeJS d'ATM10",
+ "intro": {
+  "fr": "Mystical Agriculture fait pousser les ressources. ATM10 en change plusieurs règles : les graines ne se fabriquent qu'à l'autel d'infusion, et les métaux d'Allthemodium ont un tier à part, « Magical ».",
+  "en": "Mystical Agriculture grows resources. ATM10 changes several of its rules: seeds can only be made at the infusion altar, and the Allthemodium metals get their own tier, \"Magical\"."
+ },
+ "sections": [
+  {
+   "id": "essence",
+   "title": {
+    "fr": "Monter les essences",
+    "en": "Tiering up essence"
+   },
+   "chain": [
+    {
+     "machine": {
+      "fr": "Établi",
+      "en": "Crafting table"
+     },
+     "in": {
+      "fr": "4 Inferium Essence en croix + 1 Infusion Crystal au centre",
+      "en": "4 Inferium Essence in a plus + 1 Infusion Crystal in the middle"
+     },
+     "out": {
+      "fr": "1 Prudentium Essence",
+      "en": "1 Prudentium Essence"
+     }
+    },
+    {
+     "machine": {
+      "fr": "Établi",
+      "en": "Crafting table"
+     },
+     "in": {
+      "fr": "même forme avec 4 Prudentium",
+      "en": "same shape with 4 Prudentium"
+     },
+     "out": {
+      "fr": "1 Tertium",
+      "en": "1 Tertium"
+     }
+    },
+    {
+     "machine": {
+      "fr": "Établi",
+      "en": "Crafting table"
+     },
+     "in": {
+      "fr": "puis 4 Tertium → 1 Imperium, 4 Imperium → 1 Supremium",
+      "en": "then 4 Tertium → 1 Imperium, 4 Imperium → 1 Supremium"
+     },
+     "out": {
+      "fr": "Supremium Essence",
+      "en": "Supremium Essence"
+     }
+    }
+   ],
+   "rules": [
+    {
+     "fr": "Dans ATM10, un Infusion Crystal sert 500 fois. Le Master Infusion Crystal ne s'use pas.",
+     "en": "In ATM10 an Infusion Crystal lasts 500 uses. The Master Infusion Crystal never wears out."
+    },
+    {
+     "fr": "Les mobs ne lâchent pas d'Inferium dans ATM10 : il vient du minerai et des graines.",
+     "en": "Mobs don't drop Inferium in ATM10: it comes from the ore and from seeds."
+    }
+   ],
+   "sources": [
+    {
+     "label": "recipe/prudentium_essence.json",
+     "url": "https://github.com/BlakeBr0/MysticalAgriculture/blob/1.21/src/main/resources/data/mysticalagriculture/recipe/prudentium_essence.json"
+    },
+    {
+     "label": "ATM10 config/mysticalagriculture-common.toml",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/mysticalagriculture-common.toml"
+    }
+   ]
+  },
+  {
+   "id": "infusion",
+   "title": {
+    "fr": "L'autel d'infusion",
+    "en": "The infusion altar"
+   },
+   "rules": [
+    {
+     "fr": "8 Infusion Pedestals autour de l'autel, à la même hauteur : à 3 blocs dans les 4 directions, et à 2 blocs en diagonale.",
+     "en": "8 Infusion Pedestals around the altar, at the same height: 3 blocks away in the 4 directions, and 2 blocks away on the diagonals."
+    },
+    {
+     "fr": "L'objet central va sur l'autel, les 8 ingrédients sur les piédestaux. On lance avec un signal de redstone ou un clic droit à la Wand.",
+     "en": "The centre item goes on the altar, the 8 ingredients on the pedestals. Start it with a redstone signal or a right-click with the Wand."
+    },
+    {
+     "fr": "Dans ATM10, c'est le seul moyen de faire des graines : les recettes de graines à l'établi sont désactivées.",
+     "en": "In ATM10 it's the only way to make seeds: crafting-table seed recipes are turned off."
+    }
+   ],
+   "schematic": "ma_infusion",
+   "sources": [
+    {
+     "label": "InfusionAltarTileEntity.java",
+     "url": "https://github.com/BlakeBr0/MysticalAgriculture/blob/1.21/src/main/java/com/blakebr0/mysticalagriculture/tileentity/InfusionAltarTileEntity.java"
+    },
+    {
+     "label": "ATM10 config/mysticalagriculture-common.toml",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/mysticalagriculture-common.toml"
+    }
+   ]
+  },
+  {
+   "id": "awakening",
+   "title": {
+    "fr": "L'autel d'éveil",
+    "en": "The awakening altar"
+   },
+   "rules": [
+    {
+     "fr": "Mêmes 8 emplacements que l'autel d'infusion. Le code accepte un Awakening Pedestal ou un Essence Vessel sur chacun ; le schéma montre la disposition habituelle (vessels sur les côtés, piédestaux en diagonale).",
+     "en": "Same 8 spots as the infusion altar. The code accepts an Awakening Pedestal or an Essence Vessel on each; the schematic shows the usual layout (vessels on the sides, pedestals on the diagonals)."
+    },
+    {
+     "fr": "Comme l'autel d'infusion, il se lance avec un signal de redstone ou un clic droit à la Wand.",
+     "en": "Like the infusion altar, start it with a redstone signal or a right-click with the Wand."
+    },
+    {
+     "fr": "Il sert à l'Awakened Supremium, nécessaire pour l'ATM Star et pour la Magical Soil.",
+     "en": "It makes Awakened Supremium, needed for the ATM Star and for Magical Soil."
+    }
+   ],
+   "schematic": "ma_awakening",
+   "sources": [
+    {
+     "label": "AwakeningAltarTileEntity.java",
+     "url": "https://github.com/BlakeBr0/MysticalAgriculture/blob/1.21/src/main/java/com/blakebr0/mysticalagriculture/tileentity/AwakeningAltarTileEntity.java"
+    }
+   ]
+  },
+  {
+   "id": "magical",
+   "title": {
+    "fr": "Le tier Magical d'ATM10",
+    "en": "ATM10's Magical tier"
+   },
+   "text": {
+    "fr": [
+     "ATM10 ajoute des graines d'Allthemodium, de Vibranium et d'Unobtainium (et quelques autres) dans un tier 7 maison, « Magical ». Leur graine se fait avec un bloc du métal, et elles ne poussent que sur de la Magical Soil."
+    ],
+    "en": [
+     "ATM10 adds Allthemodium, Vibranium and Unobtainium seeds (and a few others) in a custom tier 7, \"Magical\". Their seed uses a block of the metal, and they only grow on Magical Soil."
+    ]
+   },
+   "rules": [
+    {
+     "fr": "Magical Soil (établi, recette ATM10) : bloc d'Insanium, bloc d'étoile du Nether ×2, terre compressée ×3, Awakened Supremium Growth Accelerator, Insanium Farmland au centre, tête de dragon, cœur de Piglich, bloc de perles de l'Ender ×3 et pousse de Moonlight Magic Crepe Myrtle.",
+     "en": "Magical Soil (crafting table, ATM10 recipe): Insanium block, 2x nether star block, 3x compressed dirt, Awakened Supremium Growth Accelerator, Insanium Farmland in the centre, dragon head, Piglich heart, 3x ender pearl block and a Moonlight Magic Crepe Myrtle sapling."
+    },
+    {
+     "fr": "Ces cultures ne peuvent pas être fertilisées et ne donnent pas de deuxième graine.",
+     "en": "These crops can't be fertilised and never drop a second seed."
+    }
+   ],
+   "sources": [
+    {
+     "label": "ATM10 mysticalcustomization/tiers/magical.json",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/mysticalcustomization/tiers/magical.json"
+    },
+    {
+     "label": "ATM10 mysticalcustomization/crops/allthemodium.json",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/mysticalcustomization/crops/allthemodium.json"
+    },
+    {
+     "label": "ATM10 kubejs/.../MysticalAgriculture/Recipes.js",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/MysticalAgriculture/Recipes.js"
+    }
+   ]
+  }
+ ]
+}

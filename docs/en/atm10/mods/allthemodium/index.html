@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Allthemodium guide for ATM10 · Modpack Companion</title>
+<meta name="description" content="Allthemodium in ATM10: exact multiblock rules, build schematics and crafting chains, checked against the mod&#x27;s code and the pack&#x27;s config.">
+<link rel="alternate" hreflang="en" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/allthemodium/">
+<link rel="alternate" hreflang="fr" href="https://victorauffrayy.github.io/Modpack/fr/atm10/mods/allthemodium/">
+<link rel="alternate" hreflang="x-default" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/allthemodium/">
+<meta property="og:title" content="Allthemodium guide for ATM10 · Modpack Companion">
+<meta property="og:description" content="Allthemodium in ATM10: exact multiblock rules, build schematics and crafting chains, checked against the mod&#x27;s code and the pack&#x27;s config.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../../../static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500;700&display=swap">
+<meta name="theme-color" content="#121317">
+<link rel="stylesheet" href="../../../../static/site.css">
+
+</head>
+<body class="">
+<header class="site-head">
+  <a class="brand" href="../../../../en/"><img src="../../../../static/favicon.svg" alt="" width="26" height="26">Modpack Companion</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><span aria-hidden="true">›</span> <a href="../../../../en/atm10/">ATM10</a> <span aria-hidden="true">›</span> <a href="../../../../en/atm10/mods/">Mods and guides</a> <span aria-hidden="true">›</span> <a href="../../../../en/atm10/mods/allthemodium/">Allthemodium</a></nav>
+  <a class="lang" href="../../../../fr/atm10/mods/allthemodium/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+</header>
+<main class="page guide">
+  <p class="kicker">ATM10 · Guide</p>
+  <h1>Allthemodium</h1>
+  <p class="lead">Allthemodium, then Vibranium, then Unobtainium: the three metals that pace ATM10&#x27;s late game. Each gear tier needs a smithing template, and each template comes from a different place.</p>
+  <p class="checked">Checked against: Allthemodium 3.2.1 (branche 1.21.x) + scripts KubeJS et livre de quêtes d&#x27;ATM10</p>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol><li><a href="#where">Where to find the templates</a></li><li><a href="#duplicate">Duplicating a template</a></li><li><a href="#upgrade">Upgrade order</a></li></ol>
+  </nav>
+
+  <section class="g-sec" id="where"><h2>Where to find the templates</h2><h3>The rules</h3><ul class="rules"><li>Allthemodium template: brush Suspicious Clay in the floors of Ancient Cities. The block always gives it.</li><li>Vibranium template: brush Suspicious Soul Sand in Nether Bastions. Also a 100% drop.</li><li>Unobtainium template: no archaeology. It comes from the Trial Spawners in the Dungeon&#x27;s library rooms, in The Other dimension.</li><li>With Lootr, suspicious blocks give their loot to each player, like chests.</li></ul><p class="sources">Sources: <a href="https://github.com/AllTheMods/Allthemodium/tree/1.21.x/src/main/resources/data/allthemodium/loot_table" rel="nofollow">loot_table/arch.json, arch2.json, chest/template.json</a> · <a href="https://github.com/AllTheMods/ATM-10/blob/main/config/ftbquests/quests/lang/en_us/chapters/allthemodium.snbt" rel="nofollow">ATM10 quêtes : chapitre Allthemodium</a></p></section><section class="g-sec" id="duplicate"><h2>Duplicating a template</h2><p>Once you&#x27;ve found the first template, you never need to look again: each one copies at the crafting table, 1 makes 2. Each has its own recipe.</p><h3>The chain</h3><ol class="chain"><li><span class="mach">Allthemodium template</span><span class="io">1 template + 7 netherite ingots + 1 deepslate <b aria-hidden="true">→</b> 2 templates</span></li><li><span class="mach">Vibranium template</span><span class="io">1 template + 7 Allthemodium ingots + 1 Ancient Stone <b aria-hidden="true">→</b> 2 templates</span></li><li><span class="mach">Unobtainium template</span><span class="io">1 template + 7 Vibranium ingots + 1 end stone <b aria-hidden="true">→</b> 2 templates</span></li></ol><p class="sources">Sources: <a href="https://github.com/AllTheMods/Allthemodium/tree/1.21.x/src/main/resources/data/allthemodium/recipe/smithing" rel="nofollow">recipe/smithing/*_upgrade_smithing_template.json</a></p></section><section class="g-sec" id="upgrade"><h2>Upgrade order</h2><h3>The rules</h3><ul class="rules"><li>Netherite → Allthemodium: netherite tool + Allthemodium template + Allthemodium ingot, at the smithing table.</li><li>Allthemodium → Vibranium: Allthemodium tool + Vibranium template + Vibranium ingot.</li><li>Vibranium → Unobtainium: Vibranium tool + Unobtainium template + Unobtainium ingot.</li><li>ATM10 also adds &quot;silent plates&quot; that use the same templates (plate + template + previous tier&#x27;s ingot).</li></ul><p class="sources">Sources: <a href="https://github.com/AllTheMods/Allthemodium/tree/1.21.x/src/main/resources/data/allthemodium/recipe/smithing" rel="nofollow">recipe/smithing/*_pickaxe_smithing.json</a> · <a href="https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/Allthemodium/Recipes.js" rel="nofollow">ATM10 kubejs/.../Allthemodium/Recipes.js</a></p></section>
+
+  <p><a class="back" href="../">← All mods</a></p>
+</main>
+
+<footer class="site-foot">
+  <p>Fan-made site, not affiliated with the All the Mods team, Mojang or the mod authors.</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">Source on GitHub</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>

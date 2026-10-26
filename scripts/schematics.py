@@ -8,6 +8,10 @@ change in the mod can be checked against the same file.
 Rendering to SVG lives here too, so guides only reference a schematic by name.
 """
 import html
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
 
 # Mekanism wall grids for the fixed-size multiblocks (0 = may be missing, 1 = frame casing, 2 = casing or port).
 # Source: SPSValidator.ALLOWED_GRID and FusionReactorValidator.ALLOWED_GRID, Mekanism 10.7.19.
@@ -227,6 +231,49 @@ def powah_reactor():
     return [["YYY", "YYY", "YYY"] for _ in range(4)]
 
 
+# Distinct colours for structures that bring their own block list
+PALETTE = ["#8a8f9c", "#5b5f6b", "#3d4150", "#c9a46a", "#a46cff", "#e0a33a", "#7fc8e8", "#4fd2c2", "#c45dd6",
+           "#56c26a", "#ff8a3d", "#e05a9a", "#5aa0ff", "#d8d23a", "#b8b8c8", "#ff6b5a"]
+
+
+def pretty_block(block_id, mod_names):
+    ns, name = block_id.split(":")
+    return f"{name.replace('_', ' ').capitalize()} ({mod_names.get(ns, ns)})"
+
+
+def mi_structure(pack, name, controller):
+    """A Modern Industrialization layered shape saved by fetch_mi_structures.py: slices are z rows, each a list of y strings."""
+    data = json.loads((ROOT / "packs" / pack / "structures" / f"{name}.json").read_text())
+    mod_names = json.loads((ROOT / "packs" / "mods.json").read_text())
+    slices = data["slices"]
+    height = len(slices[0])
+    layers = [[sl[y].replace(" ", ".") for sl in slices] for y in range(height)]
+    blocks = {"#": ("#ff6b5a", {"en": f"{controller} (controller)", "fr": f"{controller} (contrôleur)"})}
+    for i, (char, key) in enumerate(sorted(data["keys"].items())):
+        label = pretty_block(key["block"], mod_names)
+        extra = {"en": " or a hatch", "fr": " ou une trappe (hatch)"} if key["hatch"] else {"en": "", "fr": ""}
+        blocks[char] = (PALETTE[i % len(PALETTE)], {lang: label + extra[lang] for lang in ("en", "fr")})
+    return {"layers": layers, "blocks": blocks}
+
+
+def ma_altar(kind):
+    # Mystical Agriculture: InfusionAltarTileEntity / AwakeningAltarTileEntity list the same 8 spots around the altar:
+    # 3 blocks away on each side and 2 blocks away on each diagonal, all at the altar's height.
+    spots = [(3, 0), (0, 3), (-3, 0), (0, -3), (2, 2), (2, -2), (-2, 2), (-2, -2)]
+    grid = [["."] * 7 for _ in range(7)]
+    grid[3][3] = "A"
+    for dx, dz in spots:
+        grid[3 + dz][3 + dx] = "P" if kind == "infusion" or (dx and dz) else "V"
+    blocks = {
+        "A": ("#a46cff", {"en": "Infusion Altar" if kind == "infusion" else "Awakening Altar",
+                          "fr": "Autel d'infusion" if kind == "infusion" else "Autel d'éveil"}),
+        "P": ("#56c26a", {"en": "Infusion Pedestal" if kind == "infusion" else "Awakening Pedestal",
+                          "fr": "Piédestal d'infusion" if kind == "infusion" else "Piédestal d'éveil"}),
+        "V": ("#5aa0ff", {"en": "Essence Vessel", "fr": "Essence Vessel"}),
+    }
+    return {"layers": [["".join(r) for r in grid]], "blocks": blocks}
+
+
 SCHEMATICS = {
     "mekanism_fission": fission,
     "mekanism_turbine": turbine,
@@ -238,6 +285,9 @@ SCHEMATICS = {
     "er_reactor": er_reactor,
     "er_turbine": er_turbine,
     "powah_reactor": powah_reactor,
+    "atm10_star_altar": lambda: mi_structure("atm10", "runic_star_altar", "Runic Star Altar"),
+    "ma_infusion": lambda: ma_altar("infusion"),
+    "ma_awakening": lambda: ma_altar("awakening"),
 }
 
 LAYER_WORD = {"en": "Layer {n}", "fr": "Couche {n}"}
@@ -247,8 +297,14 @@ TOP = {"en": "top", "fr": "haut"}
 
 def render(name, lang):
     """Every layer seen from above, bottom first, then a legend of the codes actually used."""
-    layers = SCHEMATICS[name]()
-    cell = 22
+    built = SCHEMATICS[name]()
+    blocks = BLOCKS
+    if isinstance(built, dict):
+        blocks = {**BLOCKS, **built["blocks"]}
+        built = built["layers"]
+    layers = built
+    widest = max(len(layer[0]) for layer in layers)
+    cell = 22 if widest <= 9 else 16
     used = []
     out = ['<div class="schem">']
     for i, layer in enumerate(layers):
@@ -263,17 +319,17 @@ def render(name, lang):
             for x, code in enumerate(row):
                 if code not in used:
                     used.append(code)
-                colour = BLOCKS[code][0]
+                colour = blocks[code][0]
                 cls = ' class="air"' if code == "." else ""
-                svg.append(f'<rect{cls} x="{x * cell + 1}" y="{z * cell + 1}" width="{cell - 2}" height="{cell - 2}" rx="3" fill="{colour}"><title>{html.escape(BLOCKS[code][1][lang])}</title></rect>')
+                svg.append(f'<rect{cls} x="{x * cell + 1}" y="{z * cell + 1}" width="{cell - 2}" height="{cell - 2}" rx="3" fill="{colour}"><title>{html.escape(blocks[code][1][lang])}</title></rect>')
                 if code not in ".C":
                     svg.append(f'<text x="{x * cell + cell / 2}" y="{z * cell + cell / 2 + 4}" text-anchor="middle">{code}</text>')
         svg.append("</svg>")
         out.append(f'<figure class="layer">{"".join(svg)}<figcaption>{html.escape(label)}</figcaption></figure>')
     out.append("</div>")
     legend = "".join(
-        f'<li><i style="background:{BLOCKS[c][0]}"{" class=air" if c == "." else ""}>{c if c not in ".C" else ""}</i>{html.escape(BLOCKS[c][1][lang])}</li>'
-        for c in sorted(used, key=list(BLOCKS).index)
+        f'<li><i style="background:{blocks[c][0]}"{" class=air" if c == "." else ""}>{c if c not in ".C" else ""}</i>{html.escape(blocks[c][1][lang])}</li>'
+        for c in sorted(used, key=lambda c: (c != ".", c))
     )
     out.append(f'<ul class="legend-list">{legend}</ul>')
     return "".join(out)
