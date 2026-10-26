@@ -5,10 +5,11 @@
   <div class="legend">
     <span><i style="background:var(--done)"></i>{{js.legend_done}}</span>
     <span><i style="background:var(--avail)"></i>{{js.legend_avail}}</span>
-    <span><i style="background:var(--slot)"></i>{{js.legend_lock}}</span>
+    <span><i style="background:var(--lock-hi)"></i>{{js.legend_lock}}</span>
   </div>
   <div class="tools">
     <input id="q" type="search" placeholder="{{js.search}}" aria-label="{{js.search}}">
+    <select id="mod" aria-label="{{js.mod_filter}}"><option value="">{{js.all_mods}}</option></select>
     <button class="mc" type="button" id="zout" aria-label="{{js.zoom_out}}">−</button>
     <button class="mc" type="button" id="zin" aria-label="{{js.zoom_in}}">+</button>
     <button class="mc" type="button" id="links">{{js.links_all}}</button>

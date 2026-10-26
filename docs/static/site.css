@@ -1,69 +1,86 @@
-/* One deliberate look for the whole site: Minecraft quest book on parchment, same in light and dark. */
+/* Art direction "Deepslate & honey": a dark second-screen UI, honeycomb texture, honey accent.
+   Status colours borrow from the game: emerald = obtained, redstone = available, stone = locked.
+   One deliberate look, the same in light and dark system themes. */
 :root {
-  color-scheme: light;
-  --parch: #e9d3a3;
-  --parch-2: #d9bb80;
-  --ink: #2b1d0e;
-  --muted: #6b5234;
-  --slot: #8b8b8b;
-  --slot-hi: #c6c6c6;
-  --slot-lo: #555;
-  --done: #49b33b;
-  --done-lo: #2a6b22;
-  --avail: #7a1f1f;
-  --avail-hi: #b33a3a;
-  --panel: #fbf3e2;
-  --gold: #f0c64a;
+  color-scheme: dark;
+  --bg: #121317;
+  --bg-2: #1a1c22;
+  --panel: #22252d;
+  --panel-2: #2b2f39;
+  --line: #3b404c;
+  --ink: #f1ede4;
+  --muted: #a2a7b3;
+  --honey: #f5b638;
+  --honey-lo: #a8711a;
+  --done: #3fbf6f;
+  --done-lo: #1f7a43;
+  --avail: #d9493e;
+  --avail-lo: #84261f;
+  --lock: #4a4f5b;
+  --lock-hi: #646a78;
   --f-pix: "Pixelify Sans", "Courier New", monospace;
-  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Rubik", "Segoe UI", system-ui, sans-serif;
+  --comb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 66 0 50V17L28 1l28 16v33zm0 31V66m28-49L28 1 0 17' fill='none' stroke='%23f5b638' stroke-opacity='.05' stroke-width='1.5'/%3E%3C/svg%3E");
 }
 * { box-sizing: border-box }
 [hidden] { display: none !important }
-body { margin: 0; background: var(--parch); color: var(--ink); font: 16px/1.5 var(--f-body);
+html { background: var(--bg) }
+body { margin: 0; background: var(--bg) var(--comb); color: var(--ink); font: 16px/1.55 var(--f-body);
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
 a { color: inherit }
-button { font: inherit; color: inherit; cursor: pointer }
-:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px }
+button, input, select { font: inherit; color: inherit }
+button { cursor: pointer }
+:focus-visible { outline: 2px solid var(--honey); outline-offset: 2px }
 
-.site-head { display: flex; align-items: center; gap: 8px 16px; flex-wrap: wrap; padding: 12px 0; border-bottom: 3px solid var(--ink); max-width: 1100px; margin: 0 auto }
-.brand { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-pix); font-weight: 700; font-size: 20px; text-decoration: none }
-.crumbs { flex: 1; min-width: 0; font-family: var(--f-pix); font-size: 15px; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap }
-.crumbs a { color: var(--muted) }
-.crumbs span[aria-hidden] { opacity: .6 }
+.site-head { display: flex; align-items: center; gap: 8px 16px; flex-wrap: wrap; padding: 14px 0; border-bottom: 1px solid var(--line); max-width: 1100px; margin: 0 auto }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-pix); font-weight: 700; font-size: 20px; text-decoration: none; color: var(--honey) }
+.crumbs { flex: 1; min-width: 0; font-size: 14px; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap; align-items: center }
+.crumbs a { color: var(--muted); text-decoration: none }
+.crumbs a:hover { color: var(--ink) }
+.crumbs span[aria-hidden] { opacity: .5 }
 @media (max-width: 600px) {
   .brand { flex: 1 }
   .crumbs { order: 3; flex-basis: 100% }
   .crumbs:empty { display: none }
 }
-.lang, .mc { font-family: var(--f-pix); font-size: 14px; background: var(--slot-hi); border: 2px solid var(--ink); box-shadow: inset -2px -2px 0 var(--slot-lo), inset 2px 2px 0 #fff; padding: 4px 10px; text-decoration: none; white-space: nowrap }
-.lang:active, .mc:active { box-shadow: inset 2px 2px 0 var(--slot-lo) }
+.lang, .mc { font-size: 13px; font-weight: 500; background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 5px 11px; text-decoration: none; white-space: nowrap; color: var(--ink) }
+.lang:hover, .mc:hover { border-color: var(--honey) }
 
-main.page { max-width: 1100px; margin: 0 auto; padding: 32px 0 24px }
-h1 { font-family: var(--f-pix); font-weight: 700; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 0 0 12px; text-wrap: balance }
-h2 { font-family: var(--f-pix); font-weight: 700; font-size: 22px; margin: 36px 0 14px }
-.lead { font-size: 18px; max-width: 62ch; color: var(--muted); margin: 0 }
+main.page { max-width: 1100px; margin: 0 auto; padding: 48px 0 32px }
+h1 { font-family: var(--f-pix); font-weight: 700; font-size: clamp(30px, 5.5vw, 52px); line-height: 1.08; margin: 0 0 16px; text-wrap: balance; letter-spacing: .005em }
+h2 { font-family: var(--f-pix); font-weight: 700; font-size: 22px; margin: 48px 0 16px; color: var(--honey) }
+.lead { font-size: 18px; max-width: 60ch; color: var(--muted); margin: 0 }
+.kicker { font-family: var(--f-pix); color: var(--honey); font-size: 15px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center }
+.hero-art { width: clamp(120px, 20vw, 220px); image-rendering: pixelated; filter: drop-shadow(0 12px 30px rgba(245, 182, 56, .25)); animation: hover 4s ease-in-out infinite }
+@keyframes hover { 50% { transform: translateY(-8px) rotate(-2deg) } }
+.stats { margin-top: 20px; display: inline-flex; font-family: var(--f-pix); font-size: 15px; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px }
+@media (max-width: 700px) { .hero { grid-template-columns: 1fr } .hero-art { display: none } }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none }
-.card { background: var(--panel); border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; position: relative }
-.card h3 { font-family: var(--f-pix); font-size: 20px; margin: 0; display: flex; align-items: center; gap: 10px }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; position: relative; transition: border-color .15s, transform .15s }
+.card:not(.off):hover { border-color: var(--honey); transform: translateY(-2px) }
+.card h3 { font-family: var(--f-pix); font-size: 21px; margin: 0; display: flex; align-items: center; gap: 10px }
 .card p { margin: 0; color: var(--muted) }
 .card .meta { font-size: 13px; color: var(--muted) }
-.card .go { margin-top: auto; align-self: flex-start; font-family: var(--f-pix); font-size: 15px; padding: 6px 12px; border: 2px solid var(--ink); text-decoration: none;
-  background: var(--done); color: #fff; box-shadow: inset -3px -3px 0 var(--done-lo), inset 3px 3px 0 #8fe07f }
+.card .go { margin-top: auto; align-self: flex-start; font-weight: 500; font-size: 14px; padding: 7px 14px; border-radius: 6px; text-decoration: none; background: var(--honey); color: #1b1404 }
 .card a.go::after { content: ""; position: absolute; inset: 0 } /* whole card is clickable */
-.card.off { background: transparent; border-style: dashed; box-shadow: none }
-.card.off .go { background: var(--slot-hi); color: var(--ink); box-shadow: none; border-style: dashed }
-.card .ico { font-size: 26px; line-height: 1 }
+.card.off { background: transparent; border-style: dashed }
+.card.off .go { background: transparent; color: var(--muted); border: 1px dashed var(--line) }
+.card .ico { font-size: 24px; line-height: 1 }
 
-.why { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; padding: 0; margin: 0; list-style: none }
-.why li { border-left: 4px solid var(--done-lo); padding: 4px 0 4px 12px }
+.why { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 12px 32px; max-width: 900px }
+.why p { margin: 0; color: var(--muted) }
+.why p:first-child { color: var(--ink) }
 
-.site-foot { max-width: 1100px; margin: 24px auto 0; padding: 14px 0 calc(20px + env(safe-area-inset-bottom, 0px)); border-top: 2px solid var(--ink); font-size: 13px; color: var(--muted) }
+.site-foot { max-width: 1100px; margin: 32px auto 0; padding: 16px 0 calc(22px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); font-size: 13px; color: var(--muted) }
 .site-foot p { margin: 4px 0 }
 
 /* Full-height tool pages (bee planner): header, app, compact footer */
 body.app { height: 100dvh; display: flex; flex-direction: column; overflow: hidden }
 body.app .site-head, body.app .site-foot { max-width: none; width: 100% }
-body.app .site-foot { margin-top: 0; padding-top: 6px; padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)); display: flex; gap: 16px; flex-wrap: wrap }
-body.app main { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-top: 10px }
+body.app .site-foot { margin-top: 0; padding-top: 6px; padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)); display: flex; gap: 16px; flex-wrap: wrap; border-top: 0 }
+body.app main { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-top: 12px }
 @media (max-width: 600px) { body.app { height: auto; overflow: visible } body.app main { min-height: 85dvh } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }

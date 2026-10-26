@@ -13,8 +13,15 @@ const nm = id => byId[id] ? byId[id].name : id;
 const ready = m => m.parents.every(p => done.has(p));
 const avail = b => !done.has(b.id) && (!!b.special || b.methods.some(ready));
 const status = b => done.has(b.id) ? 'done' : avail(b) ? 'avail' : 'lock';
-// Search matches the name in both languages, so French players can type the English in-game name too
-const matches = (b, q) => b.name.toLowerCase().includes(q) || (b.alt || '').toLowerCase().includes(q);
+const qt = s => LANG === 'fr' ? `«\u00a0${s}\u00a0»` : `"${s}"`;
+const itemText = i => (i.n.startsWith('tag ') ? `${T.tag} ${qt(i.n.slice(4))}` : i.n) + (i.m ? ` (${i.m})` : '');
+const itemHtml = i => `<span class="item">${esc(i.n.startsWith('tag ') ? `${T.tag} ${qt(i.n.slice(4))}` : i.n)}${i.m ? ` <span class="m">${esc(i.m)}</span>` : ''}</span>`;
+// Search matches the name in both languages (French players often know the English in-game name),
+// the bee's mod, and the items its recipes use
+const haystack = b => [b.name, b.alt, b.mod, b.flower && itemText(b.flower), ...b.methods.flatMap(m => m.items.map(itemText))].join('\n').toLowerCase();
+const HAY = Object.fromEntries(BEES.map(b => [b.id, haystack(b)]));
+const matches = (b, q) => HAY[b.id].includes(q);
+let modFilter = '';
 
 /* ---------- layout ---------- */
 const S = 46, G = 14, PER = 18, ROWG = 16, BANDG = 46, LEFT = 90, TOPY = 120;
@@ -69,12 +76,13 @@ function draw() {
   // root box
   const rootW = 360, rootX = LEFT + (PER * (S + G) - G - rootW) / 2;
   parts.push(`<g class="root"><rect x="${rootX}" y="20" width="${rootW}" height="58"/><text x="${rootX + rootW / 2}" y="57" text-anchor="middle">${esc(T.root)}</text></g>`);
-  // edges
+  // edges (with a mod filter on, only links touching that mod's bees stay visible)
+  const keep = id => modFilter && byId[id] && byId[id].mod === modFilter;
   const edges = [];
   BEES.forEach(b => {
     const seen = new Set();
     if (b.tier === 0) {
-      edges.push(`<line class="edge ${done.has(b.id) ? 'e-done' : 'e-avail'}" data-c="${esc(b.id)}" x1="${rootX + rootW / 2}" y1="78" x2="${pos[b.id].x}" y2="${pos[b.id].y - S / 2}"/>`);
+      edges.push(`<line class="edge ${done.has(b.id) ? 'e-done' : 'e-avail'}${keep(b.id) ? ' keep' : ''}" data-c="${esc(b.id)}" x1="${rootX + rootW / 2}" y1="78" x2="${pos[b.id].x}" y2="${pos[b.id].y - S / 2}"/>`);
       return;
     }
     b.methods.forEach(m => m.parents.forEach(p => {
@@ -82,7 +90,7 @@ function draw() {
       const cls = done.has(b.id) ? 'e-done' : (done.has(p) ? 'e-avail' : 'e-lock');
       const a = pos[p], c = pos[b.id];
       const my = (a.y + S / 2 + c.y - S / 2) / 2;
-      edges.push(`<path class="edge ${cls}" data-p="${esc(p)}" data-c="${esc(b.id)}" d="M${a.x} ${a.y + S / 2} C${a.x} ${my} ${c.x} ${my} ${c.x} ${c.y - S / 2}"/>`);
+      edges.push(`<path class="edge ${cls}${keep(b.id) || keep(p) ? ' keep' : ''}" data-p="${esc(p)}" data-c="${esc(b.id)}" d="M${a.x} ${a.y + S / 2} C${a.x} ${my} ${c.x} ${my} ${c.x} ${c.y - S / 2}"/>`);
     }));
   });
   parts.push(edges.join(''));
@@ -91,12 +99,14 @@ function draw() {
   BEES.forEach(b => {
     const p = pos[b.id], st = status(b);
     const hit = q && matches(b, q);
-    parts.push(`<g class="node ${st}${selected === b.id ? ' sel' : ''}${hit ? ' hit' : ''}" data-id="${esc(b.id)}" tabindex="0" role="button" aria-label="${esc(b.name)}" transform="translate(${p.x},${p.y})">
+    const dim = modFilter && b.mod !== modFilter;
+    parts.push(`<g class="node ${st}${selected === b.id ? ' sel' : ''}${hit ? ' hit' : ''}${dim ? ' dim' : ''}" data-id="${esc(b.id)}" tabindex="0" role="button" aria-label="${esc(b.name)}" transform="translate(${p.x},${p.y})">
       <rect class="bg" x="${-S / 2}" y="${-S / 2}" width="${S}" height="${S}" rx="5"/>
       <rect class="bevel" x="${-S / 2 + 3}" y="${-S / 2 + 3}" width="${S - 6}" height="${S - 6}" rx="3"/>${beeIcon(b)}</g>`);
   });
   svg.innerHTML = parts.join('');
   svg.classList.toggle('selmode', linkMode === 'sel');
+  svg.classList.toggle('filtering', !!modFilter);
   highlight();
   const n = BEES.filter(b => done.has(b.id)).length;
   document.getElementById('count').textContent = `${n} / ${BEES.length}`;
@@ -109,7 +119,7 @@ const biomeText = s => s.split(',').map(x => x.trim()).map(x => T.biomes[x] || x
 function kindText(m) {
   if (m.kind === 'breeding') return T.k_breeding;
   if (m.kind === 'conversion') return T.k_conversion + (m.chance ? ` (${pct(m.chance)})` : '');
-  if (m.kind === 'nest') return T.k_nest + (m.items || []).join(', ').replace(/ \(productivebees\)/g, '');
+  if (m.kind === 'nest') return T.k_nest + m.items.map(i => i.n).join(', ');
   if (m.kind === 'fishing') return T.k_fishing + (m.chance ? ` ${pct(m.chance)}` : '');
   if (m.kind === 'item_conversion') return T.k_item_conversion;
   return T.machines[m.machine] || m.machine;
@@ -118,14 +128,14 @@ function kindText(m) {
 /* ---------- tooltip ---------- */
 const tip = document.getElementById('tip');
 function showTip(b, ev) {
-  const lines = [`<div>${esc(b.name)}</div>`];
+  const lines = [`<div>${esc(b.name)}</div>`, `<div class="mod">${esc(b.mod)}</div>`];
   if (b.special) lines.push(`<div class="sub">${esc(b.special)}</div>`);
   const withParents = b.methods.filter(m => m.parents.length);
   if (!withParents.length && !b.special) b.methods.slice(0, 2).forEach(m => lines.push(`<div class="sub">${esc(kindText(m))}${m.biomes ? ' · ' + esc(biomeText(m.biomes)) : ''}</div>`));
   withParents.slice(0, 3).forEach((m, i) => {
     lines.push(`<div class="req">${i ? T.or : ''}${esc(T.requires)} ${m.parents.length > 1 ? esc(T.and) : ''}</div>`);
     m.parents.forEach(p => lines.push(`<div class="${done.has(p) ? 'ok' : 'req'}">- ${esc(nm(p))}</div>`));
-    if (m.items && m.items.length) lines.push(`<div class="sub">+ ${esc(m.items.slice(0, 2).join(', '))}</div>`);
+    if (m.items.length) lines.push(`<div class="sub">+ ${esc(m.items.slice(0, 2).map(itemText).join(', '))}</div>`);
   });
   if (withParents.length > 3) lines.push(`<div class="sub">${esc(fmt(T.more_methods, { n: withParents.length - 3 }))}</div>`);
   tip.innerHTML = lines.join(''); tip.hidden = false; moveTip(ev);
@@ -149,18 +159,18 @@ function openDrawer(id) {
   const st = status(b);
   const ch = [...(kids[id] || [])].map(k => byId[k]).filter(Boolean).sort((a, c) => a.tier - c.tier);
   const d = document.getElementById('drawer');
-  d.innerHTML = `<div class="d-head"><svg width="48" height="48" viewBox="-24 -24 48 48" aria-hidden="true"><rect x="-23" y="-23" width="46" height="46" rx="5" fill="${st === 'done' ? '#49b33b' : st === 'avail' ? '#7a1f1f' : '#8b8b8b'}" stroke="#2b1d0e" stroke-width="2"/>${beeIcon(b)}</svg>
+  d.innerHTML = `<div class="d-head"><svg width="48" height="48" viewBox="-24 -24 48 48" aria-hidden="true"><rect x="-23" y="-23" width="46" height="46" rx="5" fill="var(--${st === 'done' ? 'done-lo' : st === 'avail' ? 'avail-lo' : 'lock'})" stroke="#0c0d10" stroke-width="2"/>${beeIcon(b)}</svg>
     <h3 id="d-title">${esc(b.name)}${b.alt && b.alt !== b.name ? `<span class="alt">${esc(b.alt)}</span>` : ''}</h3><button class="close" type="button" aria-label="${esc(T.close)}">×</button></div>
-    <div class="state">${esc(fmt(T.tier, { t: b.tier }))} · ${esc(st === 'done' ? T.state_done : st === 'avail' ? T.state_avail : T.state_lock)}</div>
+    <div class="state"><span class="pill modname">${esc(T.mod)}${LANG === 'fr' ? '\u00a0: ' : ': '}${esc(b.mod)}</span><span class="pill">${esc(fmt(T.tier, { t: b.tier }))}</span><span class="pill">${esc(st === 'done' ? T.state_done : st === 'avail' ? T.state_avail : T.state_lock)}</span></div>
     <button type="button" class="primary ${st === 'done' ? 'undo' : ''}" data-toggle="${esc(id)}">${esc(st === 'done' ? T.untick : T.tick)}</button>
     ${b.desc ? `<p class="desc">${esc(b.desc)}</p>` : ''}
     <div class="sec"><h4>${esc(T.how_to_get)}</h4>
       ${b.special ? `<div class="method ready"><div class="kind">${esc(b.special)}</div></div>` : ''}
       ${b.methods.map((m, i) => `<div class="method ${m.parents.length && ready(m) ? 'ready' : ''}"><div class="kind">${i || b.special ? esc(T.or_method) : ''}${esc(kindText(m))}</div>
         ${m.parents.length ? `<div class="chips">${m.parents.map(chip).join(m.kind === 'breeding' ? '<span>×</span>' : '')}</div>` : ''}
-        ${m.items && m.items.length && m.kind !== 'nest' ? `<div class="meta">${esc(T.with)}${m.items.map(esc).join(', ')}</div>` : ''}
+        ${m.items.length && m.kind !== 'nest' ? `<div class="meta">${esc(T.with)}${m.items.map(itemHtml).join(', ')}</div>` : ''}
         ${m.biomes ? `<div class="meta">${esc(T.where)}${esc(biomeText(m.biomes))}</div>` : ''}</div>`).join('')}</div>
-    ${b.flower ? `<div class="sec"><h4>${esc(T.flower)}</h4><div>${esc(b.flower)}</div></div>` : ''}
+    ${b.flower ? `<div class="sec"><h4>${esc(T.flower)}</h4><div>${itemHtml(b.flower)}</div></div>` : ''}
     ${ch.length ? `<div class="sec"><h4>${esc(T.unlocks)}</h4><div class="chips">${ch.map(k => chip(k.id)).join('')}</div></div>` : ''}`;
   d.hidden = false; document.getElementById('scrim').hidden = false;
 }
@@ -228,6 +238,15 @@ document.getElementById('q').addEventListener('input', e => {
   query = e.target.value; draw();
   const q = query.trim().toLowerCase(); if (!q) return;
   const b = BEES.find(x => matches(x, q));
+  if (b) scrollToBee(b, 'smooth');
+});
+const modSel = document.getElementById('mod');
+const modCounts = {};
+BEES.forEach(b => modCounts[b.mod] = (modCounts[b.mod] || 0) + 1);
+Object.keys(modCounts).sort((a, c) => a.localeCompare(c, LANG)).forEach(m => modSel.add(new Option(`${m} (${modCounts[m]})`, m)));
+modSel.addEventListener('change', () => {
+  modFilter = modSel.value; draw();
+  const b = modFilter && BEES.find(x => x.mod === modFilter);
   if (b) scrollToBee(b, 'smooth');
 });
 const resetBtn = document.getElementById('reset');

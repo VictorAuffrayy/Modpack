@@ -1,14 +1,20 @@
 <main class="page">
-  <h1>{{home_title}}</h1>
-  <p class="lead">{{home_lead}}</p>
+  <section class="hero">
+    <div>
+      <p class="kicker">{{home_kicker}}</p>
+      <h1>{{home_title}}</h1>
+      <p class="lead">{{home_lead}}</p>
+      <p class="stats">{{home_stats_line}}</p>
+    </div>
+    <img class="hero-art" src="{{root}}static/favicon.svg" alt="" width="220" height="186">
+  </section>
 
   <h2>{{home_packs}}</h2>
   <ul class="cards">{{{pack_cards}}}</ul>
 
   <h2>{{home_why_title}}</h2>
-  <ul class="why">
-    <li>{{home_why_1}}</li>
-    <li>{{home_why_2}}</li>
-    <li>{{home_why_3}}</li>
-  </ul>
+  <div class="why">
+    <p>{{home_why_1}}</p>
+    <p>{{home_why_2}}</p>
+  </div>
 </main>

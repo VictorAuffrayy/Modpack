@@ -25,6 +25,18 @@ TOOLS = [  # order shown on a pack page
 ]
 
 I18N = {lang: json.loads((ROOT / "i18n" / f"{lang}.json").read_text()) for lang in LANGS}
+MODS = json.loads((ROOT / "packs" / "mods.json").read_text())
+
+
+def mod_name(ns):
+    return MODS.get(ns, ns.replace("_", " ").title())
+
+
+def item(s):
+    """'lithium bucket (mekanism)' -> {'n': 'Lithium bucket', 'm': 'Mekanism'}. No namespace = vanilla Minecraft."""
+    m = re.fullmatch(r"(.*) \((\w+)\)", s)
+    name, ns = (m.group(1), m.group(2)) if m else (s, None)
+    return {"n": name[:1].upper() + name[1:], "m": mod_name(ns) if ns else None}
 
 
 def lookup(ctx, key):
@@ -100,17 +112,32 @@ def bees_for(pack, lang):
     notes_file = pack["dir"] / "bees_notes.json"
     notes = json.loads(notes_file.read_text()) if notes_file.exists() else {}
     alt = "fr" if lang == "en" else "en"
+    cats = I18N[lang]["js"]["cats"]
     out = []
     for b in bees:
         note = notes.get(b["id"])
+        methods = [{**m, "items": [item(i) for i in m.get("items", [])]} for m in b["methods"]]
         out.append({
-            "id": b["id"], "cat": b["cat"], "tier": b["tier"], "color": b["color"], "color2": b["color2"],
+            "id": b["id"], "tier": b["tier"], "color": b["color"], "color2": b["color2"],
+            # The category is either a mod id (mekanism) or a Productive Bees group (dusts, gems...)
+            "mod": cats.get(b["cat"], mod_name(b["cat"])),
             "name": b["name"][lang], "alt": b["name"][alt],
             "desc": b["desc"][lang] if b["desc"] else None,
             "special": note[lang] if note else None,
-            "methods": b["methods"], "flower": b["flower"], "breedItem": b["breedItem"],
+            "methods": methods,
+            "flower": item(b["flower"]) if b["flower"] else None,
         })
     return out
+
+
+def pack_stats(pack):
+    bees = json.loads((pack["dir"] / "bees.json").read_text())
+    mods = {mod_name(b["cat"]) for b in bees if b["cat"] in MODS}
+    for b in bees:
+        for s in [b["flower"] or ""] + [i for m in b["methods"] for i in m.get("items", [])]:
+            if item(s)["m"]:
+                mods.add(item(s)["m"])
+    return {"bees": len(bees), "tiers": len({b["tier"] for b in bees}), "mods": len(mods)}
 
 
 def card(icon, title, desc, meta, href, status, t):
@@ -128,6 +155,9 @@ def build():
     (OUT / ".nojekyll").write_text("")
     packs = load_packs()
     pages = []
+    # Home page numbers come from the first live pack's data, so they never drift from the planner
+    stats_pack = next(p for p in packs if p["tools"].get("bees") == "live")
+    stats = pack_stats(stats_pack)
 
     for lang in LANGS:
         t = I18N[lang]
@@ -143,6 +173,7 @@ def build():
         pages.append(write_page("", lang, {
             "page_title": f"{t['site_name']} · {t['site_tagline']}",
             "page_desc": t["home_lead"],
+            "home_stats_line": stats_pack["short"] + " · " + fmt(t["home_stats"], **stats),
             "pack_cards": "".join(cards),
         }, template("home")))
 
