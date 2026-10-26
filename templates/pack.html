@@ -1,7 +1,47 @@
-<main class="page">
+<main class="page pack-page">
   <h1>{{pack_name}}</h1>
-  <p class="lead">{{pack_mc_line}}</p>
+  <p class="lead">{{pack_lead_text}}</p>
+  <p class="meta-line">{{pack_mc_line}}</p>
 
-  <h2>{{pack_tools}}</h2>
-  <ul class="cards">{{{tool_cards}}}</ul>
+  <div class="tool-strip" aria-label="{{pack_tools_title}}">{{{tool_links}}}</div>
+
+  <div class="mods-tools">
+    <input id="ms" type="search" placeholder="{{pack_search_text}}" aria-label="{{pack_search_text}}" autocomplete="off">
+    <label class="check"><input id="mg" type="checkbox"> {{mods_only_guides}}</label>
+  </div>
+  <div class="chips-row" role="group" aria-label="{{mod_category}}">{{{cat_chips}}}</div>
+  <p class="count-line" id="mcount" aria-live="polite"></p>
+
+  <ul class="mod-cards" id="mcards">{{{mod_cards}}}</ul>
+  <p class="empty" id="mempty" hidden>{{no_results}}</p>
 </main>
+<script>
+// Filter the static cards: text search on name and id, one category at a time, optional "guides only"
+(() => {
+  const ms = document.getElementById('ms'), mg = document.getElementById('mg');
+  const cards = [...document.querySelectorAll('#mcards > li')];
+  const chips = [...document.querySelectorAll('.chips-row button')];
+  const count = document.getElementById('mcount'), empty = document.getElementById('mempty');
+  const template = count.dataset.t = "{{mods_count}}";
+  let cat = '';
+  function apply() {
+    const q = ms.value.trim().toLowerCase();
+    let shown = 0;
+    for (const li of cards) {
+      const ok = (!q || li.dataset.k.includes(q)) && (!cat || li.dataset.c === cat) && (!mg.checked || li.dataset.g);
+      li.hidden = !ok; shown += ok;
+    }
+    count.textContent = template.replace('{n}', shown);
+    empty.hidden = shown > 0;
+    try { history.replaceState(null, '', q ? '#q=' + encodeURIComponent(q) : location.pathname) } catch (e) {}
+  }
+  chips.forEach(b => b.addEventListener('click', () => {
+    cat = b.dataset.c; chips.forEach(c => c.setAttribute('aria-pressed', c === b)); apply();
+  }));
+  ms.addEventListener('input', apply);
+  mg.addEventListener('change', apply);
+  const fromHash = decodeURIComponent((location.hash.match(/^#q=(.*)/) || [])[1] || '');
+  if (fromHash) ms.value = fromHash;
+  apply();
+})();
+</script>

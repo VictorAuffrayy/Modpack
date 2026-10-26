@@ -1,0 +1,10 @@
+{
+  "name": "modpack-companion",
+  "private": true,
+  "type": "module",
+  "description": "Static site in docs/ plus the /api/chat Vercel function",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
+  }
+}

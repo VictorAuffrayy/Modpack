@@ -32,7 +32,8 @@ scripts/refresh_bee_text.py   met à jour noms/descriptions depuis les fichiers 
 scripts/fetch_modlist.py      relit la liste des mods du pack (réseau)
 scripts/fetch_structures.py   relit les formes de multiblocs : Star Altar (KubeJS ATM10), pentacles Occultism, structures Nature's Aura
 scripts/schematics.py         schémas de multiblocs construits à partir des règles du code des mods
-scripts/build_site.py         génère docs/ (aucune dépendance, aucun accès réseau)
+scripts/build_site.py         génère docs/ et api/_data/ (aucune dépendance, aucun accès réseau)
+api/chat.js                   fonction Vercel du chat (SDK Anthropic, voir « Le chat »)
 docs/                         le site généré, servi par GitHub Pages
 ```
 
@@ -78,3 +79,17 @@ Site de fan, sans lien avec l'équipe All the Mods, Mojang ou les auteurs des mo
 Un guide = un fichier `packs/<pack>/guides/<mod>.json`. Chaque info doit venir d'un fichier lisible
 (code du mod à la version du pack, config ou scripts KubeJS du pack) et chaque section liste ses sources.
 Les schémas sont des fonctions de `scripts/schematics.py` qui suivent les règles du validateur du mod.
+
+## Le chat (Claude)
+
+Chaque page de mod a un chat. Le navigateur envoie la question à `api/chat.js`, une fonction Vercel qui appelle
+l'API Claude avec, en contexte, la liste des mods du pack et le guide vérifié du mod (généré par `build_site.py`
+dans `api/_data/<pack>.json`). La clé API ne quitte jamais le serveur.
+
+À régler une fois dans Vercel (Settings → Environment Variables), puis redéployer :
+
+- `ANTHROPIC_API_KEY` : ta clé, créée sur https://platform.claude.com (obligatoire).
+- `CLAUDE_MODEL` (optionnel) : `claude-opus-5-5` par défaut. `claude-haiku-5-5` coûte environ 40 fois moins cher.
+
+Garde-fous : 8 questions par minute et par visiteur (au mieux, par instance), 10 derniers messages envoyés,
+1500 caractères par message, réponses limitées à 1500 tokens. Pense à fixer une limite de dépense dans la console Anthropic.

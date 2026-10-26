@@ -136,19 +136,9 @@ def bees_for(pack, lang):
     return out
 
 
-def pack_stats(pack):
-    bees = json.loads((pack["dir"] / "bees.json").read_text())
-    mods = {mod_name(b["cat"]) for b in bees if b["cat"] in MODS}
-    for b in bees:
-        for s in [b["flower"] or ""] + [i for m in b["methods"] for i in m.get("items", [])]:
-            if item(s)["m"]:
-                mods.add(item(s)["m"])
-    return {"bees": len(bees), "tiers": len({b["tier"] for b in bees}), "mods": len(mods)}
-
-
 def card(icon, title, desc, meta, href, status, t):
     label = t["status_" + status]
-    go = f'<a class="go" href="{href}">{html.escape(label)} →</a>' if status == "live" else f'<span class="go">{html.escape(label)}</span>'
+    go = f'<a class="go" href="{href}">{html.escape(label)} →</a>' if status == "live" and href else f'<span class="go">{html.escape(label)}</span>'
     return (f'<li class="card{"" if status == "live" else " off"}"><h3><span class="ico" aria-hidden="true">{icon}</span>{html.escape(title)}</h3>'
             f'<p>{html.escape(desc)}</p>{f"<span class=meta>{html.escape(meta)}</span>" if meta else ""}{go}</li>')
 
@@ -171,37 +161,6 @@ def load_mods(pack):
         m["cat"] = cat_of.get(m["id"], "library")
         m["wanted"] = m["id"] in cats["guide"]
     return mods, guides
-
-
-def mod_link(m, guides, pack, lang):
-    """(href, badge key) for a mod row: its guide, the bee planner for Productive Bees, or nothing."""
-    if m["id"] == "productivebees" and pack["tools"].get("bees") == "live":
-        return "../bees/", "badge_tool"
-    g = guides.get(m["id"])
-    if g:
-        return f"{g.get('redirect', m['id'])}/", "badge_guide"
-    return None, "badge_planned" if m["wanted"] else None
-
-
-def render_mod_groups(mods, guides, pack, lang):
-    t = I18N[lang]
-    out = []
-    for cat in CATEGORY_ORDER:
-        group = [m for m in mods if m["cat"] == cat]
-        if not group:
-            continue
-        # Mods with a guide first, then the ones waiting for one, then the rest, each alphabetically
-        group.sort(key=lambda m: (mod_link(m, guides, pack, lang)[1] not in ("badge_guide", "badge_tool"), not m["wanted"], m["name"].lower()))
-        items = []
-        for m in group:
-            href, badge = mod_link(m, guides, pack, lang)
-            name = html.escape(m["name"])
-            label = f'<a href="{href}">{name}</a>' if href else name
-            badge_html = f'<span class="badge {badge}">{html.escape(t[badge])}</span>' if badge else ""
-            keys = html.escape(f"{m['name']} {m['id']}".lower())
-            items.append(f'<li data-k="{keys}"{" data-g=1" if href else ""}>{label}{badge_html}<span class="ver">{html.escape(m["version"])}</span></li>')
-        out.append(f'<section class="mod-group"><h2>{html.escape(t["cat"][cat])} <span class="n">{len(group)}</span></h2><ul class="mod-list">{"".join(items)}</ul></section>')
-    return "".join(out)
 
 
 def render_guide_sections(guide, lang):
@@ -234,6 +193,107 @@ def render_guide_sections(guide, lang):
     return "".join(toc), "".join(out)
 
 
+def mod_href(m, guides, pack):
+    """Where a mod's card leads, relative to the pack page, and which badge it carries."""
+    if m["id"] == "productivebees" and pack["tools"].get("bees") == "live":
+        return f"mods/{m['id']}/", "badge_tool"
+    if m["id"] in guides:
+        return f"mods/{m['id']}/", "badge_guide"
+    return f"mods/{m['id']}/", "badge_planned" if m["wanted"] else None
+
+
+def render_mod_cards(mods, guides, pack, lang):
+    t = I18N[lang]
+    order = {c: i for i, c in enumerate(CATEGORY_ORDER)}
+    # Guides first, then mods waiting for one, then the rest; within each, by category then name
+    def rank(m):
+        badge = mod_href(m, guides, pack)[1]
+        return (badge not in ("badge_guide", "badge_tool"), badge != "badge_planned", order[m["cat"]], m["name"].lower())
+    out = []
+    for m in sorted(mods, key=rank):
+        href, badge = mod_href(m, guides, pack)
+        keys = html.escape(f"{m['name']} {m['id']} {t['cat'][m['cat']]}".lower())
+        badge_html = f'<span class="badge {badge}">{html.escape(t[badge])}</span>' if badge else ""
+        out.append(
+            f'<li data-k="{keys}" data-c="{m["cat"]}"{" data-g=1" if badge in ("badge_guide", "badge_tool") else ""}>'
+            f'<a href="{href}"><span class="mc-name">{html.escape(m["name"])}</span>{badge_html}'
+            f'<span class="mc-cat">{html.escape(t["cat"][m["cat"]])}</span><span class="mc-ver">{html.escape(m["version"])}</span></a></li>'
+        )
+    return "".join(out)
+
+
+def render_cat_chips(mods, lang):
+    t = I18N[lang]
+    counts = {c: sum(1 for m in mods if m["cat"] == c) for c in CATEGORY_ORDER}
+    chips = [f'<button type="button" data-c="" aria-pressed="true">{html.escape(t["pack_all"])} <span>{len(mods)}</span></button>']
+    chips += [f'<button type="button" data-c="{c}" aria-pressed="false">{html.escape(t["cat"][c])} <span>{n}</span></button>'
+              for c, n in counts.items() if n]
+    return "".join(chips)
+
+
+def chat_html(slug, mod_id, mod, lang, root):
+    t = I18N[lang]
+    strings = {k: t[k] for k in ("chat_open", "chat_placeholder", "chat_send", "chat_reset", "chat_close",
+                                 "chat_disclaimer", "chat_error", "chat_busy")}
+    strings["chat_title"] = fmt(t["chat_title"], mod=mod)
+    return (f'<div id="mod-chat" data-pack="{slug}" data-mod="{html.escape(mod_id)}" data-lang="{lang}"></div>'
+            f'<script>window.CHAT_T = {script_json(strings)};</script>'
+            f'<script src="{root}static/chat.js" defer></script>')
+
+
+def schematic_text(name):
+    """A schematic as plain text layers + legend, so the chat can answer build questions from the same data."""
+    built = schematics.SCHEMATICS[name]()
+    blocks = schematics.BLOCKS
+    if isinstance(built, dict):
+        blocks = {**blocks, **built["blocks"]}
+        built = built["layers"]
+    used = sorted({c for layer in built for row in layer for c in row})
+    lines = []
+    for i, layer in enumerate(built):
+        lines.append(f"Layer {i + 1} (bottom = 1, seen from above):")
+        lines += ["  " + row for row in layer]
+    lines.append("Legend: " + "; ".join(f"{c} = {blocks[c][1]['en']}" for c in used if c in blocks))
+    return "\n".join(lines)
+
+
+def guide_context(guide):
+    """The guide as English plain text for the chat's system prompt."""
+    parts = [guide["intro"]["en"], f"Checked against: {guide['checked']}"]
+    for sec in guide["sections"]:
+        parts.append(f"\n## {sec['title']['en']}")
+        parts += sec.get("text", {}).get("en", [])
+        for i, st in enumerate(sec.get("chain", []), 1):
+            parts.append(f"{i}. {st['machine']['en']}: {st['in']['en']} -> {st['out']['en']}")
+        parts += [f"- {r['en']}" for r in sec.get("rules", [])]
+        if sec.get("schematic"):
+            parts.append("Minimal valid schematic:\n" + schematic_text(sec["schematic"]))
+        if sec.get("sources"):
+            parts.append("Sources: " + "; ".join(f"{x['label']} ({x['url']})" for x in sec["sources"]))
+    return "\n".join(parts)
+
+
+def write_chat_context(pack, mods, guides):
+    """api/_data/<pack>.json: what the chat function puts in Claude's system prompt for each mod of the pack."""
+    cat_names = I18N["en"]["cat"]
+    data = {
+        "pack": {"name": pack["name"], "short": pack["short"], "minecraft": pack["minecraft"], "loader": pack["loader"],
+                 "mods": "\n".join(f"{m['name']} ({m['id']}) {m['version']} [{cat_names[m['cat']]}]" for m in mods)},
+        "mods": {},
+    }
+    for m in mods:
+        g = guides.get(m["id"])
+        if g and "redirect" in g:
+            g = guides[g["redirect"]]
+        data["mods"][m["id"]] = {
+            "name": m["name"], "version": m["version"], "category": cat_names[m["cat"]],
+            "guide": guide_context(g) if g else None,
+        }
+    out = ROOT / "api" / "_data"
+    out.mkdir(parents=True, exist_ok=True)
+    (out / f"{pack['slug']}.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n")
+
+
 def build():
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -242,9 +302,12 @@ def build():
     (OUT / ".nojekyll").write_text("")
     packs = load_packs()
     pages = []
-    # Home page numbers come from the first live pack's data, so they never drift from the planner
-    stats_pack = next(p for p in packs if p["tools"].get("bees") == "live")
-    stats = pack_stats(stats_pack)
+    loaded_packs = {p["slug"]: load_mods(p) for p in packs if p.get("status") != "planned"}
+    total_mods = sum(len(l[0]) for l in loaded_packs.values() if l)
+    total_guides = sum(sum(1 for g in l[1].values() if "redirect" not in g) for l in loaded_packs.values() if l)
+    for p in packs:
+        if loaded_packs.get(p["slug"]):
+            write_chat_context(p, *loaded_packs[p["slug"]])
 
     for lang in LANGS:
         t = I18N[lang]
@@ -252,36 +315,47 @@ def build():
         # Home: one card per modpack
         cards = []
         for p in packs:
-            live = p.get("status") != "planned"
-            n_live = sum(1 for s in p["tools"].values() if s == "live")
+            loaded = loaded_packs.get(p["slug"])
             meta = fmt(t["pack_mc"], mc=p["minecraft"], loader=p["loader"])
-            desc = " · ".join(t[f"tool_{k}_name"] for k, _ in TOOLS if p["tools"].get(k) == "live") or t["status_planned"]
-            cards.append(card("⛏️", p["name"], desc, meta, f"{p['slug']}/", "live" if live and n_live else "planned", t))
+            if loaded:
+                n_guides = sum(1 for g in loaded[1].values() if "redirect" not in g)
+                desc = fmt(t["home_stats"], mods=len(loaded[0]), guides=n_guides)
+                cards.append(card("⛏️", p["name"], desc, meta, f"{p['slug']}/", "live", t))
+            else:
+                cards.append(card("⛏️", p["name"], t["status_planned"], meta, None, "planned", t))
         pages.append(write_page("", lang, {
             "page_title": f"{t['site_name']} · {t['site_tagline']}",
             "page_desc": t["home_lead"],
-            "home_stats_line": stats_pack["short"] + " · " + fmt(t["home_stats"], **stats),
+            "home_stats_line": fmt(t["home_stats"], mods=total_mods, guides=total_guides),
             "pack_cards": "".join(cards),
         }, template("home")))
 
         for p in packs:
-            if p.get("status") == "planned":
+            loaded = loaded_packs.get(p["slug"])
+            if not loaded:
                 continue
+            mods, guides = loaded
             slug, short = p["slug"], p["short"]
 
-            # Pack page: one card per tool
-            loaded = load_mods(p)
-            n_mods = len(loaded[0]) if loaded else 0
-            tool_cards = [
-                card(icon, t[f"tool_{k}_name"], fmt(t[f"tool_{k}_desc"], n=n_mods), None, f"{k}/", p["tools"].get(k, "planned"), t)
-                for k, icon in TOOLS
-            ]
+            # Pack page: every mod as a card, plus a strip of the pack's tools
+            tool_links = []
+            for k, icon in TOOLS:
+                if k == "mods":
+                    continue
+                status = p["tools"].get(k, "planned")
+                label = f'{icon} {html.escape(t[f"tool_{k}_name"])}'
+                tool_links.append(f'<a class="tool-pill" href="{k}/">{label}</a>' if status == "live"
+                                  else f'<span class="tool-pill off">{label} · {html.escape(t["status_" + status])}</span>')
             pages.append(write_page(f"{slug}/", lang, {
-                "page_title": f"{p['name']} · {t['site_name']}",
-                "page_desc": " ".join(fmt(t[f"tool_{k}_desc"], n=n_mods) for k, _ in TOOLS),
+                "page_title": fmt(t["mods_title"], pack=short) + f" · {t['site_name']}",
+                "page_desc": fmt(t["mods_meta"], pack=short, n=len(mods)),
                 "pack_name": p["name"],
+                "pack_lead_text": fmt(t["pack_lead"], n=len(mods)),
                 "pack_mc_line": fmt(t["pack_mc"], mc=p["minecraft"], loader=p["loader"]),
-                "tool_cards": "".join(tool_cards),
+                "pack_search_text": fmt(t["pack_search"], n=len(mods)),
+                "tool_links": "".join(tool_links),
+                "cat_chips": render_cat_chips(mods, lang),
+                "mod_cards": render_mod_cards(mods, guides, p, lang),
             }, template("pack"), crumbs=[(short, f"{slug}/")]))
 
             if p["tools"].get("bees") == "live":
@@ -298,21 +372,26 @@ def build():
                     "body_class": "app",
                 }, template("bees"), crumbs=[(short, f"{slug}/"), (t["tool_bees_name"], f"{slug}/bees/")]))
 
-            if p["tools"].get("mods") == "live" and loaded:
-                mods, guides = loaded
-                pages.append(write_page(f"{slug}/mods/", lang, {
-                    "page_title": fmt(t["mods_title"], pack=short) + f" · {t['site_name']}",
-                    "page_desc": fmt(t["mods_meta"], pack=short, n=len(mods)),
-                    "mods_heading_text": fmt(t["mods_heading"], pack=short, n=len(mods)),
-                    "mod_groups": render_mod_groups(mods, guides, p, lang),
-                }, template("mods"), crumbs=[(short, f"{slug}/"), (t["tool_mods_name"], f"{slug}/mods/")]))
-                names = {m["id"]: m["name"] for m in mods}
-                for mod_id, guide in guides.items():
-                    if "redirect" in guide:
-                        continue
-                    mod = names.get(mod_id, mod_name(mod_id))
+            # The old list page now lives on the pack page
+            redirect = OUT / lang / slug / "mods" / "index.html"
+            redirect.parent.mkdir(parents=True, exist_ok=True)
+            redirect.write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=../">'
+                                '<link rel="canonical" href="../"><a href="../">…</a>\n')
+
+            # One page per mod: its guide if it has one, otherwise its facts; always the chat
+            names = {m["id"]: m["name"] for m in mods}
+            for m in mods:
+                mod_id, mod = m["id"], m["name"]
+                path = f"{slug}/mods/{mod_id}/"
+                root = "../" * (1 + path.count("/"))
+                crumbs = [(short, f"{slug}/"), (mod, path)]
+                common = {"pack_short": short, "chat": chat_html(slug, mod_id, mod, lang, root),
+                          "head_extra": f'<link rel="stylesheet" href="{root}static/chat.css">'}
+                guide = guides.get(mod_id)
+                if guide and "redirect" not in guide:
                     toc, sections = render_guide_sections(guide, lang)
-                    pages.append(write_page(f"{slug}/mods/{mod_id}/", lang, {
+                    pages.append(write_page(path, lang, {
+                        **common,
                         "page_title": fmt(t["guide_title"], mod=mod, pack=short) + f" · {t['site_name']}",
                         "page_desc": fmt(t["guide_meta"], mod=mod, pack=short),
                         "guide_kicker": f"{short} · {t['badge_guide']}",
@@ -321,7 +400,29 @@ def build():
                         "guide_checked_line": fmt(t["guide_checked"], what=guide["checked"]),
                         "guide_toc_items": toc,
                         "guide_sections": sections,
-                    }, template("guide"), crumbs=[(short, f"{slug}/"), (t["tool_mods_name"], f"{slug}/mods/"), (mod, f"{slug}/mods/{mod_id}/")]))
+                    }, template("guide"), crumbs=crumbs))
+                    continue
+                if mod_id == "productivebees" and p["tools"].get("bees") == "live":
+                    body = f'<p><a class="go-link" href="../../bees/">🐝 {html.escape(t["mod_see_tool"])} →</a></p>'
+                elif guide:
+                    parent = guide["redirect"]
+                    body = (f'<p>{html.escape(fmt(t["mod_see_guide"], guide=names.get(parent, parent)))} '
+                            f'<a class="go-link" href="../{parent}/">{html.escape(names.get(parent, parent))} →</a></p>')
+                else:
+                    body = f'<p class="note">{html.escape(t["mod_no_guide"])}</p>'
+                    if m["wanted"]:
+                        body += f'<p class="note">{html.escape(t["mod_guide_planned"])}</p>'
+                pages.append(write_page(path, lang, {
+                    **common,
+                    "page_title": f"{mod} · {p['name']} · {t['site_name']}",
+                    "page_desc": fmt(t["mod_meta"], mod=mod, pack=short, version=m["version"]),
+                    "mod_kicker": f"{short} · {t['cat'][m['cat']]}",
+                    "mod_heading": mod,
+                    "mod_version_label": fmt(t["mod_version"], pack=short),
+                    "mod_version_value": m["version"],
+                    "mod_category_value": t["cat"][m["cat"]],
+                    "mod_body": body,
+                }, template("mod"), crumbs=crumbs))
 
     # Root: send visitors to their language (explicit choice first, then the browser's)
     (OUT / "index.html").write_text("""<!doctype html><html><head><meta charset="utf-8">

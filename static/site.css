@@ -137,3 +137,32 @@ body.app main { flex: 1; min-height: 0; display: flex; flex-direction: column; p
 .legend-list li { display: inline-flex; align-items: center; gap: 6px }
 .legend-list i { width: 18px; height: 18px; border-radius: 3px; display: inline-grid; place-items: center; font: 700 11px var(--f-body); font-style: normal; color: #10121a }
 .legend-list i.air { border: 1px dashed var(--line) }
+
+/* Pack page: tool strip, category chips and one card per mod */
+.meta-line { color: var(--muted); font-size: 14px; margin: 8px 0 0 }
+.tool-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px }
+.tool-pill { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; text-decoration: none; background: var(--panel) }
+a.tool-pill:hover { border-color: var(--honey) }
+.tool-pill.off { color: var(--muted); border-style: dashed; background: transparent }
+.chips-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px }
+.chips-row button { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--ink) }
+.chips-row button span { color: var(--muted); margin-left: 2px }
+.chips-row button[aria-pressed="true"] { background: var(--honey); border-color: var(--honey); color: #1b1404 }
+.chips-row button[aria-pressed="true"] span { color: #1b1404 }
+.count-line { font-size: 13px; color: var(--muted); margin: 6px 0 12px }
+.mod-cards { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 10px }
+.mod-cards a { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "name badge" "cat cat" "ver ver"; gap: 4px 8px;
+  height: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; text-decoration: none; transition: border-color .15s, transform .15s }
+.mod-cards a:hover { border-color: var(--honey); transform: translateY(-2px) }
+.mc-name { grid-area: name; font-weight: 500; min-width: 0; overflow-wrap: anywhere }
+.mod-cards .badge { grid-area: badge; align-self: start }
+.mc-cat { grid-area: cat; font-size: 12px; color: var(--muted) }
+.mc-ver { grid-area: ver; font-size: 11px; color: var(--muted); opacity: .75; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.empty { color: var(--muted) }
+
+/* Single mod page */
+.facts { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 16px 0 24px }
+.facts dt { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em }
+.facts dd { margin: 2px 0 0; font-family: var(--f-pix); font-size: 18px }
+.note { max-width: 65ch; color: var(--muted); background: var(--panel); border-left: 3px solid var(--honey); padding: 10px 14px; border-radius: 0 8px 8px 0 }
+.go-link { color: var(--honey); font-weight: 500 }
