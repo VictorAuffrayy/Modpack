@@ -1,0 +1,162 @@
+{
+ "mod": "mekanism",
+ "also": ["mekanismgenerators"],
+ "checked": "Mekanism 10.7.19 + config et scripts KubeJS d'ATM10 (branche main)",
+ "intro": {
+  "fr": "Mekanism, c'est le mod que tout le monde finit par monter dans ATM10 : traitement des minerais, réacteurs, puis la MekaSuit. Les multiblocs sont la partie où l'on bloque le plus, parce que le jeu dit juste « structure invalide ». Voici les règles exactes, lues dans le code qui vérifie les structures, avec un schéma minimal qui fonctionne pour chacun.",
+  "en": "Mekanism is the mod everyone ends up building in ATM10: ore processing, reactors, then the MekaSuit. Multiblocks are where people get stuck, because the game only says \"invalid structure\". Here are the exact rules, read from the code that checks the structures, with a minimal working schematic for each."
+ },
+ "sections": [
+  {
+   "id": "fuel",
+   "title": {"fr": "Chaîne de l'uranium jusqu'au combustible fissile", "en": "Uranium chain to fissile fuel"},
+   "text": {
+    "fr": ["Le réacteur à fission brûle du combustible fissile (fissile fuel). Il se fabrique en six étapes, toutes dans des machines Mekanism de base."],
+    "en": ["The fission reactor burns fissile fuel. It takes six steps, all in regular Mekanism machines."]
+   },
+   "chain": [
+    {"machine": {"fr": "Enrichment Chamber", "en": "Enrichment Chamber"}, "in": {"fr": "1 lingot d'uranium", "en": "1 uranium ingot"}, "out": {"fr": "2 Yellow Cake Uranium", "en": "2 Yellow Cake Uranium"}},
+    {"machine": {"fr": "Chemical Oxidizer", "en": "Chemical Oxidizer"}, "in": {"fr": "1 Yellow Cake Uranium", "en": "1 Yellow Cake Uranium"}, "out": {"fr": "250 mB d'oxyde d'uranium", "en": "250 mB Uranium Oxide"}},
+    {"machine": {"fr": "Chemical Oxidizer, puis Chemical Infuser ×2", "en": "Chemical Oxidizer, then Chemical Infuser ×2"}, "in": {"fr": "poudre de soufre → dioxyde de soufre ; + oxygène → trioxyde ; + vapeur d'eau", "en": "sulfur dust → sulfur dioxide; + oxygen → trioxide; + water vapor"}, "out": {"fr": "acide sulfurique", "en": "Sulfuric Acid"}},
+    {"machine": {"fr": "Chemical Dissolution Chamber", "en": "Chemical Dissolution Chamber"}, "in": {"fr": "1 gemme de fluorite + acide sulfurique (consommé en continu)", "en": "1 fluorite gem + sulfuric acid (used up every tick)"}, "out": {"fr": "1000 mB d'acide fluorhydrique", "en": "1000 mB Hydrofluoric Acid"}},
+    {"machine": {"fr": "Chemical Infuser", "en": "Chemical Infuser"}, "in": {"fr": "1 acide fluorhydrique + 1 oxyde d'uranium", "en": "1 Hydrofluoric Acid + 1 Uranium Oxide"}, "out": {"fr": "2 hexafluorure d'uranium", "en": "2 Uranium Hexafluoride"}},
+    {"machine": {"fr": "Isotopic Centrifuge", "en": "Isotopic Centrifuge"}, "in": {"fr": "1 hexafluorure d'uranium", "en": "1 Uranium Hexafluoride"}, "out": {"fr": "1 combustible fissile", "en": "1 Fissile Fuel"}}
+   ],
+   "sources": [{"label": "Mekanism: recipe/processing/uranium/*.json", "url": "https://github.com/mekanism/Mekanism/tree/v1.21.1-10.7.19.85/src/datagen/generated/mekanism/data/mekanism/recipe/processing/uranium"}]
+  },
+  {
+   "id": "fission",
+   "title": {"fr": "Réacteur à fission", "en": "Fission reactor"},
+   "text": {
+    "fr": ["Le réacteur chauffe de l'eau (ou du sodium) et la transforme en vapeur, qu'on envoie ensuite dans une turbine. Il ne produit pas d'électricité tout seul."],
+    "en": ["The reactor heats water (or sodium) into steam, which you then send into a turbine. It doesn't make power on its own."]
+   },
+   "rules": [
+    {"fr": "Taille : de 3×3×3 à 18×18×18, en forme de pavé.", "en": "Size: any box from 3×3×3 to 18×18×18."},
+    {"fr": "Les arêtes : uniquement des Fission Reactor Casing. Les faces : casing, verre, ports ou adaptateur logique.", "en": "Edges: Fission Reactor Casing only. Faces: casing, glass, ports or logic adapter."},
+    {"fr": "À l'intérieur : de l'air, des Fission Fuel Assembly et des Control Rod Assembly, rien d'autre.", "en": "Inside: air, Fission Fuel Assemblies and Control Rod Assemblies, nothing else."},
+    {"fr": "Chaque colonne d'assemblages doit être continue, avec exactement une barre de contrôle posée juste dessus. Il faut au moins une colonne.", "en": "Each column of fuel assemblies must be unbroken, with exactly one control rod right on top. At least one column is required."},
+    {"fr": "Chaque assemblage brûle au maximum 1 mB/t et stocke 8000 mB de combustible (config ATM10).", "en": "Each assembly burns at most 1 mB/t and stores 8000 mB of fuel (ATM10 config)."},
+    {"fr": "Au-dessus de 1200 K, le réacteur s'abîme. À 100 % de dégâts, il peut exploser : la fusion du cœur est activée dans ATM10, avec un rayon de 8 blocs.", "en": "Above 1200 K the reactor takes damage. At 100% damage it can blow up: meltdowns are enabled in ATM10, with an 8-block radius."},
+    {"fr": "Les ports se règlent avec le configurateur : entrée de combustible et d'eau, sortie de vapeur, sortie de déchets.", "en": "Set the ports with the Configurator: fuel and coolant in, heated coolant out, waste out."}
+   ],
+   "schematic": "mekanism_fission",
+   "sources": [
+    {"label": "FissionReactorValidator.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/content/fission/FissionReactorValidator.java"},
+    {"label": "FissionReactorMultiblockData.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/content/fission/FissionReactorMultiblockData.java"},
+    {"label": "ATM10 config/Mekanism/generators.toml", "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/Mekanism/generators.toml"}
+   ]
+  },
+  {
+   "id": "turbine",
+   "title": {"fr": "Turbine industrielle", "en": "Industrial turbine"},
+   "text": {
+    "fr": ["C'est elle qui transforme la vapeur du réacteur ou de la chaudière en électricité. L'ordre des étages compte."],
+    "en": ["This is what turns steam from the reactor or boiler into power. The order of the layers matters."]
+   },
+   "rules": [
+    {"fr": "Taille : de 5×3×5 à 17×18×17. La longueur et la largeur doivent être impaires.", "en": "Size: from 5×3×5 to 17×18×17. Length and width must be odd."},
+    {"fr": "Le Rotational Complex va dans la colonne centrale. En dessous, des rotors sans trou jusqu'au fond.", "en": "The Rotational Complex goes in the centre column. Below it, an unbroken stack of rotors down to the floor."},
+    {"fr": "Au niveau du complexe, une couche complète de Pressure Disperser remplit tout l'intérieur.", "en": "At the complex's level, a full layer of Pressure Dispersers fills the whole inside."},
+    {"fr": "Les Electromagnetic Coil vont au-dessus du complexe et doivent le toucher (directement ou de bobine en bobine). Les condenseurs aussi, uniquement au-dessus.", "en": "Electromagnetic Coils go above the complex and must connect to it (directly or coil to coil). Condensers too, above only."},
+    {"fr": "Les évents (Turbine Vent) sont interdits sous le niveau du complexe.", "en": "Turbine Vents are not allowed below the complex's level."},
+    {"fr": "Il faut 1 bobine pour 8 pales (config ATM10), 2 pales maximum par rotor et 28 pales au total.", "en": "You need 1 coil per 8 blades (ATM10 config), at most 2 blades per rotor and 28 blades in total."}
+   ],
+   "schematic": "mekanism_turbine",
+   "sources": [
+    {"label": "TurbineValidator.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/content/turbine/TurbineValidator.java"},
+    {"label": "ATM10 config/Mekanism/generators.toml", "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/Mekanism/generators.toml"}
+   ]
+  },
+  {
+   "id": "boiler",
+   "title": {"fr": "Chaudière thermoélectrique", "en": "Thermoelectric boiler"},
+   "rules": [
+    {"fr": "Taille : de 3×3×3 à 18×18×18.", "en": "Size: from 3×3×3 to 18×18×18."},
+    {"fr": "Une seule couche de Pressure Disperser, complète d'un mur à l'autre. L'eau est en dessous, la vapeur au-dessus.", "en": "Exactly one layer of Pressure Dispersers, wall to wall. Water sits below it, steam above."},
+    {"fr": "Au moins un Superheating Element sous les disperseurs. S'il y en a plusieurs, ils doivent se toucher.", "en": "At least one Superheating Element below the dispersers. If you place several, they must touch each other."},
+    {"fr": "Pas de poche d'air isolée dans la partie basse.", "en": "No isolated air pockets in the lower part."}
+   ],
+   "schematic": "mekanism_boiler",
+   "sources": [{"label": "BoilerValidator.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/main/java/mekanism/common/content/boiler/BoilerValidator.java"}]
+  },
+  {
+   "id": "evaporation",
+   "title": {"fr": "Usine d'évaporation thermique", "en": "Thermal evaporation plant"},
+   "text": {
+    "fr": ["Elle sert à faire de la saumure puis du lithium. Dans ATM10, la recette des blocs change : 8 Thermal Evaporation Block avec du bronze, de l'acier et un Superheating Element."],
+    "en": ["Used for brine and then lithium. ATM10 changes the block recipe: 8 Thermal Evaporation Blocks from bronze, steel and a Superheating Element."]
+   },
+   "rules": [
+    {"fr": "Base de 4×4 obligatoire, hauteur de 3 à 18 blocs.", "en": "The base must be 4×4, height from 3 to 18 blocks."},
+    {"fr": "Le dessus reste ouvert : les 4 blocs du centre sont vides, les coins peuvent manquer.", "en": "The top stays open: the 4 centre blocks are empty, the corners may be missing."},
+    {"fr": "Un seul contrôleur, sur une face (pas sur une arête).", "en": "Exactly one controller, on a face (not on an edge)."}
+   ],
+   "schematic": "mekanism_evaporation",
+   "sources": [
+    {"label": "EvaporationValidator.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/main/java/mekanism/common/content/evaporation/EvaporationValidator.java"},
+    {"label": "ATM10 kubejs/.../Mekanism/Rebalance/Items.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/Mekanism/Rebalance/Items.js"}
+   ]
+  },
+  {
+   "id": "matrix",
+   "title": {"fr": "Matrice d'induction", "en": "Induction matrix"},
+   "rules": [
+    {"fr": "Taille : de 3×3×3 à 18×18×18.", "en": "Size: from 3×3×3 to 18×18×18."},
+    {"fr": "Arêtes en Induction Casing ; faces en casing, verre ou Induction Port.", "en": "Edges in Induction Casing; faces in casing, glass or Induction Ports."},
+    {"fr": "L'intérieur se remplit de cellules (stockage) et de fournisseurs (débit), de n'importe quel tier, ou d'air.", "en": "Fill the inside with cells (storage) and providers (throughput), any tier, or air."}
+   ],
+   "schematic": "mekanism_matrix",
+   "sources": [{"label": "MatrixValidator.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/main/java/mekanism/common/content/matrix/MatrixValidator.java"}]
+  },
+  {
+   "id": "waste",
+   "title": {"fr": "Déchets nucléaires : polonium et plutonium", "en": "Nuclear waste: polonium and plutonium"},
+   "text": {
+    "fr": ["ATM10 rend les déchets deux fois plus rentables que Mekanism de base : 5 mB de déchets au lieu de 10 pour 1 mB de polonium ou de plutonium."],
+    "en": ["ATM10 makes waste twice as useful as default Mekanism: 5 mB of waste instead of 10 for 1 mB of polonium or plutonium."]
+   },
+   "chain": [
+    {"machine": {"fr": "Solar Neutron Activator", "en": "Solar Neutron Activator"}, "in": {"fr": "5 mB de déchets nucléaires", "en": "5 mB Nuclear Waste"}, "out": {"fr": "1 mB de polonium", "en": "1 mB Polonium"}},
+    {"machine": {"fr": "Isotopic Centrifuge", "en": "Isotopic Centrifuge"}, "in": {"fr": "5 mB de déchets nucléaires", "en": "5 mB Nuclear Waste"}, "out": {"fr": "1 mB de plutonium", "en": "1 mB Plutonium"}},
+    {"machine": {"fr": "Pressurized Reaction Chamber", "en": "Pressurized Reaction Chamber"}, "in": {"fr": "1000 mB de polonium + 1000 mB d'eau + 1 poudre de fluorite", "en": "1000 mB Polonium + 1000 mB water + 1 fluorite dust"}, "out": {"fr": "1 Polonium Pellet (+ 1000 mB de déchets usés)", "en": "1 Polonium Pellet (+ 1000 mB Spent Nuclear Waste)"}}
+   ],
+   "sources": [
+    {"label": "ATM10 kubejs/.../Mekanism/Rebalance/Items.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/Mekanism/Rebalance/Items.js"},
+    {"label": "Mekanism: recipe/processing/lategame/*", "url": "https://github.com/mekanism/Mekanism/tree/v1.21.1-10.7.19.85/src/datagen/generated/mekanism/data/mekanism/recipe/processing/lategame"}
+   ]
+  },
+  {
+   "id": "sps",
+   "title": {"fr": "SPS et antimatière", "en": "SPS and antimatter"},
+   "text": {
+    "fr": ["Le Supercritical Phase Shifter transforme le polonium en antimatière. C'est le multibloc le plus gourmand du mod, et de loin.",
+           "Pour une Antimatter Pellet (1000 mB d'antimatière au Chemical Crystallizer), il faut 1 000 000 mB de polonium, soit 5 000 000 mB de déchets dans ATM10, et 100 GJ d'énergie."],
+    "en": ["The Supercritical Phase Shifter turns polonium into antimatter. It's by far the hungriest multiblock in the mod.",
+           "One Antimatter Pellet (1000 mB antimatter in a Chemical Crystallizer) takes 1,000,000 mB of polonium, so 5,000,000 mB of waste in ATM10, and 100 GJ of energy."]
+   },
+   "rules": [
+    {"fr": "Taille fixe : 7×7×7, avec les coins et les arêtes coupés (voir le schéma).", "en": "Fixed size: 7×7×7, with cut corners and edges (see the schematic)."},
+    {"fr": "Le contour de chaque face est en SPS Casing ; le centre des faces accepte casing ou SPS Port.", "en": "Each face's outline is SPS Casing; the face centres take casing or SPS Ports."},
+    {"fr": "Les Supercharged Coil se posent à l'intérieur, collées derrière un port. Une bobine qui ne touche pas de port bloque la structure.", "en": "Supercharged Coils go inside, right behind a port. A coil that doesn't touch a port breaks the structure."},
+    {"fr": "1000 mB de polonium donnent 1 mB d'antimatière, pour 100 000 J par mB de polonium (config ATM10).", "en": "1000 mB of polonium make 1 mB of antimatter, at 100,000 J per mB of polonium (ATM10 config)."}
+   ],
+   "schematic": "mekanism_sps",
+   "sources": [
+    {"label": "SPSValidator.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/main/java/mekanism/common/content/sps/SPSValidator.java"},
+    {"label": "ATM10 config/Mekanism/general.toml", "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/Mekanism/general.toml"}
+   ]
+  },
+  {
+   "id": "fusion",
+   "title": {"fr": "Réacteur à fusion", "en": "Fusion reactor"},
+   "rules": [
+    {"fr": "Taille fixe : 5×5×5, faces en forme de croix (voir le schéma).", "en": "Fixed size: 5×5×5, plus-shaped faces (see the schematic)."},
+    {"fr": "Le contrôleur va obligatoirement au centre de la face du dessus.", "en": "The controller must sit in the centre of the top face."},
+    {"fr": "Le centre des autres faces accepte cadre, port, adaptateur logique ou Laser Focus Matrix. L'intérieur reste vide.", "en": "The other face centres take frame, port, logic adapter or Laser Focus Matrix. The inside stays empty."}
+   ],
+   "schematic": "mekanism_fusion",
+   "sources": [{"label": "FusionReactorValidator.java", "url": "https://github.com/mekanism/Mekanism/blob/v1.21.1-10.7.19.85/src/generators/java/mekanism/generators/common/content/fusion/FusionReactorValidator.java"}]
+  }
+ ]
+}

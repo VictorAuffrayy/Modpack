@@ -1,0 +1,2457 @@
+[
+ {
+  "id": "accelerateddecay",
+  "name": "Accelerated Decay",
+  "version": "21.0.0"
+ },
+ {
+  "id": "actuallyadditions",
+  "name": "Actually Additions",
+  "version": "1.3.26"
+ },
+ {
+  "id": "ad_astra",
+  "name": "Ad Astra",
+  "version": "1.16.26"
+ },
+ {
+  "id": "ad_astra_giselle_addon",
+  "name": "Ad Astra: Giselle Addon",
+  "version": "8.6"
+ },
+ {
+  "id": "additional_lights",
+  "name": "Additional Lights",
+  "version": "2.1.10"
+ },
+ {
+  "id": "advanced_ae",
+  "name": "Advanced AE",
+  "version": "1.6.12-1.21.1"
+ },
+ {
+  "id": "advancedperipherals",
+  "name": "Advanced Peripherals",
+  "version": "1.21.1-0.8.2a"
+ },
+ {
+  "id": "ae2importexportcard",
+  "name": "AE2 Import Export Card",
+  "version": "1.21.1-1.9.1"
+ },
+ {
+  "id": "ae2jeiintegration",
+  "name": "AE2 JEI Integration",
+  "version": "1.2.1"
+ },
+ {
+  "id": "ae2ct",
+  "name": "AE2:Crafting Tree",
+  "version": "1.21.1-1.1.1"
+ },
+ {
+  "id": "ae2netanalyser",
+  "name": "AE2NetworkAnalyzer",
+  "version": "1.21-2.1.5-neoforge"
+ },
+ {
+  "id": "ae2wtlib",
+  "name": "AE2WTLib",
+  "version": "19.5.1"
+ },
+ {
+  "id": "aeinfinitybooster",
+  "name": "AEInfinityBooster",
+  "version": "1.21.1-1.0.0.58"
+ },
+ {
+  "id": "aiimprovements",
+  "name": "AI-Improvements",
+  "version": "0.5.3"
+ },
+ {
+  "id": "akashictome",
+  "name": "Akashic Tome",
+  "version": "1.8-30"
+ },
+ {
+  "id": "allthearcanistgear",
+  "name": "All The Arcanist Gear",
+  "version": "1.21.1-21.3.2"
+ },
+ {
+  "id": "alltheleaks",
+  "name": "All The Leaks",
+  "version": "1.1.13+1.21.1-neoforge"
+ },
+ {
+  "id": "allthewizardgear",
+  "name": "All the Wizard Gear",
+  "version": "1.21.1-1.2.0"
+ },
+ {
+  "id": "allthecompressed",
+  "name": "AllTheCompressed",
+  "version": "4.4.0"
+ },
+ {
+  "id": "allthemodium",
+  "name": "Allthemodium",
+  "version": "3.2.1"
+ },
+ {
+  "id": "alltheores",
+  "name": "AllTheOres",
+  "version": "3.2.0"
+ },
+ {
+  "id": "allthetweaks",
+  "name": "AllTheTweaks",
+  "version": "2.12.1"
+ },
+ {
+  "id": "almostunified",
+  "name": "AlmostUnified",
+  "version": "1.21.1-1.4.2"
+ },
+ {
+  "id": "amendments",
+  "name": "Amendments",
+  "version": "1.21-2.1.11"
+ },
+ {
+  "id": "apotheosis",
+  "name": "Apotheosis",
+  "version": "8.9.0"
+ },
+ {
+  "id": "apothic_attributes",
+  "name": "Apothic Attributes",
+  "version": "2.11.0"
+ },
+ {
+  "id": "apothic_enchanting",
+  "name": "Apothic Enchanting",
+  "version": "1.6.4"
+ },
+ {
+  "id": "apothic_spawners",
+  "name": "Apothic Spawners",
+  "version": "1.4.0"
+ },
+ {
+  "id": "appleskin",
+  "name": "AppleSkin",
+  "version": "3.0.9+mc1.21"
+ },
+ {
+  "id": "ae2",
+  "name": "Applied Energistics 2",
+  "version": "19.2.18"
+ },
+ {
+  "id": "appmek",
+  "name": "Applied Mekanistics",
+  "version": "1.6.3"
+ },
+ {
+  "id": "appflux",
+  "name": "AppliedFlux",
+  "version": "1.21-2.1.6-neoforge"
+ },
+ {
+  "id": "aquaculture",
+  "name": "Aquaculture 2",
+  "version": "2.7.21"
+ },
+ {
+  "id": "architectury",
+  "name": "Architectury",
+  "version": "13.0.11"
+ },
+ {
+  "id": "ars_additions",
+  "name": "Ars Additions",
+  "version": "1.21.1-21.3.0"
+ },
+ {
+  "id": "ars_controle",
+  "name": "Ars Controle",
+  "version": "1.21.1-1.6.16"
+ },
+ {
+  "id": "ars_creo",
+  "name": "Ars Creo",
+  "version": "5.4.0"
+ },
+ {
+  "id": "ars_elemancy",
+  "name": "Ars Elemancy",
+  "version": "1.18.3"
+ },
+ {
+  "id": "ars_elemental",
+  "name": "Ars Elemental",
+  "version": "0.7.10.4"
+ },
+ {
+  "id": "ars_nouveau",
+  "name": "Ars Nouveau",
+  "version": "5.13.3"
+ },
+ {
+  "id": "ars_ocultas",
+  "name": "Ars Ocultas",
+  "version": "2.6.1"
+ },
+ {
+  "id": "ars_polymorphia",
+  "name": "Ars Polymorphia",
+  "version": "1.0.3"
+ },
+ {
+  "id": "ars_technica",
+  "name": "Ars Technica",
+  "version": "2.7.6"
+ },
+ {
+  "id": "ars_unification",
+  "name": "Ars Unification",
+  "version": "1.2.21"
+ },
+ {
+  "id": "arseng",
+  "name": "Ars Énergistique",
+  "version": "2.1.1-beta"
+ },
+ {
+  "id": "artifacts",
+  "name": "Artifacts",
+  "version": "13.2.5"
+ },
+ {
+  "id": "astralsorcery",
+  "name": "Astral Sorcery",
+  "version": "2.0.2"
+ },
+ {
+  "id": "athena",
+  "name": "Athena",
+  "version": "4.0.6"
+ },
+ {
+  "id": "atlas_api",
+  "name": "Atlas API",
+  "version": "1.21.1-1.2.0"
+ },
+ {
+  "id": "atmcompat",
+  "name": "ATM: Compat",
+  "version": "1.21.1-1.0.0"
+ },
+ {
+  "id": "attributefix",
+  "name": "AttributeFix",
+  "version": "21.1.3"
+ },
+ {
+  "id": "auroral",
+  "name": "Auroral",
+  "version": "1.21.1-1.1.3"
+ },
+ {
+  "id": "auroras",
+  "name": "Auroras",
+  "version": "1.6.2"
+ },
+ {
+  "id": "bwncr",
+  "name": "Bad Wither No Cookie Reloaded",
+  "version": "3.20.4"
+ },
+ {
+  "id": "balm",
+  "name": "Balm",
+  "version": "21.0.66"
+ },
+ {
+  "id": "bhc",
+  "name": "Baubley Heart Canisters",
+  "version": "1.21.1-1.4.3"
+ },
+ {
+  "id": "betteradvancedtooltips",
+  "name": "Better Advanced Tooltips",
+  "version": "2101.1.0-build.5"
+ },
+ {
+  "id": "betteradvancements",
+  "name": "Better Advancements",
+  "version": "0.4.3.21"
+ },
+ {
+  "id": "bcc",
+  "name": "Better Compatibility Checker",
+  "version": "21.1.8"
+ },
+ {
+  "id": "bibliobiomes",
+  "name": "Bibliobiomes Legacy",
+  "version": "1.6.1"
+ },
+ {
+  "id": "bibliocraft",
+  "name": "Bibliocraft Legacy",
+  "version": "1.6.5"
+ },
+ {
+  "id": "bibliowoods",
+  "name": "Bibliowoods Legacy",
+  "version": "1.6.2"
+ },
+ {
+  "id": "blueflame",
+  "name": "Blue Flame Burning",
+  "version": "1.21.1-1.1.1"
+ },
+ {
+  "id": "bookshelf",
+  "name": "Bookshelf",
+  "version": "21.1.81"
+ },
+ {
+  "id": "borderlesswindow",
+  "name": "Borderless Window",
+  "version": "1.21.1-1.7.5_1"
+ },
+ {
+  "id": "botanypots",
+  "name": "BotanyPots",
+  "version": "21.1.44"
+ },
+ {
+  "id": "botanypotsmystical",
+  "name": "BotanyPots-Mystical",
+  "version": "21.1.12"
+ },
+ {
+  "id": "botanytrees",
+  "name": "BotanyTrees",
+  "version": "21.1.7"
+ },
+ {
+  "id": "brandonscore",
+  "name": "Brandon's Core",
+  "version": "3.2.1.309"
+ },
+ {
+  "id": "bridgingmod",
+  "name": "Bridging Mod",
+  "version": "2.6.2+1.21.1"
+ },
+ {
+  "id": "buildinggadgets2",
+  "name": "Building Gadgets 2",
+  "version": "1.3.9"
+ },
+ {
+  "id": "byzantine",
+  "name": "Byzantine",
+  "version": "51.1"
+ },
+ {
+  "id": "cabletiers",
+  "name": "Cable Tiers",
+  "version": "1.21.1-0.6.15"
+ },
+ {
+  "id": "caelus",
+  "name": "Caelus API",
+  "version": "7.0.1+1.21.1"
+ },
+ {
+  "id": "camol",
+  "name": "Camol",
+  "version": "1.21.1-0.4.0"
+ },
+ {
+  "id": "catjammies",
+  "name": "CatJammies",
+  "version": "1.21-1.7.1"
+ },
+ {
+  "id": "computercraft",
+  "name": "CC: Tweaked",
+  "version": "1.113.1"
+ },
+ {
+  "id": "charginggadgets",
+  "name": "Charging Gadgets",
+  "version": "1.14.1"
+ },
+ {
+  "id": "chipped",
+  "name": "Chipped",
+  "version": "4.0.2"
+ },
+ {
+  "id": "chisel",
+  "name": "Chisel Reborn",
+  "version": "2.0.1+mc1.21.1"
+ },
+ {
+  "id": "ctov",
+  "name": "ChoiceTheorem's Overhauled Village",
+  "version": "3.6.3"
+ },
+ {
+  "id": "chromacarvings",
+  "name": "Chroma Carvings",
+  "version": "1.21.1-0.2.0"
+ },
+ {
+  "id": "cleanswing",
+  "name": "Clean Swing",
+  "version": "1.10"
+ },
+ {
+  "id": "cloth_config",
+  "name": "Cloth Config v15 API",
+  "version": "15.0.140"
+ },
+ {
+  "id": "cloudglass",
+  "name": "Cloud Glass",
+  "version": "1.1.0"
+ },
+ {
+  "id": "clumps",
+  "name": "Clumps",
+  "version": "19.0.0.1"
+ },
+ {
+  "id": "cobblegengalore",
+  "name": "Cobblegen Galore",
+  "version": "1.21.1-0.2.9"
+ },
+ {
+  "id": "cobweb",
+  "name": "Cobweb",
+  "version": "1.4.0"
+ },
+ {
+  "id": "codechickenlib",
+  "name": "CodeChicken Lib",
+  "version": "4.6.1.529"
+ },
+ {
+  "id": "colorfulhearts",
+  "name": "Colorful Hearts",
+  "version": "10.5.9"
+ },
+ {
+  "id": "colorwheel",
+  "name": "Colorwheel",
+  "version": "1.3.0+mc1.21.1"
+ },
+ {
+  "id": "colorwheel_patcher",
+  "name": "Colorwheel Patcher",
+  "version": "1.0.5+mc1.21.1"
+ },
+ {
+  "id": "comforts",
+  "name": "Comforts",
+  "version": "9.0.5+1.21.1"
+ },
+ {
+  "id": "common_storage_lib",
+  "name": "Common Storage Lib: Core",
+  "version": "0.0.10"
+ },
+ {
+  "id": "commoncapabilities",
+  "name": "CommonCapabilities",
+  "version": "2.11.6"
+ },
+ {
+  "id": "compactmachines",
+  "name": "Compact Machines",
+  "version": "7.0.81"
+ },
+ {
+  "id": "connectedglass",
+  "name": "Connected Glass",
+  "version": "1.1.14"
+ },
+ {
+  "id": "ctm",
+  "name": "ConnectedTexturesMod",
+  "version": "1.21-1.2.1+3"
+ },
+ {
+  "id": "connectivity",
+  "name": "Connectivity Mod",
+  "version": "7.7"
+ },
+ {
+  "id": "constructionstick",
+  "name": "Construction Sticks",
+  "version": "1.5.0"
+ },
+ {
+  "id": "controlling",
+  "name": "Controlling",
+  "version": "19.0.5"
+ },
+ {
+  "id": "cookingforblockheads",
+  "name": "Cooking for Blockheads",
+  "version": "21.1.24"
+ },
+ {
+  "id": "tombstone",
+  "name": "Corail Tombstone",
+  "version": "9.5.6"
+ },
+ {
+  "id": "corgilib",
+  "name": "CorgiLib",
+  "version": "5.0.0.10"
+ },
+ {
+  "id": "cosmeticarmorreworked",
+  "name": "CosmeticArmorReworked",
+  "version": "1.21.1-v1-neoforge"
+ },
+ {
+  "id": "crafting_on_a_stick",
+  "name": "Crafting On A Stick",
+  "version": "1.21.0.6"
+ },
+ {
+  "id": "craftingtweaks",
+  "name": "Crafting Tweaks",
+  "version": "21.1.11"
+ },
+ {
+  "id": "crash_assistant",
+  "name": "Crash Assistant",
+  "version": "1.11.12"
+ },
+ {
+  "id": "crashutilities",
+  "name": "Crash Utilities",
+  "version": "9.0.4"
+ },
+ {
+  "id": "create",
+  "name": "Create",
+  "version": "6.0.10"
+ },
+ {
+  "id": "create_aquatic_ambitions",
+  "name": "Create Aquatic Ambitions",
+  "version": "2.0.4"
+ },
+ {
+  "id": "createaddition",
+  "name": "Create Crafts & Additions",
+  "version": "1.7.2"
+ },
+ {
+  "id": "create_hypertube",
+  "name": "Create Hypertube",
+  "version": "0.6.0"
+ },
+ {
+  "id": "bellsandwhistles",
+  "name": "Create: Bells & Whistles",
+  "version": "0.4.7-1.21.1"
+ },
+ {
+  "id": "copycats",
+  "name": "Create: Copycats+",
+  "version": "3.0.9+mc.1.21.1-neoforge"
+ },
+ {
+  "id": "create_dragons_plus",
+  "name": "Create: Dragons Plus",
+  "version": "1.11.9"
+ },
+ {
+  "id": "create_enchantment_industry",
+  "name": "Create: Enchantment Industry",
+  "version": "2.5.4b"
+ },
+ {
+  "id": "creeperoverhaul",
+  "name": "Creeper Overhaul",
+  "version": "4.0.6"
+ },
+ {
+  "id": "cristellib",
+  "name": "Cristel Lib",
+  "version": "3.1.7"
+ },
+ {
+  "id": "cryonicconfig",
+  "name": "Cryonic Config",
+  "version": "1.0.0+mc1.21.11"
+ },
+ {
+  "id": "crystalix",
+  "name": "Crystalix",
+  "version": "3.0.2"
+ },
+ {
+  "id": "cucumber",
+  "name": "Cucumber Library",
+  "version": "8.0.16"
+ },
+ {
+  "id": "cupboard",
+  "name": "Cupboard mod",
+  "version": "4.2"
+ },
+ {
+  "id": "curios",
+  "name": "Curios API",
+  "version": "9.5.1+1.21.1"
+ },
+ {
+  "id": "cyclopscore",
+  "name": "Cyclops Core",
+  "version": "1.30.0"
+ },
+ {
+  "id": "darkmodeeverywhere",
+  "name": "Dark Mode Everywhere",
+  "version": "1.21.1-1.4.0"
+ },
+ {
+  "id": "deeperdarker",
+  "name": "Deeper and Darker",
+  "version": "1.4.1"
+ },
+ {
+  "id": "deimos",
+  "name": "Deimos",
+  "version": "2.7"
+ },
+ {
+  "id": "dimstorage",
+  "name": "DimStorage",
+  "version": "9.1.1"
+ },
+ {
+  "id": "disenchanting_table",
+  "name": "Dis-Enchanting Table",
+  "version": "5.0.2"
+ },
+ {
+  "id": "domum_ornamentum",
+  "name": "Domum Ornamentum",
+  "version": "1.0.236-snapshot"
+ },
+ {
+  "id": "draconicevolution",
+  "name": "Draconic Evolution",
+  "version": "3.1.4.633"
+ },
+ {
+  "id": "drippyloadingscreen",
+  "name": "Drippy Loading Screen",
+  "version": "3.1.5"
+ },
+ {
+  "id": "dungeoncrawl",
+  "name": "Dungeon Crawl",
+  "version": "2.3.17"
+ },
+ {
+  "id": "dyenamics",
+  "name": "Dyenamics",
+  "version": "1.21.1-3.5.0"
+ },
+ {
+  "id": "dyenamicsandfriends",
+  "name": "Dyenamics and Friends",
+  "version": "1.21.1-2.2.2"
+ },
+ {
+  "id": "dysoncubeproject",
+  "name": "Dyson Cube Project",
+  "version": "1.0.5"
+ },
+ {
+  "id": "easy_villagers",
+  "name": "Easy Villagers",
+  "version": "1.21.1-1.1.47"
+ },
+ {
+  "id": "edivadlib",
+  "name": "EdivadLib",
+  "version": "3.0.0"
+ },
+ {
+  "id": "elevatorid",
+  "name": "ElevatorMod",
+  "version": "1.21.1-1.11.4"
+ },
+ {
+  "id": "enchdesc",
+  "name": "EnchantmentDescriptions",
+  "version": "21.1.11"
+ },
+ {
+  "id": "enderdrives",
+  "name": "Ender Drives",
+  "version": "1.5.23"
+ },
+ {
+  "id": "enderio",
+  "name": "Ender IO",
+  "version": "8.2.12-beta"
+ },
+ {
+  "id": "endermanoverhaul",
+  "name": "Enderman Overhaul",
+  "version": "2.0.3"
+ },
+ {
+  "id": "enderstorage",
+  "name": "EnderStorage",
+  "version": "2.13.0.191"
+ },
+ {
+  "id": "energymeter",
+  "name": "Energy Meter",
+  "version": "1.21.1-0.5.2"
+ },
+ {
+  "id": "entangled",
+  "name": "Entangled",
+  "version": "1.3.21"
+ },
+ {
+  "id": "eternal_starlight",
+  "name": "Eternal Starlight",
+  "version": "0.9.1+1.21.1+neoforge"
+ },
+ {
+  "id": "euphoria_patcher",
+  "name": "Euphoria Patcher",
+  "version": "1.10.5-r5.9.3-neoforge"
+ },
+ {
+  "id": "everythingcopper",
+  "name": "Everything is Copper",
+  "version": "1.21.1-2.4.5"
+ },
+ {
+  "id": "evilcraft",
+  "name": "EvilCraft",
+  "version": "1.2.98"
+ },
+ {
+  "id": "expandedae",
+  "name": "Expanded AE",
+  "version": "2.1.4"
+ },
+ {
+  "id": "experiencelib",
+  "name": "ExperienceLib",
+  "version": "1.2.1"
+ },
+ {
+  "id": "explorerscompass",
+  "name": "Explorer's Compass",
+  "version": "1.21.1-3.4.0-neoforge"
+ },
+ {
+  "id": "explorify",
+  "name": "Explorify",
+  "version": "1.6.5"
+ },
+ {
+  "id": "extended_industrialization",
+  "name": "Extended Industrialization",
+  "version": "1.16.4-1.21.1"
+ },
+ {
+  "id": "extendedae",
+  "name": "ExtendedAE",
+  "version": "1.21-2.2.41-neoforge"
+ },
+ {
+  "id": "extradisks",
+  "name": "Extra Disks",
+  "version": "1.21.1-4.0.15"
+ },
+ {
+  "id": "extrastorage",
+  "name": "ExtraStorage",
+  "version": "5.0.10"
+ },
+ {
+  "id": "bigreactors",
+  "name": "Extreme Reactors",
+  "version": "1.21.1-2.4.28"
+ },
+ {
+  "id": "extremesoundmuffler",
+  "name": "Extreme Sound Muffler",
+  "version": "3.57"
+ },
+ {
+  "id": "factory_blocks",
+  "name": "Factory Blocks",
+  "version": "1.4.0+mc1.21.1"
+ },
+ {
+  "id": "fancymenu",
+  "name": "FancyMenu",
+  "version": "3.9.14"
+ },
+ {
+  "id": "farmersdelight",
+  "name": "Farmer's Delight",
+  "version": "1.3.4"
+ },
+ {
+  "id": "farmingforblockheads",
+  "name": "Farming for Blockheads",
+  "version": "21.1.14"
+ },
+ {
+  "id": "fastsuite",
+  "name": "Fast Suite",
+  "version": "6.0.7"
+ },
+ {
+  "id": "fastbench",
+  "name": "Fast Workbench",
+  "version": "9.1.3"
+ },
+ {
+  "id": "fastfurnace",
+  "name": "FastFurnace",
+  "version": "9.0.1"
+ },
+ {
+  "id": "ferritecore",
+  "name": "Ferrite Core",
+  "version": "7.0.3"
+ },
+ {
+  "id": "fireproofboats",
+  "name": "Fireproof Boats",
+  "version": "1.21.1-1.0.4"
+ },
+ {
+  "id": "flickerfix",
+  "name": "FlickerFix",
+  "version": "6.1.0"
+ },
+ {
+  "id": "fluxnetworks",
+  "name": "Flux Networks",
+  "version": "8.0.0"
+ },
+ {
+  "id": "forbidden_arcanus",
+  "name": "Forbidden Arcanus",
+  "version": "2.6.1"
+ },
+ {
+  "id": "formations",
+  "name": "Formations",
+  "version": "1.0.4"
+ },
+ {
+  "id": "formationsnether",
+  "name": "Formations Nether",
+  "version": "1.0.5+b"
+ },
+ {
+  "id": "formationsoverworld",
+  "name": "Formations Overworld",
+  "version": "1.0.5+c"
+ },
+ {
+  "id": "framedblocks",
+  "name": "FramedBlocks",
+  "version": "10.6.3"
+ },
+ {
+  "id": "framework",
+  "name": "Framework",
+  "version": "0.13.11"
+ },
+ {
+  "id": "ftbchunks",
+  "name": "FTB Chunks",
+  "version": "2101.1.22"
+ },
+ {
+  "id": "ftbessentials",
+  "name": "FTB Essentials",
+  "version": "2101.1.10"
+ },
+ {
+  "id": "ftbfiltersystem",
+  "name": "FTB Filter System",
+  "version": "21.1.4"
+ },
+ {
+  "id": "ftbjeiextras",
+  "name": "FTB Jei Extras",
+  "version": "21.1.7"
+ },
+ {
+  "id": "ftblibrary",
+  "name": "FTB Library",
+  "version": "2101.1.37"
+ },
+ {
+  "id": "ftbquests",
+  "name": "FTB Quests",
+  "version": "2101.1.36"
+ },
+ {
+  "id": "ftbquestslangsplitter",
+  "name": "FTB Quests Lang Splitter",
+  "version": "1.0.7"
+ },
+ {
+  "id": "ftbranks",
+  "name": "FTB Ranks",
+  "version": "2101.1.5"
+ },
+ {
+  "id": "ftbteams",
+  "name": "FTB Teams",
+  "version": "2101.1.11"
+ },
+ {
+  "id": "ftbultimine",
+  "name": "FTB Ultimine",
+  "version": "2101.1.15"
+ },
+ {
+  "id": "ftbxmodcompat",
+  "name": "FTB XMod Compat",
+  "version": "21.1.12"
+ },
+ {
+  "id": "fuelgoeshere",
+  "name": "Fuel Goes Here",
+  "version": "1.21.1-1.2.0"
+ },
+ {
+  "id": "functionalstorage",
+  "name": "Functional Storage",
+  "version": "1.21.1-1.5.8"
+ },
+ {
+  "id": "fusion",
+  "name": "Fusion",
+  "version": "1.3.16"
+ },
+ {
+  "id": "fzzy_config",
+  "name": "Fzzy Config",
+  "version": "0.7.7+1.21+neoforge"
+ },
+ {
+  "id": "gateways",
+  "name": "Gateways To Eternity",
+  "version": "5.1.0"
+ },
+ {
+  "id": "geckolib",
+  "name": "GeckoLib 4",
+  "version": "4.9.3"
+ },
+ {
+  "id": "generatorgalore",
+  "name": "Generator Galore",
+  "version": "1.21.1-1.7.0"
+ },
+ {
+  "id": "getittogetherdrops",
+  "name": "Get It Together, Drops!",
+  "version": "1.4"
+ },
+ {
+  "id": "glassential",
+  "name": "Glassential-renewed",
+  "version": "3.4.7"
+ },
+ {
+  "id": "glodium",
+  "name": "Glodium",
+  "version": "1.21-2.2-neoforge"
+ },
+ {
+  "id": "gmut",
+  "name": "Gravitational Modulating Additional Unit",
+  "version": "6.4"
+ },
+ {
+  "id": "guideme",
+  "name": "GuideME",
+  "version": "21.1.19"
+ },
+ {
+  "id": "handcrafted",
+  "name": "Handcrafted",
+  "version": "4.0.3"
+ },
+ {
+  "id": "hardenedarmadillos",
+  "name": "Hardened Armadillos",
+  "version": "1.21.1-0.2.0"
+ },
+ {
+  "id": "hellish_trials",
+  "name": "Hellish Trials",
+  "version": "1.0.5"
+ },
+ {
+  "id": "heyberryshutup",
+  "name": "Hey Berry! SHUT UP",
+  "version": "1.21.0-2.0.4"
+ },
+ {
+  "id": "hostilenetworks",
+  "name": "Hostile Neural Networks",
+  "version": "6.5.1"
+ },
+ {
+  "id": "imfast",
+  "name": "I'm Fast",
+  "version": "1.0.3"
+ },
+ {
+  "id": "iceandfire",
+  "name": "Ice And Fire Community Edition",
+  "version": "2.0-beta.17"
+ },
+ {
+  "id": "iceberg",
+  "name": "Iceberg",
+  "version": "1.3.2"
+ },
+ {
+  "id": "illagerwarship",
+  "name": "Illager-Warship",
+  "version": "1.0.1"
+ },
+ {
+  "id": "immediatelyfast",
+  "name": "ImmediatelyFast",
+  "version": "1.6.15+1.21.1"
+ },
+ {
+  "id": "immeng",
+  "name": "Immersive Energistics",
+  "version": "1.1.0-beta"
+ },
+ {
+  "id": "immersiveengineering",
+  "name": "Immersive Engineering",
+  "version": "12.4.2-194"
+ },
+ {
+  "id": "incontrol",
+  "name": "InControl",
+  "version": "1.21-10.3.0"
+ },
+ {
+  "id": "industrialforegoing",
+  "name": "Industrial Foregoing",
+  "version": "1.21-3.6.39"
+ },
+ {
+  "id": "industrialforegoingsouls",
+  "name": "Industrial Foregoing Souls",
+  "version": "1.10.7"
+ },
+ {
+  "id": "industrialization_overdrive",
+  "name": "Industrialization Overdrive",
+  "version": "1.14.0+1.21.1"
+ },
+ {
+  "id": "integratedcrafting",
+  "name": "IntegratedCrafting",
+  "version": "1.7.2"
+ },
+ {
+  "id": "integrateddynamics",
+  "name": "IntegratedDynamics",
+  "version": "1.38.0"
+ },
+ {
+  "id": "integratedscripting",
+  "name": "IntegratedScripting",
+  "version": "1.0.27"
+ },
+ {
+  "id": "integratedterminals",
+  "name": "IntegratedTerminals",
+  "version": "1.10.0"
+ },
+ {
+  "id": "integratedtunnels",
+  "name": "IntegratedTunnels",
+  "version": "1.13.0"
+ },
+ {
+  "id": "interdimensionalwirelesstransmitter",
+  "name": "Interdimensional Wireless Transmitter",
+  "version": "1.21.1-0.1.5"
+ },
+ {
+  "id": "invasiveopts",
+  "name": "Invasive Optimizations",
+  "version": "1.0.24"
+ },
+ {
+  "id": "invtweaks",
+  "name": "Inventory Tweaks Refoxed",
+  "version": "1.21.1-1.3.2"
+ },
+ {
+  "id": "iris",
+  "name": "Iris",
+  "version": "1.8.14-beta.1+mc1.21.1"
+ },
+ {
+  "id": "iris_search",
+  "name": "IrisSearch",
+  "version": "1.8.3-neoforge"
+ },
+ {
+  "id": "ironfurnaces",
+  "name": "Iron Furnaces",
+  "version": "4.3.2"
+ },
+ {
+  "id": "ironjetpacks",
+  "name": "Iron Jetpacks",
+  "version": "8.0.11"
+ },
+ {
+  "id": "irons_jewelry",
+  "name": "Iron's Gems 'n Jewelry",
+  "version": "1.21.1-2.0.2"
+ },
+ {
+  "id": "irons_lib",
+  "name": "Iron's Lib",
+  "version": "1.21.1-2.2.0"
+ },
+ {
+  "id": "irons_spellbooks",
+  "name": "Iron's Spells 'n Spellbooks",
+  "version": "1.21.1-3.16.3"
+ },
+ {
+  "id": "itemcollectors",
+  "name": "Item Collectors",
+  "version": "1.1.10"
+ },
+ {
+  "id": "jade",
+  "name": "Jade",
+  "version": "15.10.6+neoforge"
+ },
+ {
+  "id": "trophymanager",
+  "name": "Jonn's Trophies",
+  "version": "1.21.1-3.0.0"
+ },
+ {
+  "id": "journeymap",
+  "name": "Journeymap",
+  "version": "1.21.1-6.0.9"
+ },
+ {
+  "id": "jumpboat",
+  "name": "Jumpy Boats",
+  "version": "1.21.0-1.0.5"
+ },
+ {
+  "id": "jupiter",
+  "name": "Jupiter",
+  "version": "2.3.7"
+ },
+ {
+  "id": "justdirethings",
+  "name": "Just Dire Things",
+  "version": "1.5.7"
+ },
+ {
+  "id": "jearchaeology",
+  "name": "Just Enough Archaeology",
+  "version": "1.21.1-1.2.0"
+ },
+ {
+  "id": "justenoughbreeding",
+  "name": "Just Enough Breeding",
+  "version": "3.3.1"
+ },
+ {
+  "id": "jei",
+  "name": "Just Enough Items",
+  "version": "19.64.0.454"
+ },
+ {
+  "id": "jei_mekanism_multiblocks",
+  "name": "Just Enough Mekanism Multiblocks",
+  "version": "7.23"
+ },
+ {
+  "id": "justenoughprofessions",
+  "name": "Just Enough Professions (JEP)",
+  "version": "4.0.5"
+ },
+ {
+  "id": "jeistuff",
+  "name": "Just Enough Stuff",
+  "version": "1.21.1-1.2.1"
+ },
+ {
+  "id": "justzoom",
+  "name": "Just Zoom",
+  "version": "3.0.1"
+ },
+ {
+  "id": "keybindbundles",
+  "name": "KeyBind Bundles",
+  "version": "1.4.0"
+ },
+ {
+  "id": "keybindspurger",
+  "name": "KeybindsPurger",
+  "version": "1.4.0"
+ },
+ {
+  "id": "konkrete",
+  "name": "Konkrete",
+  "version": "1.9.9"
+ },
+ {
+  "id": "kubejs",
+  "name": "KubeJS",
+  "version": "2101.7.2-build.374"
+ },
+ {
+  "id": "kubejstweaks",
+  "name": "KubeJS Tweaks",
+  "version": "1.0.6"
+ },
+ {
+  "id": "cataclysm",
+  "name": "L_Ender's Cataclysm 1.21.1",
+  "version": "3.33"
+ },
+ {
+  "id": "laserbridges",
+  "name": "Laser Bridges",
+  "version": "6.2"
+ },
+ {
+  "id": "laserio",
+  "name": "LaserIO",
+  "version": "1.9.11"
+ },
+ {
+  "id": "lionfishapi",
+  "name": "lionfishapi",
+  "version": "3.1"
+ },
+ {
+  "id": "lithostitched",
+  "name": "Lithostitched",
+  "version": "1.8.1"
+ },
+ {
+  "id": "little_big_redstone",
+  "name": "Little Big Redstone",
+  "version": "1.9.12-1.21.1"
+ },
+ {
+  "id": "livingthings",
+  "name": "Living Things",
+  "version": "1.21.1-2.3.2"
+ },
+ {
+  "id": "lmft",
+  "name": "Load My F***ing Tags",
+  "version": "1.1.1+1.21.9"
+ },
+ {
+  "id": "logisticsnetworks",
+  "name": "LogisticsNetworks",
+  "version": "1.17.2"
+ },
+ {
+  "id": "lootr",
+  "name": "Lootr",
+  "version": "1.21.1-1.11.38.127"
+ },
+ {
+  "id": "luminax",
+  "name": "Luminax",
+  "version": "1.3.1"
+ },
+ {
+  "id": "mcwbridges",
+  "name": "Macaw's Bridges",
+  "version": "3.1.2"
+ },
+ {
+  "id": "mcwdoors",
+  "name": "Macaw's Doors",
+  "version": "1.1.5"
+ },
+ {
+  "id": "mcwfences",
+  "name": "Macaw's Fences and Walls",
+  "version": "1.2.1"
+ },
+ {
+  "id": "mcwfurnitures",
+  "name": "Macaw's Furniture",
+  "version": "3.4.1"
+ },
+ {
+  "id": "mcwholidays",
+  "name": "Macaw's Holidays",
+  "version": "1.1.2"
+ },
+ {
+  "id": "mcwlights",
+  "name": "Macaw's Lights and Lamps",
+  "version": "1.1.5"
+ },
+ {
+  "id": "mcwpaths",
+  "name": "Macaw's Paths and Pavings",
+  "version": "1.1.1"
+ },
+ {
+  "id": "mcwroofs",
+  "name": "Macaw's Roofs",
+  "version": "2.3.2"
+ },
+ {
+  "id": "mcwstairs",
+  "name": "Macaw's Stairs and Balconies",
+  "version": "1.0.2"
+ },
+ {
+  "id": "mcwtrpdoors",
+  "name": "Macaw's Trapdoors",
+  "version": "1.1.5"
+ },
+ {
+  "id": "mcwwindows",
+  "name": "Macaw's Windows",
+  "version": "2.4.2"
+ },
+ {
+  "id": "mahoutsukai",
+  "name": "Mahou Tsukai",
+  "version": "1.21.1-v1.36.28"
+ },
+ {
+  "id": "herbsandharvest",
+  "name": "Mama's Herbs and Harvest",
+  "version": "1.21.1-24"
+ },
+ {
+  "id": "merrymaking",
+  "name": "Mama's MerryMaking",
+  "version": "1.21.1-17"
+ },
+ {
+  "id": "mcjtylib",
+  "name": "McJtyLib",
+  "version": "1.21-9.0.21"
+ },
+ {
+  "id": "merequester",
+  "name": "ME Requester",
+  "version": "1.21.1-1.5.0"
+ },
+ {
+  "id": "measurements",
+  "name": "Measurements",
+  "version": "3.0.3"
+ },
+ {
+  "id": "megacells",
+  "name": "MEGA Cells",
+  "version": "4.11.0"
+ },
+ {
+  "id": "mekanism",
+  "name": "Mekanism",
+  "version": "10.7.19"
+ },
+ {
+  "id": "mekanismcovers",
+  "name": "Mekanism Covers",
+  "version": "1.3-BETA+1.21"
+ },
+ {
+  "id": "mekanismgenerators",
+  "name": "Mekanism: Generators",
+  "version": "10.7.19"
+ },
+ {
+  "id": "mekmm",
+  "name": "Mekanism: MoreMachine",
+  "version": "1.4.1"
+ },
+ {
+  "id": "mekanismtools",
+  "name": "Mekanism: Tools",
+  "version": "10.7.19"
+ },
+ {
+  "id": "mekanisticrouters",
+  "name": "Mekanistic Routers",
+  "version": "1.2.0"
+ },
+ {
+  "id": "melody",
+  "name": "Melody",
+  "version": "1.0.10"
+ },
+ {
+  "id": "memorysettings",
+  "name": "memorysettings mod",
+  "version": "6.0"
+ },
+ {
+  "id": "minecolonies",
+  "name": "MineColonies",
+  "version": "1.1.1403-1.21.1"
+ },
+ {
+  "id": "mininggadgets",
+  "name": "Mining Gadgets",
+  "version": "1.18.8"
+ },
+ {
+  "id": "dummmmmmy",
+  "name": "MmmMmmMmmMmm",
+  "version": "1.21-2.1.2"
+ },
+ {
+  "id": "mostructures",
+  "name": "Mo' Structures",
+  "version": "1.6.0+1.21.1"
+ },
+ {
+  "id": "mob_grinding_utils",
+  "name": "Mob Grinding Utils",
+  "version": "1.1.10+mc1.21.1"
+ },
+ {
+  "id": "modelfix",
+  "name": "Model Gap Fix",
+  "version": "1.21-1.10"
+ },
+ {
+  "id": "moderndynamics",
+  "name": "Modern Dynamics",
+  "version": "0.9.6"
+ },
+ {
+  "id": "modern_industrialization",
+  "name": "Modern Industrialization",
+  "version": "2.5.10"
+ },
+ {
+  "id": "modernfix",
+  "name": "ModernFix",
+  "version": "5.27.26+mc1.21.1"
+ },
+ {
+  "id": "modonomicon",
+  "name": "Modonomicon",
+  "version": "1.120.7"
+ },
+ {
+  "id": "mffs",
+  "name": "Modular Force Field System",
+  "version": "5.4.44"
+ },
+ {
+  "id": "modularrouters",
+  "name": "Modular Routers",
+  "version": "13.2.7"
+ },
+ {
+  "id": "modularbees",
+  "name": "ModularBees",
+  "version": "1.21.1-3.4-neoforge"
+ },
+ {
+  "id": "monolib",
+  "name": "MonoLib",
+  "version": "4.1.2"
+ },
+ {
+  "id": "moogs_structures",
+  "name": "Moog's Structure Lib",
+  "version": "3.4.2"
+ },
+ {
+  "id": "mes",
+  "name": "MoogsEndStructures",
+  "version": "2.1.1"
+ },
+ {
+  "id": "mns",
+  "name": "MoogsNetherStructures",
+  "version": "3.1.1"
+ },
+ {
+  "id": "mss",
+  "name": "MoogsSoaringStructures",
+  "version": "2.2.0"
+ },
+ {
+  "id": "mvs",
+  "name": "MoogsVoyagerStructures",
+  "version": "5.1.3"
+ },
+ {
+  "id": "moonlight",
+  "name": "Moonlight Lib",
+  "version": "1.21.1-3.7.2"
+ },
+ {
+  "id": "moredragoneggs",
+  "name": "More Dragon Eggs",
+  "version": "5.0"
+ },
+ {
+  "id": "mifa",
+  "name": "More Industrial Foregoing Addons",
+  "version": "2.1.0"
+ },
+ {
+  "id": "moreoverlays",
+  "name": "More Overlays Updated",
+  "version": "1.24.2"
+ },
+ {
+  "id": "morered",
+  "name": "More Red",
+  "version": "6.0.0.3"
+ },
+ {
+  "id": "moreredxcctcompat",
+  "name": "More Red x CC:Tweaked Compat",
+  "version": "1.21.1-1.3.0"
+ },
+ {
+  "id": "mousetweaks",
+  "name": "Mouse Tweaks",
+  "version": "2.26.1"
+ },
+ {
+  "id": "refurbished_furniture",
+  "name": "MrCrayfish's Furniture Mod: Refurbished",
+  "version": "1.0.22"
+ },
+ {
+  "id": "multipiston",
+  "name": "Multi-Piston",
+  "version": "1.2.58-1.21.1"
+ },
+ {
+  "id": "mysticalagradditions",
+  "name": "Mystical Agradditions",
+  "version": "8.0.15"
+ },
+ {
+  "id": "mysticalagriculture",
+  "name": "Mystical Agriculture",
+  "version": "8.0.28"
+ },
+ {
+  "id": "mysticalcustomization",
+  "name": "Mystical Customization",
+  "version": "6.0.2"
+ },
+ {
+  "id": "naturescompass",
+  "name": "Nature's Compass",
+  "version": "1.21.1-3.4.0-neoforge"
+ },
+ {
+  "id": "naturesaura",
+  "name": "NaturesAura",
+  "version": "41.10"
+ },
+ {
+  "id": "neovitae",
+  "name": "Neo Vitae",
+  "version": "1.1.38"
+ },
+ {
+  "id": "neo_auth",
+  "name": "NeoAuth",
+  "version": "1.0.1"
+ },
+ {
+  "id": "netherportalfix",
+  "name": "NetherPortalFix",
+  "version": "21.1.1"
+ },
+ {
+  "id": "nochatreports",
+  "name": "No Chat Reports",
+  "version": "1.21.1-v2.9.1"
+ },
+ {
+  "id": "novillagerdm",
+  "name": "No Villager Death Messages",
+  "version": "6.0.0"
+ },
+ {
+  "id": "not_enough_glyphs",
+  "name": "Not Enough Glyphs",
+  "version": "4.6.2"
+ },
+ {
+  "id": "notenoughanimations",
+  "name": "NotEnoughAnimations",
+  "version": "1.12.6"
+ },
+ {
+  "id": "nullscape",
+  "name": "Nullscape",
+  "version": "1.2.14"
+ },
+ {
+  "id": "observable",
+  "name": "Observable",
+  "version": "5.4.4"
+ },
+ {
+  "id": "observerlib",
+  "name": "ObserverLib",
+  "version": "1.10.3"
+ },
+ {
+  "id": "occultism",
+  "name": "Occultism",
+  "version": "1.224.5"
+ },
+ {
+  "id": "occultism_kubejs",
+  "name": "Occultism KubeJS",
+  "version": "1.11.0"
+ },
+ {
+  "id": "octolib",
+  "name": "OctoLib",
+  "version": "0.6.2"
+ },
+ {
+  "id": "biomeswevegone",
+  "name": "Oh The Biomes We've Gone",
+  "version": "2.6.3"
+ },
+ {
+  "id": "ohthetreesyoullgrow",
+  "name": "Oh The Trees You'll Grow",
+  "version": "5.3.5"
+ },
+ {
+  "id": "omegaconfig",
+  "name": "Omega Config Architectury",
+  "version": "1.5.1"
+ },
+ {
+  "id": "openloader",
+  "name": "OpenLoader",
+  "version": "21.1.5"
+ },
+ {
+  "id": "oracle_index",
+  "name": "Oracle Index",
+  "version": "1.4.0"
+ },
+ {
+  "id": "oritech",
+  "name": "Oritech",
+  "version": "1.2.13"
+ },
+ {
+  "id": "overlapless",
+  "name": "Overlapless",
+  "version": "1.21.1-1.2.0"
+ },
+ {
+  "id": "overloadedarmorbar",
+  "name": "OverloadedArmorBar",
+  "version": "2"
+ },
+ {
+  "id": "owo",
+  "name": "oωo",
+  "version": "0.12.15.5-beta.1+1.21"
+ },
+ {
+  "id": "pamhc2crops",
+  "name": "Pam's HarvestCraft - Crops",
+  "version": "1.0.9"
+ },
+ {
+  "id": "pamhc2foodcore",
+  "name": "Pam's HarvestCraft - Food Core",
+  "version": "1.0.4"
+ },
+ {
+  "id": "pamhc2foodextended",
+  "name": "Pam's HarvestCraft - Food Extended",
+  "version": "1.0.0"
+ },
+ {
+  "id": "pamhc2trees",
+  "name": "Pam's HarvestCraft - Trees",
+  "version": "1.0.9"
+ },
+ {
+  "id": "patchouli",
+  "name": "Patchouli",
+  "version": "1.21.1-93-NEOFORGE"
+ },
+ {
+  "id": "pipez",
+  "name": "Pipez",
+  "version": "1.21.1-1.2.31"
+ },
+ {
+  "id": "placebo",
+  "name": "Placebo",
+  "version": "9.9.4"
+ },
+ {
+  "id": "playeranimator",
+  "name": "Player Animator",
+  "version": "2.0.4+1.21.1"
+ },
+ {
+  "id": "pneumaticcraft",
+  "name": "PneumaticCraft: Repressurized",
+  "version": "8.2.23"
+ },
+ {
+  "id": "pocketstorage",
+  "name": "Pocket Storage",
+  "version": "1.2.5"
+ },
+ {
+  "id": "polylib",
+  "name": "PolyLib",
+  "version": "2100.1.0-build.183"
+ },
+ {
+  "id": "polymorph",
+  "name": "Polymorph",
+  "version": "1.2.0+1.21.1"
+ },
+ {
+  "id": "polyeng",
+  "name": "Polymorphic Energistics",
+  "version": "0.4.1"
+ },
+ {
+  "id": "ponderjs",
+  "name": "PonderJS",
+  "version": "1.21.1-2.4.0"
+ },
+ {
+  "id": "potionsmaster",
+  "name": "PotionsMaster",
+  "version": "1.0.1"
+ },
+ {
+  "id": "powah",
+  "name": "Powah",
+  "version": "6.2.10"
+ },
+ {
+  "id": "prickle",
+  "name": "PrickleMC",
+  "version": "21.1.11"
+ },
+ {
+  "id": "prism",
+  "name": "Prism",
+  "version": "1.0.11"
+ },
+ {
+  "id": "productivebees",
+  "name": "Productive Bees",
+  "version": "1.21.1-13.14.0"
+ },
+ {
+  "id": "productivemetalworks",
+  "name": "Productive Metalworks",
+  "version": "1.21.1-1.15.1"
+ },
+ {
+  "id": "productivetrees",
+  "name": "Productive Trees",
+  "version": "1.21.1-1.1.1"
+ },
+ {
+  "id": "pylons",
+  "name": "Pylons",
+  "version": "5.4.2"
+ },
+ {
+  "id": "quarryplus",
+  "name": "QuarryPlus",
+  "version": "21.1.164"
+ },
+ {
+  "id": "railcraft",
+  "name": "Railcraft Reborn",
+  "version": "1.2.12"
+ },
+ {
+  "id": "rangedpumps",
+  "name": "Ranged Pumps",
+  "version": "1.3.0"
+ },
+ {
+  "id": "rebind_narrator",
+  "name": "Rebind Narrator",
+  "version": "2026.08.31"
+ },
+ {
+  "id": "rechiseled",
+  "name": "Rechiseled",
+  "version": "1.2.6"
+ },
+ {
+  "id": "rechiseled_chipped",
+  "name": "Rechiseled: Chipped",
+  "version": "1.3"
+ },
+ {
+  "id": "rechiseledcreate",
+  "name": "Rechiseled: Create",
+  "version": "1.1.1"
+ },
+ {
+  "id": "redstonepen",
+  "name": "Redstone Pen",
+  "version": "1.11.42"
+ },
+ {
+  "id": "refinedfluidsubstitution",
+  "name": "Refined Fluid Substitution",
+  "version": "1.21.1-2.0.0"
+ },
+ {
+  "id": "refinedstorage",
+  "name": "Refined Storage",
+  "version": "2.0.9"
+ },
+ {
+  "id": "refinedstorage_curios_integration",
+  "name": "Refined Storage - Curios Integration",
+  "version": "1.0.0"
+ },
+ {
+  "id": "refinedstorage_jei_integration",
+  "name": "Refined Storage - JEI Integration",
+  "version": "1.0.0"
+ },
+ {
+  "id": "refinedstorage_mekanism_integration",
+  "name": "Refined Storage - Mekanism Integration",
+  "version": "1.2.0"
+ },
+ {
+  "id": "refinedstorage_quartz_arsenal",
+  "name": "Refined Storage - Quartz Arsenal",
+  "version": "1.0.8"
+ },
+ {
+  "id": "refinedtypes",
+  "name": "Refined Types",
+  "version": "1.21.1-0.3.2"
+ },
+ {
+  "id": "rsinsertexportupgrade",
+  "name": "Refined Wireless Upgrades",
+  "version": "1.21.1-2.1.3"
+ },
+ {
+  "id": "regions_unexplored",
+  "name": "Regions Unexplored",
+  "version": "0.5.9"
+ },
+ {
+  "id": "relics",
+  "name": "Relics",
+  "version": "0.12.8"
+ },
+ {
+  "id": "reliquary",
+  "name": "Reliquary Reincarnations",
+  "version": "2.0.80"
+ },
+ {
+  "id": "reliquified_artifacts",
+  "name": "reliquified_artifacts",
+  "version": "1.0.9"
+ },
+ {
+  "id": "repeatable_trial_vaults",
+  "name": "Repeatable Trial Vaults",
+  "version": "1.0.3"
+ },
+ {
+  "id": "repurposed_structures",
+  "name": "Repurposed Structures",
+  "version": "7.5.22+1.21.1-neoforge"
+ },
+ {
+  "id": "resourcefullib",
+  "name": "Resourceful Lib",
+  "version": "3.0.12"
+ },
+ {
+  "id": "resourcefulconfig",
+  "name": "Resourcefulconfig",
+  "version": "3.0.11"
+ },
+ {
+  "id": "restrictions",
+  "name": "Restrictions",
+  "version": "1.21-7.0.3"
+ },
+ {
+  "id": "rftoolsbase",
+  "name": "RFToolsBase",
+  "version": "1.21-6.0.11"
+ },
+ {
+  "id": "rftoolsbuilder",
+  "name": "RFToolsBuilder",
+  "version": "1.21-7.0.7"
+ },
+ {
+  "id": "rftoolspower",
+  "name": "RFToolsPower",
+  "version": "1.21-7.0.6"
+ },
+ {
+  "id": "rftoolsstorage",
+  "name": "RFToolsStorage",
+  "version": "1.21-6.0.5"
+ },
+ {
+  "id": "rftoolsutility",
+  "name": "RFToolsUtility",
+  "version": "1.21-7.0.12"
+ },
+ {
+  "id": "rhino",
+  "name": "Rhino",
+  "version": "2101.2.8-build.91"
+ },
+ {
+  "id": "rootsclassic",
+  "name": "Roots Classic",
+  "version": "1.21.1-1.5.10"
+ },
+ {
+  "id": "searchables",
+  "name": "Searchables",
+  "version": "1.0.2"
+ },
+ {
+  "id": "securitycraft",
+  "name": "SecurityCraft",
+  "version": "1.10.2.1"
+ },
+ {
+  "id": "shiny",
+  "name": "Shiny!",
+  "version": "1.21.1-1.3.0"
+ },
+ {
+  "id": "shrink",
+  "name": "Shrink",
+  "version": "2.0.1.47"
+ },
+ {
+  "id": "silentgear",
+  "name": "Silent Gear",
+  "version": "4.2.1.1"
+ },
+ {
+  "id": "sgearmetalworks",
+  "name": "Silent Gear Metalworks",
+  "version": "1.21.1-1.5.0"
+ },
+ {
+  "id": "silentlib",
+  "name": "Silent Lib",
+  "version": "10.6.0"
+ },
+ {
+  "id": "silentgems",
+  "name": "Silent's Gems",
+  "version": "5.1.3"
+ },
+ {
+  "id": "simplebackups",
+  "name": "Simple Backups",
+  "version": "1.21-4.0.30"
+ },
+ {
+  "id": "simplemagnets",
+  "name": "Simple Magnets",
+  "version": "1.1.12+c"
+ },
+ {
+  "id": "simple_weather",
+  "name": "Simple Weather",
+  "version": "1.0.13-hotfix"
+ },
+ {
+  "id": "simplylight",
+  "name": "Simply Light",
+  "version": "1.5.3"
+ },
+ {
+  "id": "smartbrainlib",
+  "name": "SmartBrainLib",
+  "version": "1.16.11"
+ },
+ {
+  "id": "smithingtemplateviewer",
+  "name": "SmithingTemplateViewer",
+  "version": "1.0.4"
+ },
+ {
+  "id": "sodium",
+  "name": "Sodium",
+  "version": "0.8.13+mc1.21.1"
+ },
+ {
+  "id": "sodium_extra",
+  "name": "Sodium Extra",
+  "version": "0.9.4+mc1.21.1"
+ },
+ {
+  "id": "sophisticatedbackpacks",
+  "name": "Sophisticated Backpacks",
+  "version": "3.26.12"
+ },
+ {
+  "id": "sophisticatedbackpackscreateintegration",
+  "name": "Sophisticated Backpacks Create Integration",
+  "version": "0.2.3"
+ },
+ {
+  "id": "sophisticatedcore",
+  "name": "Sophisticated Core",
+  "version": "1.5.12"
+ },
+ {
+  "id": "sophisticatedstorage",
+  "name": "Sophisticated Storage",
+  "version": "1.6.6"
+ },
+ {
+  "id": "sophisticatedstoragecreateintegration",
+  "name": "Sophisticated Storage Create Integration",
+  "version": "0.1.23"
+ },
+ {
+  "id": "sophisticatedstorageinmotion",
+  "name": "Sophisticated Storage In Motion",
+  "version": "0.10.36"
+ },
+ {
+  "id": "soulplied_energistics",
+  "name": "Soulplied Energistics",
+  "version": "1.0.3"
+ },
+ {
+  "id": "spark",
+  "name": "spark",
+  "version": "1.10.124"
+ },
+ {
+  "id": "solcarrot",
+  "name": "Spice of Life: Carrot Edition",
+  "version": "1.16.6"
+ },
+ {
+  "id": "starbunclemania",
+  "name": "Starbunclemania",
+  "version": "1.5.9"
+ },
+ {
+  "id": "stepcrafter",
+  "name": "Step Crafter",
+  "version": "1.21.1-0.1.9"
+ },
+ {
+  "id": "stevescarts",
+  "name": "StevesCarts2",
+  "version": "1.2.18"
+ },
+ {
+  "id": "storagedelight",
+  "name": "Storage Delight",
+  "version": "26.09.17-1.21-neoforge"
+ },
+ {
+  "id": "structory",
+  "name": "Structory",
+  "version": "1.3.17"
+ },
+ {
+  "id": "structory_towers",
+  "name": "Structory: Towers",
+  "version": "1.0.16"
+ },
+ {
+  "id": "structurize",
+  "name": "Structurize",
+  "version": "1.0.835-1.21.1-snapshot"
+ },
+ {
+  "id": "stylecolonies",
+  "name": "Stylecolonies",
+  "version": "1.15.64-1.21.1"
+ },
+ {
+  "id": "sfm",
+  "name": "Super Factory Manager (SFM)",
+  "version": "4.34.0"
+ },
+ {
+  "id": "supermartijn642configlib",
+  "name": "SuperMartijn642's Config Library",
+  "version": "1.1.8"
+ },
+ {
+  "id": "supermartijn642corelib",
+  "name": "SuperMartijn642's Core Lib",
+  "version": "1.1.25"
+ },
+ {
+  "id": "supplementaries",
+  "name": "Supplementaries",
+  "version": "1.21.1-4.0.1"
+ },
+ {
+  "id": "sushigocrafting",
+  "name": "Sushi Go Crafting",
+  "version": "0.6.6"
+ },
+ {
+  "id": "sussysniffers",
+  "name": "Sussy Sniffers",
+  "version": "1.21.1-0.1.3"
+ },
+ {
+  "id": "tempad",
+  "name": "Tempad",
+  "version": "3.0.4"
+ },
+ {
+  "id": "terrablender",
+  "name": "TerraBlender",
+  "version": "4.1.0.8"
+ },
+ {
+  "id": "tesseract_api",
+  "name": "Tesseract API",
+  "version": "1.12.18-1.21.1"
+ },
+ {
+  "id": "aether",
+  "name": "The Aether",
+  "version": "1.5.10"
+ },
+ {
+  "id": "the_bumblezone",
+  "name": "The Bumblezone",
+  "version": "7.16.1+1.21.1-neoforge"
+ },
+ {
+  "id": "twilightforest",
+  "name": "The Twilight Forest",
+  "version": "4.8.3345"
+ },
+ {
+  "id": "undergarden",
+  "name": "The Undergarden",
+  "version": "0.9.6"
+ },
+ {
+  "id": "theurgy",
+  "name": "Theurgy",
+  "version": "1.78.0"
+ },
+ {
+  "id": "theurgy_kubejs",
+  "name": "Theurgy KubeJS",
+  "version": "1.6.0"
+ },
+ {
+  "id": "tiab",
+  "name": "Time In A Bottle",
+  "version": "6.5.4"
+ },
+ {
+  "id": "titanium",
+  "name": "Titanium",
+  "version": "4.0.51"
+ },
+ {
+  "id": "toastcontrol",
+  "name": "Toast Control",
+  "version": "9.0.1"
+ },
+ {
+  "id": "toolbelt",
+  "name": "Tool Belt",
+  "version": "2.2.10"
+ },
+ {
+  "id": "torchmaster",
+  "name": "Torchmaster",
+  "version": "21.1.13"
+ },
+ {
+  "id": "t_and_t",
+  "name": "Towns and Towers",
+  "version": "1.13.11"
+ },
+ {
+  "id": "towntalk",
+  "name": "Towntalk",
+  "version": "1.2.0"
+ },
+ {
+  "id": "transfer_labels",
+  "name": "Transfer Labels",
+  "version": "0.1.9"
+ },
+ {
+  "id": "trashcans",
+  "name": "Trash Cans",
+  "version": "1.1.1"
+ },
+ {
+  "id": "trashslot",
+  "name": "TrashSlot",
+  "version": "21.1.11"
+ },
+ {
+  "id": "treetap",
+  "name": "Tree Tap",
+  "version": "1.21.1-0.4.6"
+ },
+ {
+  "id": "blockui",
+  "name": "UI Library Mod",
+  "version": "1.0.212-1.21.1-snapshot"
+ },
+ {
+  "id": "underground_villages",
+  "name": "Underground Villages Mod",
+  "version": "4.0.3"
+ },
+ {
+  "id": "universalgrid",
+  "name": "Universal Grid",
+  "version": "1.21.1-0.3.2"
+ },
+ {
+  "id": "sawmill",
+  "name": "Universal Sawmill",
+  "version": "1.21-1.8.1"
+ },
+ {
+  "id": "uranus",
+  "name": "Uranus",
+  "version": "2.4.1-bugfix"
+ },
+ {
+  "id": "utilitarian",
+  "name": "Utilitarian",
+  "version": "1.21.1-0.19.2"
+ },
+ {
+  "id": "utilityvest",
+  "name": "Utility vest",
+  "version": "1.3.1"
+ },
+ {
+  "id": "valhelsia_core",
+  "name": "Valhelsia Core",
+  "version": "1.1.5"
+ },
+ {
+  "id": "variantsandventures",
+  "name": "Variants&Ventures",
+  "version": "1.0.28"
+ },
+ {
+  "id": "villagesandpillages",
+  "name": "Villages&Pillages",
+  "version": "2.0.0"
+ },
+ {
+  "id": "waystones",
+  "name": "Waystones",
+  "version": "21.1.46"
+ },
+ {
+  "id": "dungeons_arise",
+  "name": "When Dungeons Arise",
+  "version": "2.1.68"
+ },
+ {
+  "id": "wirelesschargers",
+  "name": "Wireless Chargers",
+  "version": "1.0.9+a"
+ },
+ {
+  "id": "wstweaks",
+  "name": "Wither Skeleton Tweaks",
+  "version": "10.1.1"
+ },
+ {
+  "id": "wits",
+  "name": "Wits",
+  "version": "1.3.1"
+ },
+ {
+  "id": "xnet",
+  "name": "XNet",
+  "version": "1.21-7.0.7"
+ },
+ {
+  "id": "xtonesreworked",
+  "name": "XTones Reworked",
+  "version": "1.1.1-1.21.1"
+ },
+ {
+  "id": "xycraft_core",
+  "name": "XyCraft Core",
+  "version": "0.7.53"
+ },
+ {
+  "id": "xycraft_machines",
+  "name": "XyCraft Machines",
+  "version": "0.7.53"
+ },
+ {
+  "id": "xycraft_override",
+  "name": "XyCraft Override",
+  "version": "0.7.53"
+ },
+ {
+  "id": "xycraft_world",
+  "name": "XyCraft World",
+  "version": "0.7.53"
+ },
+ {
+  "id": "yeetusexperimentus",
+  "name": "Yeetus Experimentus",
+  "version": "87.0.0"
+ },
+ {
+  "id": "yet_another_config_lib_v3",
+  "name": "YetAnotherConfigLib",
+  "version": "3.8.2+1.21.1-neoforge"
+ },
+ {
+  "id": "yungsapi",
+  "name": "YUNG's API",
+  "version": "1.21.1-NeoForge-5.1.9"
+ },
+ {
+  "id": "betterdeserttemples",
+  "name": "YUNG's Better Desert Temples",
+  "version": "1.21.1-NeoForge-4.1.5"
+ },
+ {
+  "id": "betterdungeons",
+  "name": "YUNG's Better Dungeons",
+  "version": "1.21.1-NeoForge-5.1.4"
+ },
+ {
+  "id": "betterendisland",
+  "name": "YUNG's Better End Island",
+  "version": "1.21.1-NeoForge-3.1.2"
+ },
+ {
+  "id": "betterjungletemples",
+  "name": "YUNG's Better Jungle Temples",
+  "version": "1.21.1-NeoForge-3.1.2"
+ },
+ {
+  "id": "bettermineshafts",
+  "name": "YUNG's Better Mineshafts",
+  "version": "1.21.1-NeoForge-5.1.1"
+ },
+ {
+  "id": "betterfortresses",
+  "name": "YUNG's Better Nether Fortresses",
+  "version": "1.21.1-NeoForge-3.1.5"
+ },
+ {
+  "id": "betteroceanmonuments",
+  "name": "YUNG's Better Ocean Monuments",
+  "version": "1.21.1-NeoForge-4.1.2"
+ },
+ {
+  "id": "betterstrongholds",
+  "name": "YUNG's Better Strongholds",
+  "version": "1.21.1-NeoForge-5.1.3"
+ },
+ {
+  "id": "betterwitchhuts",
+  "name": "YUNG's Better Witch Huts",
+  "version": "1.21.1-NeoForge-4.1.1"
+ },
+ {
+  "id": "yungsextras",
+  "name": "YUNG's Extras",
+  "version": "1.21.1-NeoForge-5.1.1"
+ },
+ {
+  "id": "zerocore",
+  "name": "Zero CORE 2",
+  "version": "1.21.1-2.4.21"
+ }
+]

@@ -1,0 +1,28 @@
+<main class="page mods-page">
+  <h1>{{mods_heading_text}}</h1>
+  <p class="lead">{{mods_lead}}</p>
+
+  <div class="mods-tools">
+    <input id="ms" type="search" placeholder="{{mods_search}}" aria-label="{{mods_search}}">
+    <label class="check"><input id="mg" type="checkbox"> {{mods_only_guides}}</label>
+  </div>
+
+  {{{mod_groups}}}
+</main>
+<script>
+// Filter the static list: search on name and id, optionally keep only mods with a guide
+const ms = document.getElementById('ms'), mg = document.getElementById('mg');
+function filterMods() {
+  const q = ms.value.trim().toLowerCase();
+  document.querySelectorAll('.mod-group').forEach(g => {
+    let shown = 0;
+    g.querySelectorAll('li').forEach(li => {
+      const ok = (!q || li.dataset.k.includes(q)) && (!mg.checked || li.dataset.g);
+      li.hidden = !ok; shown += ok;
+    });
+    g.hidden = !shown;
+  });
+}
+ms.addEventListener('input', filterMods);
+mg.addEventListener('change', filterMods);
+</script>

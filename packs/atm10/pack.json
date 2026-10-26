@@ -6,11 +6,13 @@
  "loader": "NeoForge",
  "sources": {
   "modpack": "https://github.com/AllTheMods/ATM-10",
-  "productivebees_lang": "https://raw.githubusercontent.com/JDKDigital/productive-bees/dev-1.21.0/src/main/resources/assets/productivebees/lang/{lang}.json"
+  "productivebees_lang": "https://raw.githubusercontent.com/JDKDigital/productive-bees/dev-1.21.0/src/main/resources/assets/productivebees/lang/{lang}.json",
+  "modlist": "https://raw.githubusercontent.com/AllTheMods/ATM-10/main/config/crash_assistant/modlist.json"
  },
  "tools": {
   "bees": "live",
   "quests": "soon",
-  "howto": "soon"
+  "howto": "soon",
+  "mods": "live"
  }
 }

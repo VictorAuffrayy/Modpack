@@ -119,5 +119,38 @@
    "#c:is_plains": "plaines",
    "#productivebees:is_beach_or_river": "plages et rivières"
   }
+ },
+ "tool_mods_name": "Mods et guides",
+ "tool_mods_desc": "Les {n} mods du pack, classés par type. Les mods compliqués ont un guide avec les règles exactes et des schémas de construction.",
+ "mods_title": "Mods de {pack} et guides",
+ "mods_meta": "Liste complète des {n} mods de {pack}, classés par type, avec des guides vérifiés dans le code des mods : multiblocs, chaînes de fabrication, schémas.",
+ "mods_heading": "Les {n} mods de {pack}",
+ "mods_lead": "La liste vient du fichier officiel du pack. Les mods de déco, de confort ou les bibliothèques sont simplement listés ; ceux qui demandent de l'aide ont (ou auront) un guide.",
+ "mods_search": "Chercher un mod…",
+ "mods_only_guides": "Seulement les mods avec guide",
+ "mods_count": "{n} mods",
+ "badge_guide": "Guide",
+ "badge_tool": "Planificateur",
+ "badge_planned": "Guide prévu",
+ "guide_title": "Guide {mod} pour {pack}",
+ "guide_meta": "{mod} dans {pack} : règles exactes des multiblocs, schémas de construction et chaînes de fabrication, vérifiés dans le code du mod et la config du pack.",
+ "guide_checked": "Vérifié sur : {what}",
+ "guide_toc": "Sommaire",
+ "guide_rules": "Les règles",
+ "guide_chain": "La chaîne",
+ "guide_schematic": "Schéma minimal (vu de dessus, couche par couche)",
+ "guide_sources": "Sources",
+ "guide_back": "Tous les mods",
+ "cat": {
+  "progression": "Progression du pack",
+  "tech": "Technologie",
+  "logistics": "Logistique et automatisation",
+  "storage": "Stockage",
+  "magic": "Magie",
+  "exploration": "Exploration, dimensions et monstres",
+  "food": "Agriculture et nourriture",
+  "building": "Construction et déco",
+  "utility": "Confort et interface",
+  "library": "Bibliothèques et performances"
  }
 }

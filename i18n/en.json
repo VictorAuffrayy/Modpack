@@ -6,7 +6,6 @@
  "nav_home": "Modpacks",
  "footer_disclaimer": "Fan-made site, not affiliated with the All the Mods team, Mojang or the mod authors.",
  "footer_source": "Source on GitHub",
-
  "home_kicker": "For your second screen",
  "home_title": "Which cross gives that bee? It's in here.",
  "home_lead": "With 500 mods, the quest book and JEI aren't enough to plan ahead. Every tree and recipe here comes out of the game files, not from a wiki someone wrote from memory.",
@@ -15,24 +14,20 @@
  "home_why_title": "Where the data comes from",
  "home_why_1": "A script reads the mods' recipes and lang files, then builds the pages. When ATM ships an update, we run it again and the site follows.",
  "home_why_2": "Your progress stays in your browser. No account needed.",
-
  "pack_tools": "Tools",
  "pack_mc": "Minecraft {mc} · {loader}",
  "status_live": "Open",
  "status_soon": "Coming soon",
  "status_planned": "Planned",
-
  "tool_bees_name": "Bee planner",
  "tool_bees_desc": "Every Productive Bees bee with its parents, tier and how to get it. Tick the ones you have and see what unlocks next.",
  "tool_quests_name": "Quest book",
  "tool_quests_desc": "The pack's quests with search and a checkbox to keep track of where you are.",
  "tool_howto_name": "How do I get X?",
  "tool_howto_desc": "Type an item and see the whole crafting chain, including the recipes ATM changed.",
-
  "bees_title": "{pack} Bee Planner",
  "bees_meta": "Interactive Productive Bees breeding tree for {pack}: {n} bees with their nests, conversions and tiers. Tick what you have to see what's next.",
  "bees_heading": "{pack} Apiary",
-
  "js": {
   "legend_done": "Obtained",
   "legend_avail": "Available",
@@ -124,5 +119,38 @@
    "#c:is_plains": "plains",
    "#productivebees:is_beach_or_river": "beaches and rivers"
   }
+ },
+ "tool_mods_name": "Mods and guides",
+ "tool_mods_desc": "All {n} mods in the pack, sorted by type. The complicated ones get a guide with exact rules and build schematics.",
+ "mods_title": "{pack} mods and guides",
+ "mods_meta": "Full list of the {n} mods in {pack}, sorted by type, with guides checked against the mods' code: multiblocks, crafting chains, schematics.",
+ "mods_heading": "The {n} mods in {pack}",
+ "mods_lead": "The list comes from the pack's own mod list. Decoration, quality-of-life and library mods are just listed; the ones that need explaining have (or will have) a guide.",
+ "mods_search": "Search a mod…",
+ "mods_only_guides": "Only mods with a guide",
+ "mods_count": "{n} mods",
+ "badge_guide": "Guide",
+ "badge_tool": "Planner",
+ "badge_planned": "Guide planned",
+ "guide_title": "{mod} guide for {pack}",
+ "guide_meta": "{mod} in {pack}: exact multiblock rules, build schematics and crafting chains, checked against the mod's code and the pack's config.",
+ "guide_checked": "Checked against: {what}",
+ "guide_toc": "Contents",
+ "guide_rules": "The rules",
+ "guide_chain": "The chain",
+ "guide_schematic": "Minimal schematic (top view, layer by layer)",
+ "guide_sources": "Sources",
+ "guide_back": "All mods",
+ "cat": {
+  "progression": "Pack progression",
+  "tech": "Tech",
+  "logistics": "Logistics and automation",
+  "storage": "Storage",
+  "magic": "Magic",
+  "exploration": "Exploration, dimensions and mobs",
+  "food": "Farming and food",
+  "building": "Building and decoration",
+  "utility": "Quality of life and UI",
+  "library": "Libraries and performance"
  }
 }

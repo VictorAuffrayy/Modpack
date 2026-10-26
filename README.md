@@ -11,6 +11,7 @@ Un script relit les fichiers, un autre génère le site. Ajouter un pack ou une 
 | ATM10 | 🐝 Planificateur d'abeilles (le Rucher) | ✅ en ligne |
 | ATM10 | 📜 Livre de quêtes                      | bientôt   |
 | ATM10 | 🧭 Comment obtenir X ?                  | bientôt   |
+| ATM10 | 📚 Liste des 491 mods + guides          | ✅ en ligne (guide Mekanism) |
 | ATM11 | (tous)                                  | prévu     |
 
 ## Organisation
@@ -19,10 +20,16 @@ Un script relit les fichiers, un autre génère le site. Ajouter un pack ou une 
 packs/<pack>/pack.json        nom, version Minecraft, sources, outils actifs
 packs/atm10/bees.json         abeilles : arbre, méthodes, noms et descriptions EN/FR + leurs clés de langue
 packs/atm10/bees_notes.json   les quelques notes écrites à la main (œufs, abeilles coucou…), EN/FR
+packs/atm10/modlist.json      liste officielle des mods du pack (générée par fetch_modlist.py)
+packs/atm10/mod_categories.json  classement des mods par type + ceux qui méritent un guide (choix éditorial)
+packs/atm10/guides/<mod>.json   guides EN/FR : chaînes, règles, schémas, avec la source de chaque info
+packs/mods.json               id de mod -> nom affiché (commun à tous les packs)
 i18n/en.json, i18n/fr.json    textes de l'interface
 templates/                    gabarits HTML ({{clé}} échappée, {{{clé}}} brute)
 static/                       CSS, JS, icône
 scripts/refresh_bee_text.py   met à jour noms/descriptions depuis les fichiers de langue de Productive Bees
+scripts/fetch_modlist.py      relit la liste des mods du pack (réseau)
+scripts/schematics.py         schémas de multiblocs construits à partir des règles du code des mods
 scripts/build_site.py         génère docs/ (aucune dépendance, aucun accès réseau)
 docs/                         le site généré, servi par GitHub Pages
 ```
@@ -31,6 +38,7 @@ docs/                         le site généré, servi par GitHub Pages
 
 ```bash
 python3 scripts/refresh_bee_text.py atm10   # relire les textes officiels du mod (réseau)
+python3 scripts/fetch_modlist.py atm10      # relire la liste des mods (réseau)
 python3 scripts/build_site.py               # régénérer docs/
 python3 -m http.server 8000 -d docs         # voir le site sur http://localhost:8000
 ```
@@ -61,3 +69,9 @@ L'adresse publique utilisée pour le SEO (hreflang, sitemap) se règle au build 
 4. Semaines 5–6 : publicité + Ko-fi, préparer les pages ATM11.
 
 Site de fan, sans lien avec l'équipe All the Mods, Mojang ou les auteurs des mods.
+
+## Écrire un guide
+
+Un guide = un fichier `packs/<pack>/guides/<mod>.json`. Chaque info doit venir d'un fichier lisible
+(code du mod à la version du pack, config ou scripts KubeJS du pack) et chaque section liste ses sources.
+Les schémas sont des fonctions de `scripts/schematics.py` qui suivent les règles du validateur du mod.

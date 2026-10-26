@@ -84,3 +84,56 @@ body.app .site-foot { margin-top: 0; padding-top: 6px; padding-bottom: calc(8px 
 body.app main { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-top: 12px }
 @media (max-width: 600px) { body.app { height: auto; overflow: visible } body.app main { min-height: 85dvh } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
+
+/* Mods list */
+.mods-tools { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; margin: 28px 0 8px }
+#ms { border: 1px solid var(--line); border-radius: 6px; background: var(--panel); padding: 8px 12px; width: 320px; max-width: 100% }
+#ms:focus { border-color: var(--honey); outline: 0 }
+.check { display: inline-flex; gap: 8px; align-items: center; color: var(--muted); font-size: 14px; cursor: pointer }
+.check input { accent-color: var(--honey); width: 16px; height: 16px }
+.mod-group h2 { display: flex; align-items: baseline; gap: 10px }
+.mod-group h2 .n { font-family: var(--f-body); font-size: 14px; color: var(--muted); font-weight: 400 }
+.mod-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 6px }
+.mod-list li { display: flex; align-items: center; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; font-size: 14px; min-width: 0 }
+.mod-list li a { font-weight: 500; color: var(--ink) }
+.mod-list li a:hover { color: var(--honey) }
+.mod-list .ver { margin-left: auto; color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 40% }
+.badge { font-size: 11px; font-weight: 500; border-radius: 999px; padding: 1px 8px; white-space: nowrap }
+.badge_guide, .badge_tool { background: var(--honey); color: #1b1404 }
+.badge_planned { border: 1px dashed var(--line); color: var(--muted) }
+
+/* Guides */
+.guide { max-width: 860px }
+.guide .checked { font-size: 13px; color: var(--muted); margin: 14px 0 0 }
+.toc { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 4px 22px 14px; margin-top: 28px }
+.toc h2 { font-size: 16px; margin: 14px 0 6px }
+.toc ol { margin: 0; padding-left: 20px; columns: 2 220px; column-gap: 32px }
+.toc a { color: var(--ink); text-decoration: none }
+.toc a:hover { color: var(--honey) }
+.g-sec { border-top: 1px solid var(--line); margin-top: 40px; scroll-margin-top: 16px }
+.g-sec h2 { margin-top: 28px }
+.g-sec h3 { font-family: var(--f-pix); font-size: 16px; color: var(--muted); margin: 22px 0 10px; font-weight: 500 }
+.g-sec p { max-width: 70ch }
+.rules { padding-left: 20px; margin: 0; display: grid; gap: 6px }
+.rules li::marker { color: var(--honey) }
+.chain { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; gap: 8px }
+.chain li { counter-increment: step; display: grid; grid-template-columns: 30px 1fr; gap: 2px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px }
+.chain li::before { content: counter(step); grid-row: span 2; font-family: var(--f-pix); color: var(--honey); font-size: 20px; line-height: 1.2 }
+.chain .mach { font-weight: 500 }
+.chain .io { color: var(--muted); font-size: 14px }
+.chain .io b { color: var(--honey); font-weight: 400 }
+.sources { font-size: 12px; color: var(--muted); margin-top: 18px }
+.sources a { color: var(--muted) }
+.back { color: var(--honey); text-decoration: none }
+
+/* Schematics: one small top-down grid per layer */
+.schem { display: flex; flex-wrap: wrap; gap: 16px; margin: 0 }
+.layer { margin: 0; display: flex; flex-direction: column; gap: 6px; align-items: center }
+.layer svg { display: block; background: var(--bg-2); border: 1px solid var(--line); border-radius: 6px; padding: 3px; box-sizing: content-box }
+.layer svg rect.air { fill: transparent; stroke: var(--line); stroke-dasharray: 2 2 }
+.layer svg text { font: 700 11px var(--f-body); fill: #10121a; pointer-events: none }
+.layer figcaption { font-size: 12px; color: var(--muted) }
+.legend-list { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted) }
+.legend-list li { display: inline-flex; align-items: center; gap: 6px }
+.legend-list i { width: 18px; height: 18px; border-radius: 3px; display: inline-grid; place-items: center; font: 700 11px var(--f-body); font-style: normal; color: #10121a }
+.legend-list i.air { border: 1px dashed var(--line) }
