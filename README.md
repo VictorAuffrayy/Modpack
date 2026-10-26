@@ -35,11 +35,12 @@ python3 scripts/build_site.py               # régénérer docs/
 python3 -m http.server 8000 -d docs         # voir le site sur http://localhost:8000
 ```
 
-## Mise en ligne (GitHub Pages)
+## Mise en ligne
 
-Settings → Pages → *Deploy from a branch* → branche `main`, dossier `/docs`.
-Le site sera sur `https://victorauffrayy.github.io/Modpack/`. Si tu prends un nom de domaine,
-relance le build avec `SITE_URL=https://ton-domaine/ python3 scripts/build_site.py`.
+Le site est hébergé sur Vercel : `vercel.json` lui dit de servir `docs/` tel quel (pas de build côté Vercel),
+donc il faut committer `docs/` après chaque `build_site.py`. Chaque push sur `main` redéploie.
+L'adresse publique utilisée pour le SEO (hreflang, sitemap) se règle au build :
+`SITE_URL=https://ton-domaine/ python3 scripts/build_site.py`.
 
 ## D'où viennent les données
 
