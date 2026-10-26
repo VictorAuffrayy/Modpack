@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ars Nouveau guide for ATM10 · Modpack Companion</title>
+<meta name="description" content="Ars Nouveau in ATM10: exact multiblock rules, build schematics and crafting chains, checked against the mod&#x27;s code and the pack&#x27;s config.">
+<link rel="alternate" hreflang="en" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/ars_nouveau/">
+<link rel="alternate" hreflang="fr" href="https://victorauffrayy.github.io/Modpack/fr/atm10/mods/ars_nouveau/">
+<link rel="alternate" hreflang="x-default" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/ars_nouveau/">
+<meta property="og:title" content="Ars Nouveau guide for ATM10 · Modpack Companion">
+<meta property="og:description" content="Ars Nouveau in ATM10: exact multiblock rules, build schematics and crafting chains, checked against the mod&#x27;s code and the pack&#x27;s config.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../../../static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500;700&display=swap">
+<meta name="theme-color" content="#121317">
+<link rel="stylesheet" href="../../../../static/site.css">
+
+</head>
+<body class="">
+<header class="site-head">
+  <a class="brand" href="../../../../en/"><img src="../../../../static/favicon.svg" alt="" width="26" height="26">Modpack Companion</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><span aria-hidden="true">›</span> <a href="../../../../en/atm10/">ATM10</a> <span aria-hidden="true">›</span> <a href="../../../../en/atm10/mods/">Mods and guides</a> <span aria-hidden="true">›</span> <a href="../../../../en/atm10/mods/ars_nouveau/">Ars Nouveau</a></nav>
+  <a class="lang" href="../../../../fr/atm10/mods/ars_nouveau/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+</header>
+<main class="page guide">
+  <p class="kicker">ATM10 · Guide</p>
+  <h1>Ars Nouveau</h1>
+  <p class="lead">Ars Nouveau revolves around Source, the mod&#x27;s magic energy. Most stalls come from a machine that can&#x27;t find its pedestals or its Source: each machine has its own range.</p>
+  <p class="checked">Checked against: Ars Nouveau, branche 1.21.x (pack : 5.13.3) + config/ars_nouveau-common.toml d&#x27;ATM10</p>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol><li><a href="#source">Source</a></li><li><a href="#apparatus">The Enchanting Apparatus</a></li><li><a href="#imbuement">The Imbuement Chamber</a></li></ol>
+  </nav>
+
+  <section class="g-sec" id="source"><h2>Source</h2><h3>The rules</h3><ul class="rules"><li>A Source Jar holds 10,000 Source.</li><li>Machines draw from nearby jars; distance is counted as x + y + z steps, not a straight line.</li><li>In ATM10 you don&#x27;t spawn with the book: you have to craft it.</li></ul><p class="sources">Sources: <a href="https://github.com/baileyholl/Ars-Nouveau/blob/1.21.x/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/SourceJarTile.java" rel="nofollow">SourceJarTile.java</a> · <a href="https://github.com/baileyholl/Ars-Nouveau/blob/1.21.x/src/main/java/com/hollingsworth/arsnouveau/api/util/SourceUtil.java" rel="nofollow">SourceUtil.java</a> · <a href="https://github.com/AllTheMods/ATM-10/blob/main/config/ars_nouveau-common.toml" rel="nofollow">ATM10 config/ars_nouveau-common.toml</a></p></section><section class="g-sec" id="apparatus"><h2>The Enchanting Apparatus</h2><h3>The rules</h3><ul class="rules"><li>Arcane Pedestals must sit in a 7 × 7 × 7 cube centred on the apparatus (3 blocks in every direction, up and down included).</li><li>Source comes from jars within 10 blocks.</li></ul><p class="sources">Sources: <a href="https://github.com/baileyholl/Ars-Nouveau/blob/1.21.x/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/EnchantingApparatusTile.java" rel="nofollow">EnchantingApparatusTile.java</a> · <a href="https://github.com/baileyholl/Ars-Nouveau/tree/1.21.x/src/main/java/com/hollingsworth/arsnouveau" rel="nofollow">IPedestalMachine.pedestalList</a></p></section><section class="g-sec" id="imbuement"><h2>The Imbuement Chamber</h2><h3>The rules</h3><ul class="rules"><li>Its pedestals must touch it: a 3 × 3 × 3 cube around it.</li><li>It pulls Source from jars within 2 blocks, 200 at a time every second.</li><li>With no jar in range it still works, just very slowly: 10 Source per second.</li></ul><p class="sources">Sources: <a href="https://github.com/baileyholl/Ars-Nouveau/blob/1.21.x/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/ImbuementTile.java" rel="nofollow">ImbuementTile.java</a></p></section>
+
+  <p><a class="back" href="../">← All mods</a></p>
+</main>
+
+<footer class="site-foot">
+  <p>Fan-made site, not affiliated with the All the Mods team, Mojang or the mod authors.</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">Source on GitHub</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+ "mod": "naturesaura",
+ "checked": "Nature's Aura 41.10 (tag 41.10)",
+ "intro": {
+  "fr": "Nature's Aura transforme l'aura de la nature en magie. Ses trois premières structures (autel naturel, rituel de l'arbre, table d'offrande) sont des multiblocs précis : les voici tels que le mod les vérifie.",
+  "en": "Nature's Aura turns nature's aura into magic. Its first three structures (natural altar, tree ritual, offering table) are exact multiblocks: here they are as the mod checks them."
+ },
+ "sections": [
+  {
+   "id": "altar",
+   "title": {"fr": "L'autel naturel", "en": "The natural altar"},
+   "rules": [
+    {"fr": "9 × 9 au sol et 4 de haut : un sol en briques de pierre, pierre ciselée et planches, des piliers en briques de pierre et des briques d'or au sommet.", "en": "9 × 9 wide and 4 high: a floor of stone bricks, chiseled stone and planks, stone brick pillars and gold bricks on top."},
+    {"fr": "Chaque matériau accepte ses variantes via un tag du mod (d'autres planches ou d'autres briques fonctionnent).", "en": "Each material accepts variants through one of the mod's tags (other planks or other bricks work)."},
+    {"fr": "Les cases vides du schéma peuvent contenir n'importe quoi.", "en": "Empty cells in the schematic can hold anything."}
+   ],
+   "schematic": "naturesaura_altar",
+   "sources": [{"label": "Multiblocks.java (ALTAR)", "url": "https://github.com/Ellpeck/NaturesAura/blob/41.10/src/main/java/de/ellpeck/naturesaura/blocks/multi/Multiblocks.java"}]
+  },
+  {
+   "id": "tree",
+   "title": {"fr": "Le rituel de l'arbre", "en": "The tree ritual"},
+   "rules": [
+    {"fr": "Une pousse au centre, un cercle de Gold Powder autour, et 8 Wood Stands sur lesquels on pose les ingrédients.", "en": "A sapling in the centre, a ring of Gold Powder around it, and 8 Wood Stands that hold the ingredients."},
+    {"fr": "N'importe quelle pousse (ou bûche) prévue par une recette de rituel convient au centre.", "en": "Any sapling (or log) used by a ritual recipe works in the centre."}
+   ],
+   "schematic": "naturesaura_tree_ritual",
+   "sources": [{"label": "Multiblocks.java (TREE_RITUAL)", "url": "https://github.com/Ellpeck/NaturesAura/blob/41.10/src/main/java/de/ellpeck/naturesaura/blocks/multi/Multiblocks.java"}]
+  },
+  {
+   "id": "offering",
+   "title": {"fr": "La table d'offrande", "en": "The offering table"},
+   "rules": [
+    {"fr": "Deux anneaux de petites fleurs autour de la table (n'importe quelle petite fleur, pas seulement le coquelicot du schéma).", "en": "Two rings of small flowers around the table (any small flower, not just the poppy shown)."}
+   ],
+   "schematic": "naturesaura_offering_table",
+   "sources": [{"label": "Multiblocks.java (OFFERING_TABLE)", "url": "https://github.com/Ellpeck/NaturesAura/blob/41.10/src/main/java/de/ellpeck/naturesaura/blocks/multi/Multiblocks.java"}]
+  }
+ ]
+}

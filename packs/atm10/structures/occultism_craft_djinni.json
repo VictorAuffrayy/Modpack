@@ -1,0 +1,50 @@
+{
+ "layers": [
+  [
+   "             ",
+   "  XLXLXLXLX  ",
+   " XL 2   2 LX ",
+   " L  WXXXW  L ",
+   " X2WS1 1SW2X ",
+   " L X1S S1X L ",
+   " X X  0  X X ",
+   " L X1S S1X L ",
+   " X2WS1 1SW2X ",
+   " L  WXXXW  L ",
+   " XL 2   2 LX ",
+   "  XLXLXLXLX  ",
+   "             "
+  ]
+ ],
+ "keys": {
+  "0": {
+   "block": "occultism:golden_sacrificial_bowl",
+   "hatch": false
+  },
+  "1": {
+   "block": "#minecraft:candles",
+   "hatch": false
+  },
+  "2": {
+   "block": "minecraft:skeleton_skull",
+   "hatch": false
+  },
+  "L": {
+   "block": "occultism:chalk_glyph_lime",
+   "hatch": false
+  },
+  "S": {
+   "block": "occultism:chalk_glyph_light_gray",
+   "hatch": false
+  },
+  "W": {
+   "block": "occultism:chalk_glyph_white",
+   "hatch": false
+  },
+  "X": {
+   "block": "occultism:chalk_glyph_purple",
+   "hatch": false
+  }
+ },
+ "source": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/craft_djinni.json"
+}

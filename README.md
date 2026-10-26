@@ -23,13 +23,14 @@ packs/atm10/bees_notes.json   les quelques notes écrites à la main (œufs, abe
 packs/atm10/modlist.json      liste officielle des mods du pack (générée par fetch_modlist.py)
 packs/atm10/mod_categories.json  classement des mods par type + ceux qui méritent un guide (choix éditorial)
 packs/atm10/guides/<mod>.json   guides EN/FR : chaînes, règles, schémas, avec la source de chaque info
+packs/atm10/structures/        formes de multiblocs extraites (générées par fetch_structures.py)
 packs/mods.json               id de mod -> nom affiché (commun à tous les packs)
 i18n/en.json, i18n/fr.json    textes de l'interface
 templates/                    gabarits HTML ({{clé}} échappée, {{{clé}}} brute)
 static/                       CSS, JS, icône
 scripts/refresh_bee_text.py   met à jour noms/descriptions depuis les fichiers de langue de Productive Bees
 scripts/fetch_modlist.py      relit la liste des mods du pack (réseau)
-scripts/fetch_mi_structures.py  relit les multiblocs Modern Industrialization des scripts du pack (Star Altar)
+scripts/fetch_structures.py   relit les formes de multiblocs : Star Altar (KubeJS ATM10), pentacles Occultism, structures Nature's Aura
 scripts/schematics.py         schémas de multiblocs construits à partir des règles du code des mods
 scripts/build_site.py         génère docs/ (aucune dépendance, aucun accès réseau)
 docs/                         le site généré, servi par GitHub Pages
@@ -40,7 +41,7 @@ docs/                         le site généré, servi par GitHub Pages
 ```bash
 python3 scripts/refresh_bee_text.py atm10   # relire les textes officiels du mod (réseau)
 python3 scripts/fetch_modlist.py atm10      # relire la liste des mods (réseau)
-python3 scripts/fetch_mi_structures.py atm10  # relire les structures des multiblocs ATM (réseau)
+python3 scripts/fetch_structures.py atm10   # relire les structures des multiblocs (réseau)
 python3 scripts/build_site.py               # régénérer docs/
 python3 -m http.server 8000 -d docs         # voir le site sur http://localhost:8000
 ```

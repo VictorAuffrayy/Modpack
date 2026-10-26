@@ -1,0 +1,26 @@
+{
+ "layers": [
+  [
+   "  RRRRR  ",
+   " R     R ",
+   "R  RRR  R",
+   "R R   R R",
+   "R R 0 R R",
+   "R R   R R",
+   "R  RRR  R",
+   " R     R ",
+   "  RRRRR  "
+  ]
+ ],
+ "keys": {
+  "R": {
+   "block": "minecraft:poppy",
+   "hatch": false
+  },
+  "0": {
+   "block": "naturesaura:offering_table",
+   "hatch": false
+  }
+ },
+ "source": "https://github.com/Ellpeck/NaturesAura/blob/41.10/src/main/java/de/ellpeck/naturesaura/blocks/multi/Multiblocks.java"
+}

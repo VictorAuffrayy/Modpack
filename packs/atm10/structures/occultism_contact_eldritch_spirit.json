@@ -1,0 +1,90 @@
+{
+ "layers": [
+  [
+   "                     ",
+   "          C          ",
+   "         CeC         ",
+   "         CMC         ",
+   "    BB  CMMMC  BB    ",
+   "    BlBBCMPMCBBfB    ",
+   "     BABAE EABAB     ",
+   "     BB PE EP BB     ",
+   "    CCAPA P APACC    ",
+   "  CCMMEE     EEMMCC  ",
+   " CkMMP  P 0 P  PMMgC ",
+   "  CCMMEE     EEMMCC  ",
+   "    CCAPA P APACC    ",
+   "     BB PE EP BB     ",
+   "     BABAE EABAB     ",
+   "    BjBBCMPMCBBhB    ",
+   "    BB  CMMMC  BB    ",
+   "         CMC         ",
+   "         CiC         ",
+   "          C          ",
+   "                     "
+  ]
+ ],
+ "keys": {
+  "0": {
+   "block": "occultism:golden_sacrificial_bowl",
+   "hatch": false
+  },
+  "A": {
+   "block": "occultism:chalk_glyph_light_blue",
+   "hatch": false
+  },
+  "B": {
+   "block": "occultism:chalk_glyph_brown",
+   "hatch": false
+  },
+  "C": {
+   "block": "occultism:chalk_glyph_cyan",
+   "hatch": false
+  },
+  "E": {
+   "block": "occultism:chalk_glyph_green",
+   "hatch": false
+  },
+  "M": {
+   "block": "occultism:chalk_glyph_magenta",
+   "hatch": false
+  },
+  "P": {
+   "block": "occultism:chalk_glyph_pink",
+   "hatch": false
+  },
+  "e": {
+   "block": "minecraft:lodestone",
+   "hatch": false
+  },
+  "f": {
+   "block": "minecraft:end_rod",
+   "hatch": false
+  },
+  "g": {
+   "block": "minecraft:amethyst_cluster",
+   "hatch": false
+  },
+  "h": {
+   "block": "#c:glass_panes",
+   "hatch": false
+  },
+  "i": {
+   "block": "minecraft:beacon",
+   "hatch": false
+  },
+  "j": {
+   "block": "#c:lightning_rods",
+   "hatch": false
+  },
+  "k": {
+   "block": "#c:enchanting_tables",
+   "hatch": false
+  },
+  "l": {
+   "block": "#c:iron_bars",
+   "hatch": false
+  }
+ },
+ "source": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/contact_eldritch_spirit.json"
+}

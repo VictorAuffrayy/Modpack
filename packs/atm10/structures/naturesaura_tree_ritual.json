@@ -1,0 +1,30 @@
+{
+ "layers": [
+  [
+   "    W    ",
+   " W     W ",
+   "   GGG   ",
+   "  GG GG  ",
+   "W G 0 G W",
+   "  GG GG  ",
+   "   GGG   ",
+   " W     W ",
+   "    W    "
+  ]
+ ],
+ "keys": {
+  "W": {
+   "block": "naturesaura:wood_stand",
+   "hatch": false
+  },
+  "G": {
+   "block": "naturesaura:gold_powder",
+   "hatch": false
+  },
+  "0": {
+   "block": "minecraft:oak_sapling",
+   "hatch": false
+  }
+ },
+ "source": "https://github.com/Ellpeck/NaturesAura/blob/41.10/src/main/java/de/ellpeck/naturesaura/blocks/multi/Multiblocks.java"
+}

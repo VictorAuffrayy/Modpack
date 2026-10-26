@@ -9,6 +9,7 @@ Rendering to SVG lives here too, so guides only reference a schematic by name.
 """
 import html
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -236,23 +237,39 @@ PALETTE = ["#8a8f9c", "#5b5f6b", "#3d4150", "#c9a46a", "#a46cff", "#e0a33a", "#7
            "#56c26a", "#ff8a3d", "#e05a9a", "#5aa0ff", "#d8d23a", "#b8b8c8", "#ff6b5a"]
 
 
-def pretty_block(block_id, mod_names):
-    ns, name = block_id.split(":")
-    return f"{name.replace('_', ' ').capitalize()} ({mod_names.get(ns, ns)})"
+CHALK = {"white": "#f2f2f2", "purple": "#9b4dd6", "gray": "#8a8a8a", "lime": "#7ed957", "orange": "#f08a24", "red": "#d43c3c",
+         "blue": "#3c64d4", "black": "#2b2b2b", "light_blue": "#6cc4ff", "brown": "#8b5a2b", "cyan": "#1fb5b5", "green": "#3f8f34",
+         "magenta": "#d64dc4", "pink": "#f2a0c8", "yellow": "#f0d23c", "light_gray": "#c0c0c0", "gold": "#f5c542"}
 
 
-def mi_structure(pack, name, controller):
-    """A Modern Industrialization layered shape saved by fetch_mi_structures.py: slices are z rows, each a list of y strings."""
+def pretty_block(block_id, mod_names, lang):
+    tag = block_id.startswith("#")
+    ns, name = block_id.lstrip("#").split(":")
+    words = name.replace("_", " ")
+    mod = mod_names.get(ns, ns)
+    if tag:
+        return {"en": f"Any {words} (tag {mod})", "fr": f"N'importe quel bloc « {words} » (tag {mod})"}[lang]
+    return f"{words[:1].upper()}{words[1:]} ({mod})"
+
+
+def structure(pack, name, controller=None):
+    """A structure saved by fetch_structures.py: bottom layer first, each a list of z rows of x chars."""
     data = json.loads((ROOT / "packs" / pack / "structures" / f"{name}.json").read_text())
     mod_names = json.loads((ROOT / "packs" / "mods.json").read_text())
-    slices = data["slices"]
-    height = len(slices[0])
-    layers = [[sl[y].replace(" ", ".") for sl in slices] for y in range(height)]
-    blocks = {"#": ("#ff6b5a", {"en": f"{controller} (controller)", "fr": f"{controller} (contrôleur)"})}
+    layers = [[row.replace(" ", ".") for row in layer] for layer in data["layers"]]
+    blocks = {}
+    if controller:
+        blocks["#"] = ("#ff6b5a", {"en": f"{controller} (controller)", "fr": f"{controller} (contrôleur)"})
     for i, (char, key) in enumerate(sorted(data["keys"].items())):
-        label = pretty_block(key["block"], mod_names)
-        extra = {"en": " or a hatch", "fr": " ou une trappe (hatch)"} if key["hatch"] else {"en": "", "fr": ""}
-        blocks[char] = (PALETTE[i % len(PALETTE)], {lang: label + extra[lang] for lang in ("en", "fr")})
+        block = key["block"]
+        chalk = re.search(r"chalk_glyph_(\w+)", block)
+        colour = CHALK.get(chalk.group(1)) if chalk else PALETTE[i % len(PALETTE)]
+        names = {}
+        for lang in ("en", "fr"):
+            names[lang] = pretty_block(block, mod_names, lang)
+            if key.get("hatch"):
+                names[lang] += {"en": " or a hatch", "fr": " ou une trappe (hatch)"}[lang]
+        blocks[char] = (colour, names)
     return {"layers": layers, "blocks": blocks}
 
 
@@ -285,7 +302,15 @@ SCHEMATICS = {
     "er_reactor": er_reactor,
     "er_turbine": er_turbine,
     "powah_reactor": powah_reactor,
-    "atm10_star_altar": lambda: mi_structure("atm10", "runic_star_altar", "Runic Star Altar"),
+    "atm10_star_altar": lambda: structure("atm10", "runic_star_altar", "Runic Star Altar"),
+    "occultism_foliot": lambda: structure("atm10", "occultism_craft_foliot"),
+    "occultism_djinni": lambda: structure("atm10", "occultism_craft_djinni"),
+    "occultism_afrit": lambda: structure("atm10", "occultism_craft_afrit"),
+    "occultism_marid": lambda: structure("atm10", "occultism_craft_marid"),
+    "occultism_eldritch": lambda: structure("atm10", "occultism_contact_eldritch_spirit"),
+    "naturesaura_altar": lambda: structure("atm10", "naturesaura_altar"),
+    "naturesaura_tree_ritual": lambda: structure("atm10", "naturesaura_tree_ritual"),
+    "naturesaura_offering_table": lambda: structure("atm10", "naturesaura_offering_table"),
     "ma_infusion": lambda: ma_altar("infusion"),
     "ma_awakening": lambda: ma_altar("awakening"),
 }
@@ -304,7 +329,7 @@ def render(name, lang):
         built = built["layers"]
     layers = built
     widest = max(len(layer[0]) for layer in layers)
-    cell = 22 if widest <= 9 else 16
+    cell = 22 if widest <= 9 else 16 if widest <= 15 else 13
     used = []
     out = ['<div class="schem">']
     for i, layer in enumerate(layers):
@@ -321,7 +346,9 @@ def render(name, lang):
                     used.append(code)
                 colour = blocks[code][0]
                 cls = ' class="air"' if code == "." else ""
-                svg.append(f'<rect{cls} x="{x * cell + 1}" y="{z * cell + 1}" width="{cell - 2}" height="{cell - 2}" rx="3" fill="{colour}"><title>{html.escape(blocks[code][1][lang])}</title></rect>')
+                rect = f'<rect{cls} x="{x * cell + 1}" y="{z * cell + 1}" width="{cell - 2}" height="{cell - 2}" rx="3" fill="{colour}"'
+                # Empty cells are most of a big structure: no tooltip keeps the page light
+                svg.append(rect + "/>" if code == "." else f'{rect}><title>{html.escape(blocks[code][1][lang])}</title></rect>')
                 if code not in ".C":
                     svg.append(f'<text x="{x * cell + cell / 2}" y="{z * cell + cell / 2 + 4}" text-anchor="middle">{code}</text>')
         svg.append("</svg>")

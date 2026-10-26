@@ -1,0 +1,71 @@
+{
+ "layers": [
+  [
+   "         ",
+   "   WBW   ",
+   "   WBW   ",
+   " WWCWCWW ",
+   " BBW WBB ",
+   " WWCWCWW ",
+   "   WBW   ",
+   "   WBW   ",
+   "         "
+  ],
+  [
+   "    B    ",
+   "         ",
+   "  M   M  ",
+   "         ",
+   "B   0   B",
+   "         ",
+   "  M   M  ",
+   "         ",
+   "    B    "
+  ],
+  [
+   "    B    ",
+   "         ",
+   "         ",
+   "         ",
+   "B       B",
+   "         ",
+   "         ",
+   "         ",
+   "    B    "
+  ],
+  [
+   "    M    ",
+   "         ",
+   "         ",
+   "         ",
+   "M       M",
+   "         ",
+   "         ",
+   "         ",
+   "    M    "
+  ]
+ ],
+ "keys": {
+  "C": {
+   "block": "minecraft:chiseled_stone_bricks",
+   "hatch": false
+  },
+  "B": {
+   "block": "minecraft:stone_bricks",
+   "hatch": false
+  },
+  "W": {
+   "block": "minecraft:oak_planks",
+   "hatch": false
+  },
+  "M": {
+   "block": "naturesaura:gold_brick",
+   "hatch": false
+  },
+  "0": {
+   "block": "naturesaura:nature_altar",
+   "hatch": false
+  }
+ },
+ "source": "https://github.com/Ellpeck/NaturesAura/blob/41.10/src/main/java/de/ellpeck/naturesaura/blocks/multi/Multiblocks.java"
+}

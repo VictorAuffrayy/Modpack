@@ -1,0 +1,62 @@
+{
+ "mod": "occultism",
+ "checked": "Occultism 1.224.5 (tag release/v1.21.1-1.224.5) + données KubeJS d'ATM10",
+ "intro": {
+  "fr": "Occultism, c'est de l'invocation d'esprits : on dessine un pentacle à la craie, on remplit des bols, et un esprit fabrique l'objet. Un seul glyphe mal placé et le rituel ne démarre pas, d'où les schémas ci-dessous, générés à partir des pentacles du mod.",
+  "en": "Occultism is spirit summoning: draw a chalk pentacle, fill some bowls, and a spirit makes the item. One misplaced glyph and the ritual won't start, hence the schematics below, generated from the mod's own pentacles."
+ },
+ "sections": [
+  {
+   "id": "basics",
+   "title": {"fr": "Comment marche un rituel", "en": "How a ritual works"},
+   "rules": [
+    {"fr": "Le Golden Sacrificial Bowl va au centre du pentacle. Les ingrédients vont dans des Sacrificial Bowls ordinaires, à 8 blocs maximum du bol central.", "en": "The Golden Sacrificial Bowl goes in the centre of the pentacle. Ingredients go in regular Sacrificial Bowls, within 8 blocks of the centre bowl."},
+    {"fr": "On lance le rituel en faisant un clic droit sur le bol central avec l'objet d'activation (souvent un Book of Binding lié à un esprit).", "en": "Start the ritual by right-clicking the centre bowl with the activation item (often a Book of Binding bound to a spirit)."},
+    {"fr": "Les bols centraux ont des tiers : or (1), iesnium (2), puis les calices Eldritch et Celestial (3).", "en": "Centre bowls have tiers: golden (1), iesnium (2), then the Eldritch and Celestial chalices (3)."},
+    {"fr": "Le Spirit Fire transforme ce qu'on jette dedans : un livre donne un Book of Binding vide, une craie impure donne une craie pure, une fleur donne une Otherflower.", "en": "Spirit Fire transforms what you throw in: a book becomes an empty Book of Binding, impure chalk becomes pure chalk, a flower becomes an Otherflower."}
+   ],
+   "sources": [
+    {"label": "Ritual.SACRIFICIAL_BOWL_RANGE / GoldenSacrificialBowlBlockEntity", "url": "https://github.com/klikli-dev/occultism/tree/release/v1.21.1-1.224.5/src/main/java/com/klikli_dev/occultism"},
+    {"label": "recipe/spirit_fire/*.json", "url": "https://github.com/klikli-dev/occultism/tree/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/recipe/spirit_fire"}
+   ]
+  },
+  {
+   "id": "foliot",
+   "title": {"fr": "Pentacle du Foliot (9 × 9)", "en": "Foliot pentacle (9 × 9)"},
+   "text": {"fr": ["Le premier pentacle : craie blanche, craie violette et 8 bougies."], "en": ["The first pentacle: white chalk, purple chalk and 8 candles."]},
+   "schematic": "occultism_foliot",
+   "sources": [{"label": "modonomicon/multiblocks/craft_foliot.json", "url": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/craft_foliot.json"}]
+  },
+  {
+   "id": "djinni",
+   "title": {"fr": "Pentacle du Djinni (13 × 13)", "en": "Djinni pentacle (13 × 13)"},
+   "schematic": "occultism_djinni",
+   "sources": [{"label": "modonomicon/multiblocks/craft_djinni.json", "url": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/craft_djinni.json"}]
+  },
+  {
+   "id": "afrit",
+   "title": {"fr": "Pentacle de l'Afrit (17 × 17)", "en": "Afrit pentacle (17 × 17)"},
+   "schematic": "occultism_afrit",
+   "sources": [{"label": "modonomicon/multiblocks/craft_afrit.json", "url": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/craft_afrit.json"}]
+  },
+  {
+   "id": "marid",
+   "title": {"fr": "Pentacle du Marid (21 × 21)", "en": "Marid pentacle (21 × 21)"},
+   "schematic": "occultism_marid",
+   "sources": [{"label": "modonomicon/multiblocks/craft_marid.json", "url": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/craft_marid.json"}]
+  },
+  {
+   "id": "eldritch",
+   "title": {"fr": "Contact Eldritch Spirit et le mineur d'ATM10", "en": "Contact Eldritch Spirit and ATM10's miner"},
+   "text": {
+    "fr": ["ATM10 ajoute un rituel sur ce pentacle : le mineur Ancient Eldritch. Ingrédients : un cœur de Piglich, une pioche en Unobtainium, une pioche en Iesnium et un Marid Master Miner. Objet d'activation : un Mining Dimension Core. Le rituel dure 360 secondes."],
+    "en": ["ATM10 adds a ritual on this pentacle: the Ancient Eldritch miner. Ingredients: a Piglich heart, an Unobtainium pickaxe, an Iesnium pickaxe and a Marid Master Miner. Activation item: a Mining Dimension Core. The ritual takes 360 seconds."]
+   },
+   "schematic": "occultism_eldritch",
+   "sources": [
+    {"label": "modonomicon/multiblocks/contact_eldritch_spirit.json", "url": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/contact_eldritch_spirit.json"},
+    {"label": "ATM10 kubejs/data/occultism/recipe/ritual/misc_miner_ancient_eldritch.json", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/data/occultism/recipe/ritual/misc_miner_ancient_eldritch.json"}
+   ]
+  }
+ ]
+}

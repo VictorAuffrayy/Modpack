@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Forbidden Arcanus guide for ATM10 · Modpack Companion</title>
+<meta name="description" content="Forbidden Arcanus in ATM10: exact multiblock rules, build schematics and crafting chains, checked against the mod&#x27;s code and the pack&#x27;s config.">
+<link rel="alternate" hreflang="en" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/forbidden_arcanus/">
+<link rel="alternate" hreflang="fr" href="https://victorauffrayy.github.io/Modpack/fr/atm10/mods/forbidden_arcanus/">
+<link rel="alternate" hreflang="x-default" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/forbidden_arcanus/">
+<meta property="og:title" content="Forbidden Arcanus guide for ATM10 · Modpack Companion">
+<meta property="og:description" content="Forbidden Arcanus in ATM10: exact multiblock rules, build schematics and crafting chains, checked against the mod&#x27;s code and the pack&#x27;s config.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../../../static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500;700&display=swap">
+<meta name="theme-color" content="#121317">
+<link rel="stylesheet" href="../../../../static/site.css">
+
+</head>
+<body class="">
+<header class="site-head">
+  <a class="brand" href="../../../../en/"><img src="../../../../static/favicon.svg" alt="" width="26" height="26">Modpack Companion</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><span aria-hidden="true">›</span> <a href="../../../../en/atm10/">ATM10</a> <span aria-hidden="true">›</span> <a href="../../../../en/atm10/mods/">Mods and guides</a> <span aria-hidden="true">›</span> <a href="../../../../en/atm10/mods/forbidden_arcanus/">Forbidden Arcanus</a></nav>
+  <a class="lang" href="../../../../fr/atm10/mods/forbidden_arcanus/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+</header>
+<main class="page guide">
+  <p class="kicker">ATM10 · Guide</p>
+  <h1>Forbidden Arcanus</h1>
+  <p class="lead">In ATM10, Forbidden &amp; Arcanus matters mostly for its Hephaestus Forge: it makes the Runic Star Altar controller, and so the road to the ATM Star. You need to take it to tier 5.</p>
+  <p class="checked">Checked against: Forbidden &amp; Arcanus, branche 1.21.1 (pack : 2.6.1) + scripts KubeJS d&#x27;ATM10</p>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol><li><a href="#tiers">The forge&#x27;s 5 tiers</a></li><li><a href="#upgrade">Upgrading the forge</a></li><li><a href="#relics">Duplicating relics (ATM10)</a></li></ol>
+  </nav>
+
+  <section class="g-sec" id="tiers"><h2>The forge&#x27;s 5 tiers</h2><p>Each tier raises the maximum stock of the four essences (aureal, souls, blood, experience). A ritual that needs more than that stock can&#x27;t start.</p><h3>The rules</h3><ul class="rules"><li>Tier 1: 1000 aureal, 10 souls, 10,000 blood, 900 XP.</li><li>Tier 2: 3000 aureal, 50 souls, 15,000 blood, 1350 XP.</li><li>Tier 3: 5000 aureal, 100 souls, 30,000 blood, 2500 XP.</li><li>Tier 4: 10,000 aureal, 500 souls, 50,000 blood, 5000 XP.</li><li>Tier 5: 20,000 aureal, 1000 souls, 100,000 blood, 7500 XP.</li></ul><p class="sources">Sources: <a href="https://github.com/stal111/Forbidden-Arcanus/blob/1.21.1/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/HephaestusForgeLevel.java" rel="nofollow">HephaestusForgeLevel.java</a></p></section><section class="g-sec" id="upgrade"><h2>Upgrading the forge</h2><p>Each upgrade is itself a forge ritual: a main item in the forge, ingredients on the pedestals, and essences.</p><h3>The chain</h3><ol class="chain"><li><span class="mach">To tier 2</span><span class="io">Edelwood planks + 4 Arcane Crystals + 4 Spawner Scraps; 500 aureal, 6000 blood, 10 souls <b aria-hidden="true">→</b> tier 2 forge</span></li><li><span class="mach">To tier 3</span><span class="io">chiseled polished darkstone + 4 Arcane Crystals + 4 Deorum ingots; 1000 aureal, 9000 blood, 50 souls <b aria-hidden="true">→</b> tier 3 forge</span></li><li><span class="mach">To tier 4</span><span class="io">chiseled polished darkstone + 4 Stellarite Pieces + 4 Runes; 2000 aureal, 12,000 blood, 100 souls <b aria-hidden="true">→</b> tier 4 forge</span></li><li><span class="mach">To tier 5</span><span class="io">Stellarite block + 4 Sculk Catalysts + 2 Dark Nether Stars + 2 Dragon Scales; 5000 aureal, 20,000 blood, 500 souls <b aria-hidden="true">→</b> tier 5 forge</span></li></ol><p class="sources">Sources: <a href="https://github.com/stal111/Forbidden-Arcanus/tree/1.21.1/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual" rel="nofollow">hephaestus_forge/ritual/upgrade_tier_*.json</a></p></section><section class="g-sec" id="relics"><h2>Duplicating relics (ATM10)</h2><p>The Star Altar ritual needs 4 enhancers. ATM10 adds rituals to copy relics: the relic in the forge, 4 Obsidiansteel blocks and 4 ingots on the pedestals, tier 3 forge, 1000 aureal, 1000 blood, 100 souls and 100 XP. You get 2 relics back.</p><h3>The rules</h3><ul class="rules"><li>Artisan Relic: Deorum ingots.</li><li>Elementarium: Allthemodium ingots.</li><li>Crimson Stone: Vibranium ingots.</li><li>Divine Pact: Unobtainium ingots.</li></ul><p class="sources">Sources: <a href="https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/ForbiddenArcanus/Hephaestus_Forge.js" rel="nofollow">ATM10 kubejs/.../ForbiddenArcanus/Hephaestus_Forge.js</a></p></section>
+
+  <p><a class="back" href="../">← All mods</a></p>
+</main>
+
+<footer class="site-foot">
+  <p>Fan-made site, not affiliated with the All the Mods team, Mojang or the mod authors.</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">Source on GitHub</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>

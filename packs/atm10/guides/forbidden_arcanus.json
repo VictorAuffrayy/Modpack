@@ -1,0 +1,56 @@
+{
+ "mod": "forbidden_arcanus",
+ "checked": "Forbidden & Arcanus, branche 1.21.1 (pack : 2.6.1) + scripts KubeJS d'ATM10",
+ "intro": {
+  "fr": "Dans ATM10, Forbidden & Arcanus compte surtout pour sa Forge d'Héphaïstos : c'est elle qui fabrique le contrôleur du Runic Star Altar, et donc le chemin vers l'ATM Star. Il faut la monter jusqu'au tier 5.",
+  "en": "In ATM10, Forbidden & Arcanus matters mostly for its Hephaestus Forge: it makes the Runic Star Altar controller, and so the road to the ATM Star. You need to take it to tier 5."
+ },
+ "sections": [
+  {
+   "id": "tiers",
+   "title": {"fr": "Les 5 tiers de la forge", "en": "The forge's 5 tiers"},
+   "text": {
+    "fr": ["Chaque tier augmente le stock maximum des quatre essences (aureal, âmes, sang, expérience). Un rituel qui demande plus que ce stock ne peut pas se lancer."],
+    "en": ["Each tier raises the maximum stock of the four essences (aureal, souls, blood, experience). A ritual that needs more than that stock can't start."]
+   },
+   "rules": [
+    {"fr": "Tier 1 : 1000 aureal, 10 âmes, 10 000 sang, 900 XP.", "en": "Tier 1: 1000 aureal, 10 souls, 10,000 blood, 900 XP."},
+    {"fr": "Tier 2 : 3000 aureal, 50 âmes, 15 000 sang, 1350 XP.", "en": "Tier 2: 3000 aureal, 50 souls, 15,000 blood, 1350 XP."},
+    {"fr": "Tier 3 : 5000 aureal, 100 âmes, 30 000 sang, 2500 XP.", "en": "Tier 3: 5000 aureal, 100 souls, 30,000 blood, 2500 XP."},
+    {"fr": "Tier 4 : 10 000 aureal, 500 âmes, 50 000 sang, 5000 XP.", "en": "Tier 4: 10,000 aureal, 500 souls, 50,000 blood, 5000 XP."},
+    {"fr": "Tier 5 : 20 000 aureal, 1000 âmes, 100 000 sang, 7500 XP.", "en": "Tier 5: 20,000 aureal, 1000 souls, 100,000 blood, 7500 XP."}
+   ],
+   "sources": [{"label": "HephaestusForgeLevel.java", "url": "https://github.com/stal111/Forbidden-Arcanus/blob/1.21.1/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/HephaestusForgeLevel.java"}]
+  },
+  {
+   "id": "upgrade",
+   "title": {"fr": "Monter de tier", "en": "Upgrading the forge"},
+   "text": {
+    "fr": ["Chaque amélioration est elle-même un rituel de la forge : un objet principal dans la forge, des ingrédients sur les piédestaux, et des essences."],
+    "en": ["Each upgrade is itself a forge ritual: a main item in the forge, ingredients on the pedestals, and essences."]
+   },
+   "chain": [
+    {"machine": {"fr": "Vers le tier 2", "en": "To tier 2"}, "in": {"fr": "planches d'Edelwood + 4 Arcane Crystals + 4 Spawner Scraps ; 500 aureal, 6000 sang, 10 âmes", "en": "Edelwood planks + 4 Arcane Crystals + 4 Spawner Scraps; 500 aureal, 6000 blood, 10 souls"}, "out": {"fr": "forge tier 2", "en": "tier 2 forge"}},
+    {"machine": {"fr": "Vers le tier 3", "en": "To tier 3"}, "in": {"fr": "darkstone poli ciselé + 4 Arcane Crystals + 4 lingots de Deorum ; 1000 aureal, 9000 sang, 50 âmes", "en": "chiseled polished darkstone + 4 Arcane Crystals + 4 Deorum ingots; 1000 aureal, 9000 blood, 50 souls"}, "out": {"fr": "forge tier 3", "en": "tier 3 forge"}},
+    {"machine": {"fr": "Vers le tier 4", "en": "To tier 4"}, "in": {"fr": "darkstone poli ciselé + 4 Stellarite Pieces + 4 Runes ; 2000 aureal, 12 000 sang, 100 âmes", "en": "chiseled polished darkstone + 4 Stellarite Pieces + 4 Runes; 2000 aureal, 12,000 blood, 100 souls"}, "out": {"fr": "forge tier 4", "en": "tier 4 forge"}},
+    {"machine": {"fr": "Vers le tier 5", "en": "To tier 5"}, "in": {"fr": "bloc de Stellarite + 4 Sculk Catalysts + 2 Dark Nether Stars + 2 Dragon Scales ; 5000 aureal, 20 000 sang, 500 âmes", "en": "Stellarite block + 4 Sculk Catalysts + 2 Dark Nether Stars + 2 Dragon Scales; 5000 aureal, 20,000 blood, 500 souls"}, "out": {"fr": "forge tier 5", "en": "tier 5 forge"}}
+   ],
+   "sources": [{"label": "hephaestus_forge/ritual/upgrade_tier_*.json", "url": "https://github.com/stal111/Forbidden-Arcanus/tree/1.21.1/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual"}]
+  },
+  {
+   "id": "relics",
+   "title": {"fr": "Dupliquer les reliques (ATM10)", "en": "Duplicating relics (ATM10)"},
+   "text": {
+    "fr": ["Le rituel du Star Altar demande 4 améliorations. ATM10 ajoute des rituels pour copier les reliques : la relique dans la forge, 4 blocs d'Obsidiansteel et 4 lingots sur les piédestaux, forge tier 3, 1000 aureal, 1000 sang, 100 âmes et 100 XP. On récupère 2 reliques."],
+    "en": ["The Star Altar ritual needs 4 enhancers. ATM10 adds rituals to copy relics: the relic in the forge, 4 Obsidiansteel blocks and 4 ingots on the pedestals, tier 3 forge, 1000 aureal, 1000 blood, 100 souls and 100 XP. You get 2 relics back."]
+   },
+   "rules": [
+    {"fr": "Artisan Relic : lingots de Deorum.", "en": "Artisan Relic: Deorum ingots."},
+    {"fr": "Elementarium : lingots d'Allthemodium.", "en": "Elementarium: Allthemodium ingots."},
+    {"fr": "Crimson Stone : lingots de Vibranium.", "en": "Crimson Stone: Vibranium ingots."},
+    {"fr": "Divine Pact : lingots d'Unobtainium.", "en": "Divine Pact: Unobtainium ingots."}
+   ],
+   "sources": [{"label": "ATM10 kubejs/.../ForbiddenArcanus/Hephaestus_Forge.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/ForbiddenArcanus/Hephaestus_Forge.js"}]
+  }
+ ]
+}

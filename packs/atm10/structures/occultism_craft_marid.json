@@ -1,0 +1,78 @@
+{
+ "layers": [
+  [
+   "                     ",
+   "  XXUUUXUUUUUXUUUXX  ",
+   " XX       4       XX ",
+   " X  RXOXOXRXOXOXR  X ",
+   " U RX    3 3    XR U ",
+   " U X  XLXLXLXLX  X U ",
+   " U O XL 2   2 LX O U ",
+   " X X L  WXXXW  L X X ",
+   " U O X2WK1 1KW2X O U ",
+   " U X3L X1K K1X L3X U ",
+   " U4R X X  0  X X R4U ",
+   " U X3L X1K K1X L3X U ",
+   " U O X2WK1 1KW2X O U ",
+   " X X L  WXXXW  L X X ",
+   " U O XL 2   2 LX O U ",
+   " U X  XLXLXLXLX  X U ",
+   " U RX    3 3    XR U ",
+   " X  RXOXOXRXOXOXR  X ",
+   " XX       4       XX ",
+   "  XXUUUXUUUUUXUUUXX  ",
+   "                     "
+  ]
+ ],
+ "keys": {
+  "0": {
+   "block": "occultism:golden_sacrificial_bowl",
+   "hatch": false
+  },
+  "1": {
+   "block": "#minecraft:candles",
+   "hatch": false
+  },
+  "2": {
+   "block": "minecraft:skeleton_skull",
+   "hatch": false
+  },
+  "3": {
+   "block": "occultism:spirit_attuned_crystal",
+   "hatch": false
+  },
+  "4": {
+   "block": "minecraft:wither_skeleton_skull",
+   "hatch": false
+  },
+  "K": {
+   "block": "occultism:chalk_glyph_black",
+   "hatch": false
+  },
+  "L": {
+   "block": "occultism:chalk_glyph_lime",
+   "hatch": false
+  },
+  "O": {
+   "block": "occultism:chalk_glyph_orange",
+   "hatch": false
+  },
+  "R": {
+   "block": "occultism:chalk_glyph_red",
+   "hatch": false
+  },
+  "U": {
+   "block": "occultism:chalk_glyph_blue",
+   "hatch": false
+  },
+  "W": {
+   "block": "occultism:chalk_glyph_white",
+   "hatch": false
+  },
+  "X": {
+   "block": "occultism:chalk_glyph_purple",
+   "hatch": false
+  }
+ },
+ "source": "https://github.com/klikli-dev/occultism/blob/release/v1.21.1-1.224.5/src/generated/resources/data/occultism/modonomicon/multiblocks/craft_marid.json"
+}
