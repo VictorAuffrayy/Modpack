@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guide Ender IO pour ATM10 · Modpack Companion</title>
+<meta name="description" content="Ender IO dans ATM10 : règles exactes des multiblocs, schémas de construction et chaînes de fabrication, vérifiés dans le code du mod et la config du pack.">
+<link rel="alternate" hreflang="en" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/enderio/">
+<link rel="alternate" hreflang="fr" href="https://victorauffrayy.github.io/Modpack/fr/atm10/mods/enderio/">
+<link rel="alternate" hreflang="x-default" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/enderio/">
+<meta property="og:title" content="Guide Ender IO pour ATM10 · Modpack Companion">
+<meta property="og:description" content="Ender IO dans ATM10 : règles exactes des multiblocs, schémas de construction et chaînes de fabrication, vérifiés dans le code du mod et la config du pack.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../../../static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500;700&display=swap">
+<meta name="theme-color" content="#121317">
+<link rel="stylesheet" href="../../../../static/site.css">
+
+</head>
+<body class="">
+<header class="site-head">
+  <a class="brand" href="../../../../fr/"><img src="../../../../static/favicon.svg" alt="" width="26" height="26">Modpack Companion</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><span aria-hidden="true">›</span> <a href="../../../../fr/atm10/">ATM10</a> <span aria-hidden="true">›</span> <a href="../../../../fr/atm10/mods/">Mods et guides</a> <span aria-hidden="true">›</span> <a href="../../../../fr/atm10/mods/enderio/">Ender IO</a></nav>
+  <a class="lang" href="../../../../en/atm10/mods/enderio/" hreflang="en" lang="en" data-lang="en">English</a>
+</header>
+<main class="page guide">
+  <p class="kicker">ATM10 · Guide</p>
+  <h1>Ender IO</h1>
+  <p class="lead">Ender IO sert surtout pour ses alliages, ses conduits et quelques machines uniques. Attention aux vieux guides : la version 8 a supprimé des alliages et changé des recettes.</p>
+  <p class="checked">Vérifié sur : Ender IO 8.2.12-beta + scripts KubeJS d&#x27;ATM10</p>
+
+  <nav class="toc" aria-label="Sommaire">
+    <h2>Sommaire</h2>
+    <ol><li><a href="#alloys">Les alliages (Alloy Smelter)</a></li><li><a href="#enchanter">Les deux « Enchanter » du pack</a></li></ol>
+  </nav>
+
+  <section class="g-sec" id="alloys"><h2>Les alliages (Alloy Smelter)</h2><p>Electrical Steel n&#x27;existe plus dans Ender IO 8. ATM10 ajoute des recettes de SAG Mill pour les minerais, minerais bruts et lingots qui n&#x27;en avaient pas.</p><h3>La chaîne</h3><ol class="chain"><li><span class="mach">Conductive Alloy</span><span class="io">fer + cuivre <b aria-hidden="true">→</b> 2 lingots</span></li><li><span class="mach">Redstone Alloy</span><span class="io">redstone + cuivre <b aria-hidden="true">→</b> 1 lingot</span></li><li><span class="mach">Pulsating Alloy</span><span class="io">fer + perle de l&#x27;Ender <b aria-hidden="true">→</b> 2 lingots</span></li><li><span class="mach">Energetic Alloy</span><span class="io">redstone + Conductive Alloy + or <b aria-hidden="true">→</b> 2 lingots</span></li><li><span class="mach">Vibrant Alloy</span><span class="io">Energetic Alloy + perle de l&#x27;Ender + glowstone <b aria-hidden="true">→</b> 2 lingots</span></li><li><span class="mach">Dark Steel</span><span class="io">fer + poudre de charbon + obsidienne <b aria-hidden="true">→</b> 2 lingots</span></li><li><span class="mach">End Steel</span><span class="io">pierre de l&#x27;End + Dark Steel + obsidienne <b aria-hidden="true">→</b> 2 lingots</span></li><li><span class="mach">Soularium</span><span class="io">sable ou terre des âmes + or <b aria-hidden="true">→</b> 1 lingot</span></li></ol><p class="sources">Sources : <a href="https://github.com/Team-EnderIO/EnderIO/tree/v8.2.12-beta/enderio/src/generated/resources/data/enderio/recipe/alloy_smelting" rel="nofollow">recipe/alloy_smelting/*.json</a> · <a href="https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/EnderIO/Recipes.js" rel="nofollow">ATM10 kubejs/.../EnderIO/Recipes.js</a></p></section><section class="g-sec" id="enchanter"><h2>Les deux « Enchanter » du pack</h2><p>ATM10 contient deux blocs qui s&#x27;appellent Enchanter, et ils ne font pas du tout la même chose.</p><h3>Les règles</h3><ul class="rules"><li>Enchanter d&#x27;Ender IO : fabrique un livre enchanté. Il prend un livre et plume (pas un livre normal), du lapis et un objet propre à l&#x27;enchantement (par exemple un nénuphar pour Aqua Affinity), et coûte des niveaux d&#x27;XP.</li><li>Enchanter de Mystical Agriculture : enchante directement l&#x27;objet que tu poses dedans, avec des ingrédients et de l&#x27;Experience Essence (Sharpness : 16 quartz + 64 Experience Essence).</li></ul><p class="sources">Sources : <a href="https://github.com/Team-EnderIO/EnderIO/tree/v8.2.12-beta/enderio/src/main/java/com/enderio/enderio/content/enchanter" rel="nofollow">Ender IO EnchanterBlockEntity / EnchanterRecipe</a> · <a href="https://github.com/Team-EnderIO/EnderIO/blob/v8.2.12-beta/enderio/src/generated/resources/data/enderio/recipe/enchanting/aqua_affinity.json" rel="nofollow">Ender IO recipe/enchanting/aqua_affinity.json</a> · <a href="https://github.com/BlakeBr0/MysticalAgriculture/blob/1.21/src/main/resources/data/mysticalagriculture/recipe/enchanter/sharpness.json" rel="nofollow">Mystical Agriculture recipe/enchanter/sharpness.json</a></p></section>
+
+  <p><a class="back" href="../">← Tous les mods</a></p>
+</main>
+
+<footer class="site-foot">
+  <p>Site fait par un fan, sans lien avec l&#x27;équipe All the Mods, Mojang ni les auteurs des mods.</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">Code source sur GitHub</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>

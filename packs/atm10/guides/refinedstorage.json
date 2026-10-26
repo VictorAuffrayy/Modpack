@@ -1,0 +1,47 @@
+{
+ "mod": "refinedstorage",
+ "checked": "Refined Storage 2.0.9 + config/refinedstorage-common.toml d'ATM10",
+ "intro": {
+  "fr": "ATM10 embarque Refined Storage 2, une réécriture complète du mod. Beaucoup de guides en ligne parlent encore de la version 1 : les tailles de disques et l'autocraft ont changé.",
+  "en": "ATM10 ships Refined Storage 2, a full rewrite of the mod. Many guides online still describe version 1: disk sizes and autocrafting have changed."
+ },
+ "sections": [
+  {
+   "id": "basics",
+   "title": {"fr": "Ce qui change par rapport à AE2", "en": "How it differs from AE2"},
+   "rules": [
+    {"fr": "Pas de canaux : on branche autant d'appareils qu'on veut sur un câble.", "en": "No channels: plug in as many devices as you like on one cable."},
+    {"fr": "Les câbles ne consomment rien (énergie à 0 dans ATM10). Le contrôleur stocke 50 000 FE.", "en": "Cables use no energy (0 in ATM10). The controller stores 50,000 FE."},
+    {"fr": "Chaque appareil a sa consommation : 10 FE/t pour un Disk Drive plus 4 par disque, 14 pour une Crafting Grid, 16 pour un Wireless Transmitter (valeurs d'ATM10).", "en": "Each device has its own draw: 10 FE/t for a Disk Drive plus 4 per disk, 14 for a Crafting Grid, 16 for a Wireless Transmitter (ATM10 values)."},
+    {"fr": "Le Wireless Transmitter couvre 16 blocs, +8 par Range Upgrade.", "en": "The Wireless Transmitter reaches 16 blocks, +8 per Range Upgrade."}
+   ],
+   "sources": [{"label": "ATM10 config/refinedstorage-common.toml", "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/refinedstorage-common.toml"}]
+  },
+  {
+   "id": "disks",
+   "title": {"fr": "Disques de stockage", "en": "Storage disks"},
+   "text": {
+    "fr": ["Contrairement à AE2, il n'y a pas de limite de types : un disque 1k garde 1024 objets, qu'ils soient tous identiques ou tous différents."],
+    "en": ["Unlike AE2 there's no type limit: a 1k disk holds 1024 items, whether they're all the same or all different."]
+   },
+   "rules": [
+    {"fr": "Objets : 1k = 1024, 4k = 4096, 16k = 16 384, 64k = 65 536 objets.", "en": "Items: 1k = 1024, 4k = 4096, 16k = 16,384, 64k = 65,536 items."},
+    {"fr": "Fluides : 64, 256, 1024 et 4096 seaux.", "en": "Fluids: 64, 256, 1024 and 4096 buckets."},
+    {"fr": "Pour plus gros, ATM10 inclut ExtraStorage.", "en": "For bigger disks, ATM10 includes ExtraStorage."}
+   ],
+   "sources": [
+    {"label": "ItemStorageVariant.java", "url": "https://github.com/refinedmods/refinedstorage2/blob/v2.0.9/refinedstorage-common/src/main/java/com/refinedmods/refinedstorage/common/storage/ItemStorageVariant.java"},
+    {"label": "FluidStorageVariant.java", "url": "https://github.com/refinedmods/refinedstorage2/blob/v2.0.9/refinedstorage-common/src/main/java/com/refinedmods/refinedstorage/common/storage/FluidStorageVariant.java"}
+   ]
+  },
+  {
+   "id": "autocrafting",
+   "title": {"fr": "Autocraft", "en": "Autocrafting"},
+   "rules": [
+    {"fr": "Les patterns se fabriquent dans la Pattern Grid et se rangent dans un Autocrafter : 9 patterns par Autocrafter.", "en": "Make patterns in the Pattern Grid and put them in an Autocrafter: 9 patterns per Autocrafter."},
+    {"fr": "On peut enchaîner jusqu'à 8 Autocrafters les uns derrière les autres pour qu'ils partagent la même machine cible.", "en": "Up to 8 Autocrafters can be chained one behind another so they share the same target machine."}
+   ],
+   "sources": [{"label": "AutocrafterBlockEntity.java", "url": "https://github.com/refinedmods/refinedstorage2/blob/v2.0.9/refinedstorage-common/src/main/java/com/refinedmods/refinedstorage/common/autocrafting/autocrafter/AutocrafterBlockEntity.java"}]
+  }
+ ]
+}

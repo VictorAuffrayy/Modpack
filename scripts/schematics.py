@@ -48,6 +48,13 @@ BLOCKS = {
     "I": ("#4fd2c2", {"en": "Induction cell / provider", "fr": "Cellule / fournisseur d'induction"}),
     "M": ("#a46cff", {"en": "Laser focus matrix", "fr": "Matrice de focalisation laser"}),
     "S": ("#3c78b4", {"en": "Solar panel (optional)", "fr": "Panneau solaire (optionnel)"}),
+    "U": ("#6bd35a", {"en": "Reactor fuel rod", "fr": "Barre de combustible (Fuel Rod)"}),
+    "N": ("#f0d23c", {"en": "Reactor control rod", "fr": "Barre de contrôle (Control Rod)"}),
+    "Z": ("#ff9f43", {"en": "Rotor bearing", "fr": "Palier de rotor (Rotor Bearing)"}),
+    "A": ("#c9a46a", {"en": "Rotor shaft", "fr": "Arbre de rotor (Rotor Shaft)"}),
+    "B": ("#e8e8e8", {"en": "Rotor blade", "fr": "Pale de rotor (Rotor Blade)"}),
+    "W": ("#f5c542", {"en": "Metal block (induction coil), e.g. gold", "fr": "Bloc de métal (bobine), ex. or"}),
+    "Y": ("#4fc3f7", {"en": "Reactor block (same tier)", "fr": "Bloc de réacteur (même tier)"}),
 }
 
 
@@ -179,6 +186,47 @@ def fusion():
     return s
 
 
+def er_reactor():
+    # 5x5x5 Extreme Reactors reactor. MultiblockReactor: frame = casing only, at least one controller and one control rod,
+    # all control rods on the same face, and behind each one a straight line of fuel rods ending on a casing (not glass).
+    s = cuboid(5, 5, 5, wall="G")
+    for x, z in [(1, 1), (3, 1), (1, 3), (3, 3), (2, 2)]:
+        put(s, x, 4, z, "N")
+        for y in (1, 2, 3):
+            put(s, x, y, z, "U")
+        put(s, x, 0, z, "C")
+    put(s, 2, 2, 0, "X")
+    put(s, 0, 2, 2, "P")   # power tap
+    put(s, 4, 2, 2, "P")   # access port
+    return s
+
+
+def er_turbine():
+    # 5x5x7 Extreme Reactors turbine. MultiblockTurbine: exactly one rotor bearing on a face, a shaft running the whole
+    # interior and ending against the housing, blades closer to the bearing than any metal, metal blocks in rings.
+    s = cuboid(5, 7, 5, wall="C")
+    put(s, 2, 6, 2, "Z")
+    for y in range(1, 6):
+        put(s, 2, y, 2, "A")
+    for y in (5, 4):
+        for x, z in [(1, 2), (3, 2), (2, 1), (2, 3)]:
+            put(s, x, y, z, "B")
+    for y in (2, 1):
+        for x in (1, 2, 3):
+            for z in (1, 2, 3):
+                if (x, z) != (2, 2):
+                    put(s, x, y, z, "W")
+    put(s, 2, 3, 0, "X")
+    put(s, 0, 5, 2, "P")   # steam in
+    put(s, 4, 1, 2, "P")   # water out / power tap
+    return s
+
+
+def powah_reactor():
+    # Powah Builder.getPosList: a 3x3 footprint, 4 blocks high, around the block you place (36 blocks of the same tier).
+    return [["YYY", "YYY", "YYY"] for _ in range(4)]
+
+
 SCHEMATICS = {
     "mekanism_fission": fission,
     "mekanism_turbine": turbine,
@@ -187,6 +235,9 @@ SCHEMATICS = {
     "mekanism_matrix": matrix,
     "mekanism_sps": sps,
     "mekanism_fusion": fusion,
+    "er_reactor": er_reactor,
+    "er_turbine": er_turbine,
+    "powah_reactor": powah_reactor,
 }
 
 LAYER_WORD = {"en": "Layer {n}", "fr": "Couche {n}"}

@@ -1,0 +1,49 @@
+{
+ "mod": "enderio",
+ "checked": "Ender IO 8.2.12-beta + scripts KubeJS d'ATM10",
+ "intro": {
+  "fr": "Ender IO sert surtout pour ses alliages, ses conduits et quelques machines uniques. Attention aux vieux guides : la version 8 a supprimé des alliages et changé des recettes.",
+  "en": "Ender IO is mostly about its alloys, conduits and a few unique machines. Beware of old guides: version 8 removed some alloys and changed recipes."
+ },
+ "sections": [
+  {
+   "id": "alloys",
+   "title": {"fr": "Les alliages (Alloy Smelter)", "en": "Alloys (Alloy Smelter)"},
+   "chain": [
+    {"machine": {"fr": "Conductive Alloy", "en": "Conductive Alloy"}, "in": {"fr": "fer + cuivre", "en": "iron + copper"}, "out": {"fr": "2 lingots", "en": "2 ingots"}},
+    {"machine": {"fr": "Redstone Alloy", "en": "Redstone Alloy"}, "in": {"fr": "redstone + cuivre", "en": "redstone + copper"}, "out": {"fr": "1 lingot", "en": "1 ingot"}},
+    {"machine": {"fr": "Pulsating Alloy", "en": "Pulsating Alloy"}, "in": {"fr": "fer + perle de l'Ender", "en": "iron + ender pearl"}, "out": {"fr": "2 lingots", "en": "2 ingots"}},
+    {"machine": {"fr": "Energetic Alloy", "en": "Energetic Alloy"}, "in": {"fr": "redstone + Conductive Alloy + or", "en": "redstone + Conductive Alloy + gold"}, "out": {"fr": "2 lingots", "en": "2 ingots"}},
+    {"machine": {"fr": "Vibrant Alloy", "en": "Vibrant Alloy"}, "in": {"fr": "Energetic Alloy + perle de l'Ender + glowstone", "en": "Energetic Alloy + ender pearl + glowstone"}, "out": {"fr": "2 lingots", "en": "2 ingots"}},
+    {"machine": {"fr": "Dark Steel", "en": "Dark Steel"}, "in": {"fr": "fer + poudre de charbon + obsidienne", "en": "iron + coal dust + obsidian"}, "out": {"fr": "2 lingots", "en": "2 ingots"}},
+    {"machine": {"fr": "End Steel", "en": "End Steel"}, "in": {"fr": "pierre de l'End + Dark Steel + obsidienne", "en": "end stone + Dark Steel + obsidian"}, "out": {"fr": "2 lingots", "en": "2 ingots"}},
+    {"machine": {"fr": "Soularium", "en": "Soularium"}, "in": {"fr": "sable ou terre des âmes + or", "en": "soul sand or soul soil + gold"}, "out": {"fr": "1 lingot", "en": "1 ingot"}}
+   ],
+   "text": {
+    "fr": ["Electrical Steel n'existe plus dans Ender IO 8. ATM10 ajoute des recettes de SAG Mill pour les minerais, minerais bruts et lingots qui n'en avaient pas."],
+    "en": ["Electrical Steel no longer exists in Ender IO 8. ATM10 adds SAG Mill recipes for ores, raw ores and ingots that had none."]
+   },
+   "sources": [
+    {"label": "recipe/alloy_smelting/*.json", "url": "https://github.com/Team-EnderIO/EnderIO/tree/v8.2.12-beta/enderio/src/generated/resources/data/enderio/recipe/alloy_smelting"},
+    {"label": "ATM10 kubejs/.../EnderIO/Recipes.js", "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/EnderIO/Recipes.js"}
+   ]
+  },
+  {
+   "id": "enchanter",
+   "title": {"fr": "Les deux « Enchanter » du pack", "en": "The pack's two \"Enchanters\""},
+   "text": {
+    "fr": ["ATM10 contient deux blocs qui s'appellent Enchanter, et ils ne font pas du tout la même chose."],
+    "en": ["ATM10 has two blocks called Enchanter, and they do completely different things."]
+   },
+   "rules": [
+    {"fr": "Enchanter d'Ender IO : fabrique un livre enchanté. Il prend un livre et plume (pas un livre normal), du lapis et un objet propre à l'enchantement (par exemple un nénuphar pour Aqua Affinity), et coûte des niveaux d'XP.", "en": "Ender IO's Enchanter: makes an enchanted book. It takes a book and quill (not a plain book), lapis and an item specific to the enchantment (a lily pad for Aqua Affinity, say), and costs XP levels."},
+    {"fr": "Enchanter de Mystical Agriculture : enchante directement l'objet que tu poses dedans, avec des ingrédients et de l'Experience Essence (Sharpness : 16 quartz + 64 Experience Essence).", "en": "Mystical Agriculture's Enchanter: enchants the item you put in directly, using ingredients and Experience Essence (Sharpness: 16 quartz + 64 Experience Essence)."}
+   ],
+   "sources": [
+    {"label": "Ender IO EnchanterBlockEntity / EnchanterRecipe", "url": "https://github.com/Team-EnderIO/EnderIO/tree/v8.2.12-beta/enderio/src/main/java/com/enderio/enderio/content/enchanter"},
+    {"label": "Ender IO recipe/enchanting/aqua_affinity.json", "url": "https://github.com/Team-EnderIO/EnderIO/blob/v8.2.12-beta/enderio/src/generated/resources/data/enderio/recipe/enchanting/aqua_affinity.json"},
+    {"label": "Mystical Agriculture recipe/enchanter/sharpness.json", "url": "https://github.com/BlakeBr0/MysticalAgriculture/blob/1.21/src/main/resources/data/mysticalagriculture/recipe/enchanter/sharpness.json"}
+   ]
+  }
+ ]
+}

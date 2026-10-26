@@ -1,0 +1,158 @@
+{
+ "mod": "ae2",
+ "checked": "Applied Energistics 2 19.2.18 + config/ae2-common.toml d'ATM10",
+ "intro": {
+  "fr": "AE2 est le stockage le plus puissant du pack, et le plus exigeant : tout tourne autour des canaux. Une fois qu'on a compris combien chaque câble en transporte, le reste suit.",
+  "en": "AE2 is the most powerful storage in the pack, and the most demanding: everything revolves around channels. Once you know how many each cable carries, the rest follows."
+ },
+ "sections": [
+  {
+   "id": "channels",
+   "title": {
+    "fr": "Les canaux",
+    "en": "Channels"
+   },
+   "text": {
+    "fr": [
+     "Presque chaque appareil branché au réseau (terminal, interface, bus, lecteur de cellules…) consomme un canal. ATM10 garde le mode de canaux par défaut d'AE2."
+    ],
+    "en": [
+     "Almost every device on the network (terminal, interface, bus, drive…) uses one channel. ATM10 keeps AE2's default channel mode."
+    ]
+   },
+   "rules": [
+    {
+     "fr": "Câble normal (glass, covered, smart) : 8 canaux.",
+     "en": "Normal cable (glass, covered, smart): 8 channels."
+    },
+    {
+     "fr": "Câble dense : 32 canaux. Chaque face du contrôleur en fournit 32.",
+     "en": "Dense cable: 32 channels. Each controller face provides 32."
+    },
+    {
+     "fr": "Sans contrôleur, un réseau tourne quand même, mais limité à 8 appareils en tout.",
+     "en": "Without a controller a network still works, but with 8 devices at most."
+    },
+    {
+     "fr": "Le bon réflexe : du câble dense qui part du contrôleur, puis du câble normal pour les groupes de 8 machines.",
+     "en": "Rule of thumb: dense cable out of the controller, then normal cable for groups of 8 machines."
+    }
+   ],
+   "sources": [
+    {
+     "label": "GridNode.getMaxChannels",
+     "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/neoforge/v19.2.18/src/main/java/appeng/me/GridNode.java"
+    },
+    {
+     "label": "ChannelMode.java",
+     "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/neoforge/v19.2.18/src/main/java/appeng/api/networking/pathing/ChannelMode.java"
+    },
+    {
+     "label": "ATM10 config/ae2-common.toml",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/ae2-common.toml"
+    }
+   ]
+  },
+  {
+   "id": "controller",
+   "title": {
+    "fr": "Le contrôleur",
+    "en": "The controller"
+   },
+   "rules": [
+    {
+     "fr": "Plusieurs blocs de contrôleur collés forment un seul contrôleur. La structure ne doit pas dépasser 7 blocs sur chaque axe.",
+     "en": "Several controller blocks touching form one controller. The structure can't exceed 7 blocks on any axis."
+    },
+    {
+     "fr": "Tous les blocs de contrôleur du réseau doivent se toucher, sinon le réseau passe en conflit.",
+     "en": "All controller blocks on the network must touch each other, otherwise the network goes into conflict."
+    },
+    {
+     "fr": "Pas de croix : si un bloc a des contrôleurs des deux côtés sur deux axes à la fois (par exemple nord-sud et est-ouest), le réseau passe en conflit. Les lignes, les plaques et les angles sont permis.",
+     "en": "No crosses: if a block has controllers on both sides along two axes at once (say north-south and east-west), the network goes into conflict. Lines, slabs and corners are fine."
+    }
+   ],
+   "sources": [
+    {
+     "label": "ControllerValidator.java",
+     "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/neoforge/v19.2.18/src/main/java/appeng/me/pathfinding/ControllerValidator.java"
+    }
+   ]
+  },
+  {
+   "id": "cells",
+   "title": {
+    "fr": "Les cellules de stockage",
+    "en": "Storage cells"
+   },
+   "text": {
+    "fr": [
+     "Une cellule a deux limites : ses octets et son nombre de types. Chaque type différent coûte des octets avant même de stocker un objet, donc une cellule pleine de 63 objets différents en contient beaucoup moins qu'on croit."
+    ],
+    "en": [
+     "A cell has two limits: bytes and number of types. Each new type costs bytes before storing anything, so a cell full of 63 different items holds far less than you'd think."
+    ]
+   },
+   "rules": [
+    {
+     "fr": "1k = 1024 octets, 4k = 4096, 16k = 16 384, 64k = 65 536, 256k = 262 144.",
+     "en": "1k = 1024 bytes, 4k = 4096, 16k = 16,384, 64k = 65,536, 256k = 262,144."
+    },
+    {
+     "fr": "1 octet = 8 objets, ou 8 seaux pour les fluides.",
+     "en": "1 byte = 8 items, or 8 buckets for fluids."
+    },
+    {
+     "fr": "Cellules d'objets : 63 types max. Cellules de fluides : 18 types max.",
+     "en": "Item cells: 63 types max. Fluid cells: 18 types max."
+    },
+    {
+     "fr": "Coût de chaque type : 8 octets (1k), 32 (4k), 128 (16k), 512 (64k), 2048 (256k). Exemple : une 1k avec un seul type garde (1024 − 8) × 8 = 8128 objets.",
+     "en": "Cost per type: 8 bytes (1k), 32 (4k), 128 (16k), 512 (64k), 2048 (256k). Example: a 1k with a single type holds (1024 − 8) × 8 = 8128 items."
+    }
+   ],
+   "sources": [
+    {
+     "label": "AEItems.java",
+     "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/neoforge/v19.2.18/src/main/java/appeng/core/definitions/AEItems.java"
+    },
+    {
+     "label": "StorageTier.java",
+     "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/neoforge/v19.2.18/src/main/java/appeng/items/storage/StorageTier.java"
+    },
+    {
+     "label": "AEKeyType.getAmountPerByte",
+     "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/neoforge/v19.2.18/src/main/java/appeng/api/stacks/AEKeyType.java"
+    }
+   ]
+  },
+  {
+   "id": "cpu",
+   "title": {
+    "fr": "Le CPU de craft",
+    "en": "The crafting CPU"
+   },
+   "rules": [
+    {
+     "fr": "Un pavé plein (sans trou) de blocs de craft : Crafting Unit, Crafting Storage, Co-Processing Unit, Crafting Monitor.",
+     "en": "A solid box (no gaps) of crafting blocks: Crafting Units, Crafting Storage, Co-Processing Units, Crafting Monitors."
+    },
+    {
+     "fr": "Au moins un Crafting Storage, sinon le CPU ne se forme pas.",
+     "en": "At least one Crafting Storage, otherwise the CPU won't form."
+    },
+    {
+     "fr": "17 blocs maximum sur chaque axe.",
+     "en": "17 blocks at most on each axis."
+    }
+   ],
+   "sources": [
+    {
+     "label": "CraftingCPUCalculator.java",
+     "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/neoforge/v19.2.18/src/main/java/appeng/me/cluster/implementations/CraftingCPUCalculator.java"
+    }
+   ]
+  }
+ ]
+}

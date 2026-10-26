@@ -1,0 +1,108 @@
+{
+ "mod": "powah",
+ "checked": "Powah 6.2.10 + config/powah.json5 d'ATM10",
+ "intro": {
+  "fr": "Powah est la source d'énergie la plus simple du début de partie : peu de multiblocs, beaucoup de tiers. Le réacteur et l'orbe d'énergisation sont les deux pièces à comprendre.",
+  "en": "Powah is the simplest early power source: few multiblocks, lots of tiers. The reactor and the energizing orb are the two pieces to understand."
+ },
+ "sections": [
+  {
+   "id": "reactor",
+   "title": {
+    "fr": "Le réacteur",
+    "en": "The reactor"
+   },
+   "rules": [
+    {
+     "fr": "Il fait 3 × 3 au sol et 4 de haut : 36 blocs de réacteur du même tier.",
+     "en": "It's 3 × 3 wide and 4 high: 36 reactor blocks of the same tier."
+    },
+    {
+     "fr": "Il faut avoir les 36 blocs dans l'inventaire : on en pose un, le réacteur se construit tout seul autour. La place doit être libre.",
+     "en": "You need all 36 blocks in your inventory: place one and the reactor builds itself around it. The space must be clear."
+    },
+    {
+     "fr": "Il brûle de l'uraninite. Sans charbon, la production est divisée par 1,2 ; sans redstone, par 1,4. La redstone fait aussi monter la consommation et la chaleur.",
+     "en": "It burns uraninite. Without carbon, output is divided by 1.2; without redstone, by 1.4. Redstone also raises fuel use and heat."
+    },
+    {
+     "fr": "Plus il chauffe, moins il produit. Refroidissement liquide : l'eau. Refroidissement solide, du moins bon au meilleur : neige, glace, glace compactée, glace bleue, puis la glace sèche de Powah (−32).",
+     "en": "The hotter it runs, the less it makes. Liquid coolant: water. Solid coolant, from worst to best: snow, ice, packed ice, blue ice, then Powah's dry ice (−32)."
+    }
+   ],
+   "schematic": "powah_reactor",
+   "sources": [
+    {
+     "label": "reactor/Builder.java",
+     "url": "https://github.com/Technici4n/Powah/blob/v6.2.10/src/main/java/owmii/powah/block/reactor/Builder.java"
+    },
+    {
+     "label": "reactor/ReactorTile.java",
+     "url": "https://github.com/Technici4n/Powah/blob/v6.2.10/src/main/java/owmii/powah/block/reactor/ReactorTile.java"
+    },
+    {
+     "label": "data_maps reactor_fuel / solid_coolant",
+     "url": "https://github.com/Technici4n/Powah/tree/v6.2.10/src/generated/resources/data/powah/data_maps"
+    }
+   ]
+  },
+  {
+   "id": "tiers",
+   "title": {
+    "fr": "Production par tier (ATM10)",
+    "en": "Output per tier (ATM10)"
+   },
+   "rules": [
+    {
+     "fr": "Réacteur : Starter 500, Basic 2000, Hardened 5000, Blazing 20 000, Niotic 50 000, Spirited 200 000, Nitro 500 000 FE/t.",
+     "en": "Reactor: Starter 500, Basic 2000, Hardened 5000, Blazing 20,000, Niotic 50,000, Spirited 200,000, Nitro 500,000 FE/t."
+    },
+    {
+     "fr": "Ces valeurs sont des maximums : le vrai débit dépend de la chaleur et des ajouts (charbon, redstone).",
+     "en": "These are maximums: real output depends on heat and additives (carbon, redstone)."
+    }
+   ],
+   "sources": [
+    {
+     "label": "ATM10 config/powah.json5",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/powah.json5"
+    }
+   ]
+  },
+  {
+   "id": "orb",
+   "title": {
+    "fr": "L'orbe d'énergisation",
+    "en": "The energizing orb"
+   },
+   "rules": [
+    {
+     "fr": "Les Energizing Rods se relient toutes seules à l'orbe le plus proche dans un rayon de 4 blocs (config ATM10), quelle que soit leur orientation.",
+     "en": "Energizing Rods link themselves to the nearest orb within 4 blocks (ATM10 config), whichever way they face."
+    },
+    {
+     "fr": "Plus de tiges = recette plus rapide. Chaque tier de tige a son propre débit : de 200 FE/t (Starter) à 400 000 FE/t (Nitro).",
+     "en": "More rods = faster recipes. Each rod tier has its own rate: from 200 FE/t (Starter) to 400,000 FE/t (Nitro)."
+    },
+    {
+     "fr": "ATM10 modifie certaines recettes d'énergisation avec ses scripts : vérifie dans JEI/EMI plutôt qu'un vieux guide.",
+     "en": "ATM10 changes some energizing recipes through its scripts: check JEI/EMI rather than an old guide."
+    }
+   ],
+   "sources": [
+    {
+     "label": "ATM10 config/powah.json5",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/powah.json5"
+    },
+    {
+     "label": "ATM10 kubejs/.../Powah/Energizing.js",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/kubejs/server_scripts/mods/Powah/Energizing.js"
+    },
+    {
+     "label": "EnergizingRodBlock.setOrbPos",
+     "url": "https://github.com/Technici4n/Powah/blob/v6.2.10/src/main/java/owmii/powah/block/energizing/EnergizingRodBlock.java"
+    }
+   ]
+  }
+ ]
+}

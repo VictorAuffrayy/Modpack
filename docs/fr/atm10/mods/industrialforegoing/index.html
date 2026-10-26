@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guide Industrial Foregoing pour ATM10 · Modpack Companion</title>
+<meta name="description" content="Industrial Foregoing dans ATM10 : règles exactes des multiblocs, schémas de construction et chaînes de fabrication, vérifiés dans le code du mod et la config du pack.">
+<link rel="alternate" hreflang="en" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/industrialforegoing/">
+<link rel="alternate" hreflang="fr" href="https://victorauffrayy.github.io/Modpack/fr/atm10/mods/industrialforegoing/">
+<link rel="alternate" hreflang="x-default" href="https://victorauffrayy.github.io/Modpack/en/atm10/mods/industrialforegoing/">
+<meta property="og:title" content="Guide Industrial Foregoing pour ATM10 · Modpack Companion">
+<meta property="og:description" content="Industrial Foregoing dans ATM10 : règles exactes des multiblocs, schémas de construction et chaînes de fabrication, vérifiés dans le code du mod et la config du pack.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../../../static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500;700&display=swap">
+<meta name="theme-color" content="#121317">
+<link rel="stylesheet" href="../../../../static/site.css">
+
+</head>
+<body class="">
+<header class="site-head">
+  <a class="brand" href="../../../../fr/"><img src="../../../../static/favicon.svg" alt="" width="26" height="26">Modpack Companion</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><span aria-hidden="true">›</span> <a href="../../../../fr/atm10/">ATM10</a> <span aria-hidden="true">›</span> <a href="../../../../fr/atm10/mods/">Mods et guides</a> <span aria-hidden="true">›</span> <a href="../../../../fr/atm10/mods/industrialforegoing/">Industrial Foregoing</a></nav>
+  <a class="lang" href="../../../../en/atm10/mods/industrialforegoing/" hreflang="en" lang="en" data-lang="en">English</a>
+</header>
+<main class="page guide">
+  <p class="kicker">ATM10 · Guide</p>
+  <h1>Industrial Foregoing</h1>
+  <p class="lead">Industrial Foregoing automatise tout ce qui est fermes, mobs et minerais. Tout commence par le plastique, et le plastique commence par le latex des arbres.</p>
+  <p class="checked">Vérifié sur : Industrial Foregoing, branche 1.21 (pack : 3.6.39)</p>
+
+  <nav class="toc" aria-label="Sommaire">
+    <h2>Sommaire</h2>
+    <ol><li><a href="#plastic">Du latex au plastique</a></li><li><a href="#frames">Les cadres de machine</a></li><li><a href="#laser">La perceuse laser</a></li></ol>
+  </nav>
+
+  <section class="g-sec" id="plastic"><h2>Du latex au plastique</h2><p>Le latex coule lentement : mets plusieurs Fluid Extractors autour d&#x27;une ferme d&#x27;arbres plutôt qu&#x27;un seul.</p><h3>La chaîne</h3><ol class="chain"><li><span class="mach">Fluid Extractor (face à une bûche)</span><span class="io">1 bûche de chêne <b aria-hidden="true">→</b> 2 mB de latex par opération (1 % de chance d&#x27;écorcer la bûche)</span></li><li><span class="mach">Latex Processing Unit</span><span class="io">750 mB de latex + 500 mB d&#x27;eau <b aria-hidden="true">→</b> 1 Dry Rubber</span></li><li><span class="mach">Four</span><span class="io">1 Dry Rubber <b aria-hidden="true">→</b> 1 plastique</span></li></ol><p class="sources">Sources : <a href="https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1.21/src/generated/resources/data/industrialforegoing/recipe/fluid_extractor/oak.json" rel="nofollow">recipe/fluid_extractor/oak.json</a> · <a href="https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1.21/src/main/java/com/buuz135/industrial/block/core/tile/LatexProcessingUnitTile.java" rel="nofollow">LatexProcessingUnitTile.java</a> · <a href="https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1.21/src/generated/resources/data/industrialforegoing/recipe/plastic.json" rel="nofollow">recipe/plastic.json</a></p></section><section class="g-sec" id="frames"><h2>Les cadres de machine</h2><h3>Les règles</h3><ul class="rules"><li>Le Simple Machine Frame se fait dans la Dissolution Chamber : 2 plastiques, un Pity Machine Frame, 2 briques du Nether, 2 lingots de fer et un engrenage en or, avec 250 mB de latex.</li><li>Les cadres Advanced et Supreme passent aussi par la Dissolution Chamber : regarde leur recette dans JEI/EMI.</li><li>Pink Slime Ingot : 2 lingots de fer + 2 lingots d&#x27;or + 1000 mB de pink slime, dans la Dissolution Chamber.</li></ul><p class="sources">Sources : <a href="https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1.21/src/generated/resources/data/industrialforegoing/recipe/dissolution_chamber/simple_machine_frame.json" rel="nofollow">dissolution_chamber/simple_machine_frame.json</a> · <a href="https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1.21/src/generated/resources/data/industrialforegoing/recipe/dissolution_chamber/pink_slime_ingot.json" rel="nofollow">dissolution_chamber/pink_slime_ingot.json</a></p></section><section class="g-sec" id="laser"><h2>La perceuse laser</h2><h3>Les règles</h3><ul class="rules"><li>Une Ore Laser Base (ou Fluid Laser Base) et des Laser Drills tournées vers elle, à environ 2 blocs.</li><li>Chaque Laser Drill alimentée fait avancer la barre de la base : plus il y en a, plus elle mine vite.</li><li>La base a 6 emplacements de lentilles colorées pour favoriser certains minerais. La profondeur de minage est affichée dans son interface.</li></ul><p class="sources">Sources : <a href="https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1.21/src/main/java/com/buuz135/industrial/block/resourceproduction/tile/LaserDrillTile.java" rel="nofollow">LaserDrillTile.java</a> · <a href="https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1.21/src/main/java/com/buuz135/industrial/block/resourceproduction/tile/OreLaserBaseTile.java" rel="nofollow">OreLaserBaseTile.java</a></p></section>
+
+  <p><a class="back" href="../">← Tous les mods</a></p>
+</main>
+
+<footer class="site-foot">
+  <p>Site fait par un fan, sans lien avec l&#x27;équipe All the Mods, Mojang ni les auteurs des mods.</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">Code source sur GitHub</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+{
+ "mod": "bigreactors",
+ "checked": "Extreme Reactors 2.4.27 (code) + config/extremereactors/common.toml d'ATM10 (pack : 2.4.28)",
+ "intro": {
+  "fr": "Extreme Reactors, c'est le réacteur « à l'ancienne » : on le construit à la taille qu'on veut, et ATM10 le rend très rentable. Ses règles de construction diffèrent de celles de Mekanism, et c'est là qu'on se trompe.",
+  "en": "Extreme Reactors is the classic build-it-any-size reactor, and ATM10 makes it very profitable. Its build rules differ from Mekanism's, which is where people go wrong."
+ },
+ "sections": [
+  {
+   "id": "atm10",
+   "title": {
+    "fr": "Les réglages d'ATM10",
+    "en": "ATM10 settings"
+   },
+   "rules": [
+    {
+     "fr": "Production d'énergie ×4 pour tout le mod, puis ×3 en plus pour le réacteur et ×3 pour la turbine.",
+     "en": "Power output ×4 for the whole mod, then another ×3 for the reactor and ×3 for the turbine."
+    },
+    {
+     "fr": "Consommation de combustible ×0,8.",
+     "en": "Fuel usage ×0.8."
+    },
+    {
+     "fr": "Réacteur renforcé : jusqu'à 32 blocs de large et 48 de haut. Turbine renforcée : 32 × 32.",
+     "en": "Reinforced reactor: up to 32 blocks wide and 48 high. Reinforced turbine: 32 × 32."
+    },
+    {
+     "fr": "Les versions basiques sont limitées : réacteur de 5 blocs, turbine de 5 de large et 10 de haut.",
+     "en": "Basic versions are capped: 5-block reactor, turbine 5 wide and 10 high."
+    }
+   ],
+   "sources": [
+    {
+     "label": "ATM10 config/extremereactors/common.toml",
+     "url": "https://github.com/AllTheMods/ATM-10/blob/main/config/extremereactors/common.toml"
+    },
+    {
+     "label": "ReactorVariant.java",
+     "url": "https://github.com/ZeroNoRyouki/ExtremeReactors2/blob/1.21.1-2.4.27/src/main/java/it/zerono/mods/extremereactors/gamecontent/multiblock/reactor/variant/ReactorVariant.java"
+    },
+    {
+     "label": "TurbineVariant.java",
+     "url": "https://github.com/ZeroNoRyouki/ExtremeReactors2/blob/1.21.1-2.4.27/src/main/java/it/zerono/mods/extremereactors/gamecontent/multiblock/turbine/variant/TurbineVariant.java"
+    }
+   ]
+  },
+  {
+   "id": "reactor",
+   "title": {
+    "fr": "Le réacteur",
+    "en": "The reactor"
+   },
+   "rules": [
+    {
+     "fr": "Le cadre (les arêtes) : uniquement des Reactor Casing.",
+     "en": "Frame (edges): Reactor Casing only."
+    },
+    {
+     "fr": "Il faut au moins un contrôleur et au moins une barre de contrôle.",
+     "en": "You need at least one controller and at least one control rod."
+    },
+    {
+     "fr": "Toutes les barres de contrôle sur la même face. Derrière chacune, une ligne droite de Fuel Rods qui traverse le réacteur et se termine sur un Reactor Casing (pas du verre).",
+     "en": "All control rods on the same face. Behind each one, a straight line of Fuel Rods across the reactor, ending on a Reactor Casing (not glass)."
+    },
+    {
+     "fr": "Aucune Fuel Rod isolée : chacune doit appartenir à une colonne derrière une barre de contrôle.",
+     "en": "No loose Fuel Rods: each one must belong to a column behind a control rod."
+    },
+    {
+     "fr": "Le reste de l'intérieur : air ou modérateurs (blocs et fluides reconnus par le mod).",
+     "en": "The rest of the inside: air or moderators (blocks and fluids the mod recognises)."
+    },
+    {
+     "fr": "Un seul type de sortie d'énergie par réacteur.",
+     "en": "Only one type of energy output per reactor."
+    }
+   ],
+   "schematic": "er_reactor",
+   "sources": [
+    {
+     "label": "MultiblockReactor.java",
+     "url": "https://github.com/ZeroNoRyouki/ExtremeReactors2/blob/1.21.1-2.4.27/src/main/java/it/zerono/mods/extremereactors/gamecontent/multiblock/reactor/MultiblockReactor.java"
+    }
+   ]
+  },
+  {
+   "id": "turbine",
+   "title": {
+    "fr": "La turbine",
+    "en": "The turbine"
+   },
+   "rules": [
+    {
+     "fr": "Exactement un Rotor Bearing, sur une face, et au moins un contrôleur.",
+     "en": "Exactly one Rotor Bearing, on a face, and at least one controller."
+    },
+    {
+     "fr": "L'arbre (Rotor Shaft) part du palier et traverse tout l'intérieur, jusqu'à toucher le boîtier en face.",
+     "en": "The Rotor Shaft starts at the bearing and runs the whole interior until it hits the housing on the other side."
+    },
+    {
+     "fr": "Les pales partent de l'arbre, en continu, et doivent être plus près du palier que tout bloc de métal.",
+     "en": "Blades extend continuously from the shaft and must be closer to the bearing than any metal block."
+    },
+    {
+     "fr": "Les blocs de métal (la bobine) forment des anneaux, complets ou partiels, autour de l'arbre, du côté opposé au palier.",
+     "en": "Metal blocks (the coil) form full or partial rings around the shaft, on the side away from the bearing."
+    },
+    {
+     "fr": "Rien d'autre à l'intérieur : arbre, pales, métal ou air.",
+     "en": "Nothing else inside: shaft, blades, metal or air."
+    }
+   ],
+   "schematic": "er_turbine",
+   "sources": [
+    {
+     "label": "MultiblockTurbine.java",
+     "url": "https://github.com/ZeroNoRyouki/ExtremeReactors2/blob/1.21.1-2.4.27/src/main/java/it/zerono/mods/extremereactors/gamecontent/multiblock/turbine/MultiblockTurbine.java"
+    }
+   ]
+  }
+ ]
+}
