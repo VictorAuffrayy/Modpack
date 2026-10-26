@@ -1,0 +1,73 @@
+/* Bee planner: compact toolbar, then a pannable quest-book canvas: start box on top, one band per tier below, slots linked by lines; details in a side drawer. */
+.bees { font-size: 14px }
+.top { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-bottom: 10px }
+.top h1 { font-size: 26px; margin: 0; letter-spacing: .02em }
+.prog { display: flex; align-items: center; gap: 10px; flex: 1 1 260px; min-width: 0 }
+.bar { flex: 1; height: 14px; background: var(--slot-lo); border: 2px solid var(--ink); position: relative; min-width: 80px }
+.bar i { position: absolute; inset: 0 auto 0 0; background: var(--done); width: 0; transition: width .3s }
+.prog span { font-family: var(--f-pix); font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--muted) }
+.legend span { display: inline-flex; align-items: center; gap: 5px }
+.legend i { width: 14px; height: 14px; border: 2px solid var(--ink) }
+.tools { display: flex; gap: 6px; flex-wrap: wrap; align-items: center }
+#q { font: inherit; border: 2px solid var(--ink); background: var(--panel); padding: 5px 9px; width: 210px; max-width: 100%; color: var(--ink) }
+
+.board { flex: 1; min-height: 360px; position: relative; overflow: auto; border: 3px solid var(--ink); background:
+  radial-gradient(ellipse at 50% 0%, #f3e1b8 0%, var(--parch) 45%, var(--parch-2) 100%); cursor: grab; touch-action: pan-x pan-y }
+.board.drag { cursor: grabbing }
+#svg { display: block; transform-origin: 0 0 }
+.node { cursor: pointer }
+.node .bg { fill: var(--slot); stroke: var(--ink); stroke-width: 2 }
+.node .bevel { fill: none; stroke: var(--slot-hi); stroke-width: 2 }
+.node.avail .bg { fill: var(--avail) }
+.node.avail .bevel { stroke: var(--avail-hi) }
+.node.done .bg { fill: var(--done) }
+.node.done .bevel { stroke: #8fe07f }
+.node.lock .ic { opacity: .45 }
+.node:hover .bg, .node.sel .bg { stroke: var(--gold); stroke-width: 3 }
+.node.hit .bg { stroke: #1d6fd6; stroke-width: 4 }
+.edge { fill: none; stroke-width: 1.6; opacity: .35 }
+.edge.e-done { stroke: var(--done-lo); opacity: .55 }
+.edge.e-avail { stroke: #a23030; opacity: .6 }
+.edge.e-lock { stroke: #6a5a44 }
+.edge.hl { opacity: 1; stroke-width: 3 }
+.selmode .edge:not(.hl) { display: none }
+.band-label { font-family: var(--f-pix); font-size: 16px; fill: var(--muted) }
+.root rect { fill: #3f8f34; stroke: var(--ink); stroke-width: 3 }
+.root text { font-family: var(--f-pix); fill: #fff; font-size: 22px }
+
+.tip { position: fixed; z-index: 40; pointer-events: none; background: #1a0f24; color: #fff; border: 2px solid #3d1f6b; outline: 2px solid #120a1a;
+  padding: 6px 9px; font-family: var(--f-pix); font-size: 14px; max-width: 280px; line-height: 1.35 }
+.tip .req { color: #ff6b6b }
+.tip .ok { color: #7be06b }
+.tip .sub { color: #c9b9e0; font-size: 12px }
+
+.scrim { position: fixed; inset: 0; background: rgba(30,20,8,.35); z-index: 20 }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100%); background: var(--panel); z-index: 21; overflow-y: auto; border-left: 3px solid var(--ink);
+  padding: calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) calc(22px + env(safe-area-inset-bottom, 0px)) 18px;
+  display: flex; flex-direction: column; gap: 14px; font-size: 14px }
+.d-head { display: flex; gap: 12px; align-items: center }
+.d-head h3 { font-family: var(--f-pix); font-size: 22px; margin: 0; flex: 1; min-width: 0; text-wrap: balance }
+.d-head .alt { display: block; font-family: var(--f-body); font-size: 13px; color: var(--muted); font-weight: 400 }
+.close { border: 0; background: none; font-size: 26px; padding: 2px 8px; color: var(--muted) }
+.state { font-size: 13px; padding: 6px 10px; border: 2px solid var(--ink); background: #fff8 }
+.primary { font-family: var(--f-pix); font-size: 17px; border: 2px solid var(--ink); background: var(--done); color: #fff; padding: 9px 12px; box-shadow: inset -3px -3px 0 var(--done-lo), inset 3px 3px 0 #8fe07f }
+.primary.undo { background: var(--slot-hi); color: var(--ink); box-shadow: inset -3px -3px 0 var(--slot-lo), inset 3px 3px 0 #fff }
+.sec { display: flex; flex-direction: column; gap: 8px }
+.sec h4 { margin: 0; font-family: var(--f-pix); font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em }
+.method { border: 2px solid var(--ink); background: #fff9; padding: 9px 11px; display: flex; flex-direction: column; gap: 6px }
+.method.ready { border-color: var(--done-lo); background: #e4f5df }
+.method .kind { font-weight: 700 }
+.method .meta { font-size: 12px; color: var(--muted) }
+.chips { display: flex; flex-wrap: wrap; gap: 6px }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 2px solid var(--ink); background: var(--panel); padding: 2px 8px 2px 4px; font-size: 13px }
+.chip.done { background: #cdeec6 }
+.desc { color: var(--muted); margin: 0 }
+
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 30; width: min(520px, calc(100% - 32px));
+  background: #1a0f24; color: #fff; border: 3px solid #3d1f6b; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; font-family: var(--f-pix); font-size: 15px }
+.toast .chip { background: transparent; border-color: #6b4f9a; color: #fff; font-family: var(--f-body) }
+.toast .x { position: absolute; top: 4px; right: 8px; border: 0; background: none; color: #fff; font-size: 20px }
+.foot { font-size: 12px; color: var(--muted); padding-top: 8px; margin: 0; max-width: 90ch }
+@media (max-width: 600px) { .top h1 { font-size: 22px } #q { width: 100% } .tools { width: 100% } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }

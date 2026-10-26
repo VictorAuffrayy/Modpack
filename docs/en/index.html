@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Modpack Companion · Interactive planners for big Minecraft modpacks</title>
+<meta name="description" content="Bee breeding trees, quests and crafting chains, extracted straight from the game files and kept up to date with each pack release. Open it on your second screen.">
+<link rel="alternate" hreflang="en" href="https://victorauffrayy.github.io/Modpack/en/">
+<link rel="alternate" hreflang="fr" href="https://victorauffrayy.github.io/Modpack/fr/">
+<link rel="alternate" hreflang="x-default" href="https://victorauffrayy.github.io/Modpack/en/">
+<meta property="og:title" content="Modpack Companion · Interactive planners for big Minecraft modpacks">
+<meta property="og:description" content="Bee breeding trees, quests and crafting chains, extracted straight from the game files and kept up to date with each pack release. Open it on your second screen.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="../static/site.css">
+
+</head>
+<body class="">
+<header class="site-head">
+  <a class="brand" href="../en/"><img src="../static/favicon.svg" alt="" width="26" height="26">Modpack Companion</a>
+  <nav class="crumbs" aria-label="Breadcrumb"></nav>
+  <a class="lang" href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+</header>
+<main class="page">
+  <h1>Plan your big modpack run</h1>
+  <p class="lead">Bee breeding trees, quests and crafting chains, extracted straight from the game files and kept up to date with each pack release. Open it on your second screen.</p>
+
+  <h2>Modpacks</h2>
+  <ul class="cards"><li class="card"><h3><span class="ico" aria-hidden="true">⛏️</span>All the Mods 10</h3><p>Bee planner</p><span class=meta>Minecraft 1.21.1 · NeoForge</span><a class="go" href="atm10/">Open →</a></li><li class="card off"><h3><span class="ico" aria-hidden="true">⛏️</span>All the Mods 11</h3><p>Planned</p><span class=meta>Minecraft 1.21.x · NeoForge</span><span class="go">Planned</span></li></ul>
+
+  <h2>Why trust it?</h2>
+  <ul class="why">
+    <li>Read from the files, not from memory: every tree and recipe comes from the mods&#x27; data.</li>
+    <li>Updated with the pack: a script re-reads each new version.</li>
+    <li>Your progress stays in your browser, no account needed.</li>
+  </ul>
+</main>
+
+<footer class="site-foot">
+  <p>Fan-made site, not affiliated with the All the Mods team, Mojang or the mod authors. Data comes from the mods&#x27; and modpack&#x27;s own files.</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">Source on GitHub</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>

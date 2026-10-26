@@ -1,0 +1,71 @@
+{
+ "_comment": "Hand-written notes for bees the recipe files don't describe (spawn eggs, cuckoos, archaeology...). Keep each one checkable: say where it comes from in the mod's code or data.",
+ "productivebees:amber": {
+  "fr": "Œuf en archéologie : pinceau sur le gravier suspect des ruines océaniques froides (8 %).",
+  "en": "Egg from archaeology: brush suspicious gravel in cold ocean ruins (8%)."
+ },
+ "minecraft:bee": {
+  "fr": "Nids d'abeilles vanilla dans les arbres (plaines, forêts de fleurs) ou ruches de village.",
+  "en": "Vanilla bee nests in trees (plains, flower forests) or village beehives."
+ },
+ "productivebees:beebee": {
+  "fr": "Apparition naturelle très rare. Attention, elle est mortelle !",
+  "en": "Very rare natural spawn. Careful, it's deadly!"
+ },
+ "productivebees:crimson": {
+  "fr": "Nid naturel dans les forêts cramoisies du Nether.",
+  "en": "Natural nest in the Nether's crimson forests."
+ },
+ "productivebees:fire_dragonsteel": {
+  "fr": "Recette de fabrication de son œuf d'invocation (regarde dans EMI/JEI, nécessite de l'acier de dragon de feu).",
+  "en": "Crafted spawn egg (check EMI/JEI, needs fire dragonsteel)."
+ },
+ "productivebees:forgotten": {
+  "fr": "Œufs rares dans les coffres des Catacombes de l'Undergarden.",
+  "en": "Rare eggs in Catacombs chests in the Undergarden."
+ },
+ "productivebees:ice_dragonsteel": {
+  "fr": "Recette de fabrication de son œuf d'invocation (regarde dans EMI/JEI, nécessite de l'acier de dragon de glace).",
+  "en": "Crafted spawn egg (check EMI/JEI, needs ice dragonsteel)."
+ },
+ "productivebees:lightning_dragonsteel": {
+  "fr": "Recette de fabrication de son œuf d'invocation (regarde dans EMI/JEI, nécessite de l'acier de dragon de foudre).",
+  "en": "Crafted spawn egg (check EMI/JEI, needs lightning dragonsteel)."
+ },
+ "productivebees:neon_cuckoo_bee": {
+  "fr": "Abeille coucou : pond ses œufs dans les nids de l'Abeille à bandes bleues. Pose des nids d'abeille à bandes bleues habités et attends.",
+  "en": "Cuckoo bee: lays its eggs in Blue Banded Bee nests. Place occupied Blue Banded Bee nests and wait."
+ },
+ "productivebees:nomad_bee": {
+  "fr": "Abeille coucou : pond ses œufs dans les nids de l'Abeille mineuse cendrée. Pose des nids d'abeille mineuse cendrée habités et attends.",
+  "en": "Cuckoo bee: lays its eggs in Ashy Mining Bee nests. Place occupied Ashy Mining Bee nests and wait."
+ },
+ "productivebees:ribbeet": {
+  "fr": "Donne une abeille à manger à une grenouille.",
+  "en": "Feed a bee to a frog."
+ },
+ "productivebees:skeletal": {
+  "fr": "S'installe la nuit dans les ruches et nids mal éclairés. Laisse une ruche dans le noir près d'un spawn de squelettes.",
+  "en": "Moves into poorly lit hives and nests at night. Leave a hive in the dark near a skeleton spawn."
+ },
+ "productivebees:sugarbag": {
+  "fr": "Nid naturel dans les jungles (nid Sugarbag dans les arbres de jungle).",
+  "en": "Natural nest in jungles (Sugarbag nest in jungle trees)."
+ },
+ "productivebees:sussy": {
+  "fr": "Œuf trouvé par un renifleur (sniffer) quand il creuse (15 %).",
+  "en": "Egg dug up by a sniffer (15%)."
+ },
+ "productivebees:utheric": {
+  "fr": "Essaims cachés dans les Gloomgourds de l'Undergarden.",
+  "en": "Swarms hide inside Gloomgourds in the Undergarden."
+ },
+ "productivebees:warped": {
+  "fr": "Nid naturel dans les forêts déformées du Nether.",
+  "en": "Natural nest in the Nether's warped forests."
+ },
+ "productivebees:zombie": {
+  "fr": "S'installe la nuit dans les ruches et nids mal éclairés. Laisse une ruche dans le noir.",
+  "en": "Moves into poorly lit hives and nests at night. Leave a hive in the dark."
+ }
+}

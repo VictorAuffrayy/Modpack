@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{{page_title}}</title>
+<meta name="description" content="{{page_desc}}">
+<link rel="alternate" hreflang="en" href="{{url_en}}">
+<link rel="alternate" hreflang="fr" href="{{url_fr}}">
+<link rel="alternate" hreflang="x-default" href="{{url_en}}">
+<meta property="og:title" content="{{page_title}}">
+<meta property="og:description" content="{{page_desc}}">
+<meta property="og:type" content="website">
+<link rel="icon" href="{{root}}static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="{{root}}static/site.css">
+{{{head_extra}}}
+</head>
+<body class="{{body_class}}">
+<header class="site-head">
+  <a class="brand" href="{{root}}{{lang}}/"><img src="{{root}}static/favicon.svg" alt="" width="26" height="26">{{site_name}}</a>
+  <nav class="crumbs" aria-label="Breadcrumb">{{{crumbs}}}</nav>
+  <a class="lang" href="{{alt_href}}" hreflang="{{alt_lang}}" lang="{{alt_lang}}" data-lang="{{alt_lang}}">{{lang_switch}}</a>
+</header>
+{{{content}}}
+<footer class="site-foot">
+  <p>{{footer_disclaimer}}</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">{{footer_source}}</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>

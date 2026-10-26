@@ -1,0 +1,12 @@
+{
+ "slug": "atm11",
+ "name": "All the Mods 11",
+ "short": "ATM11",
+ "minecraft": "1.21.x",
+ "loader": "NeoForge",
+ "status": "planned",
+ "sources": {
+  "modpack": "https://github.com/AllTheMods/ATM-11"
+ },
+ "tools": {}
+}

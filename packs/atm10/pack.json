@@ -1,0 +1,16 @@
+{
+ "slug": "atm10",
+ "name": "All the Mods 10",
+ "short": "ATM10",
+ "minecraft": "1.21.1",
+ "loader": "NeoForge",
+ "sources": {
+  "modpack": "https://github.com/AllTheMods/ATM-10",
+  "productivebees_lang": "https://raw.githubusercontent.com/JDKDigital/productive-bees/dev-1.21.0/src/main/resources/assets/productivebees/lang/{lang}.json"
+ },
+ "tools": {
+  "bees": "live",
+  "quests": "soon",
+  "howto": "soon"
+ }
+}

@@ -1,0 +1,69 @@
+/* One deliberate look for the whole site: Minecraft quest book on parchment, same in light and dark. */
+:root {
+  color-scheme: light;
+  --parch: #e9d3a3;
+  --parch-2: #d9bb80;
+  --ink: #2b1d0e;
+  --muted: #6b5234;
+  --slot: #8b8b8b;
+  --slot-hi: #c6c6c6;
+  --slot-lo: #555;
+  --done: #49b33b;
+  --done-lo: #2a6b22;
+  --avail: #7a1f1f;
+  --avail-hi: #b33a3a;
+  --panel: #fbf3e2;
+  --gold: #f0c64a;
+  --f-pix: "Pixelify Sans", "Courier New", monospace;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { margin: 0; background: var(--parch); color: var(--ink); font: 16px/1.5 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+a { color: inherit }
+button { font: inherit; color: inherit; cursor: pointer }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px }
+
+.site-head { display: flex; align-items: center; gap: 8px 16px; flex-wrap: wrap; padding: 12px 0; border-bottom: 3px solid var(--ink); max-width: 1100px; margin: 0 auto }
+.brand { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-pix); font-weight: 700; font-size: 20px; text-decoration: none }
+.crumbs { flex: 1; min-width: 0; font-family: var(--f-pix); font-size: 15px; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap }
+.crumbs a { color: var(--muted) }
+.crumbs span[aria-hidden] { opacity: .6 }
+@media (max-width: 600px) {
+  .brand { flex: 1 }
+  .crumbs { order: 3; flex-basis: 100% }
+  .crumbs:empty { display: none }
+}
+.lang, .mc { font-family: var(--f-pix); font-size: 14px; background: var(--slot-hi); border: 2px solid var(--ink); box-shadow: inset -2px -2px 0 var(--slot-lo), inset 2px 2px 0 #fff; padding: 4px 10px; text-decoration: none; white-space: nowrap }
+.lang:active, .mc:active { box-shadow: inset 2px 2px 0 var(--slot-lo) }
+
+main.page { max-width: 1100px; margin: 0 auto; padding: 32px 0 24px }
+h1 { font-family: var(--f-pix); font-weight: 700; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 0 0 12px; text-wrap: balance }
+h2 { font-family: var(--f-pix); font-weight: 700; font-size: 22px; margin: 36px 0 14px }
+.lead { font-size: 18px; max-width: 62ch; color: var(--muted); margin: 0 }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none }
+.card { background: var(--panel); border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; position: relative }
+.card h3 { font-family: var(--f-pix); font-size: 20px; margin: 0; display: flex; align-items: center; gap: 10px }
+.card p { margin: 0; color: var(--muted) }
+.card .meta { font-size: 13px; color: var(--muted) }
+.card .go { margin-top: auto; align-self: flex-start; font-family: var(--f-pix); font-size: 15px; padding: 6px 12px; border: 2px solid var(--ink); text-decoration: none;
+  background: var(--done); color: #fff; box-shadow: inset -3px -3px 0 var(--done-lo), inset 3px 3px 0 #8fe07f }
+.card a.go::after { content: ""; position: absolute; inset: 0 } /* whole card is clickable */
+.card.off { background: transparent; border-style: dashed; box-shadow: none }
+.card.off .go { background: var(--slot-hi); color: var(--ink); box-shadow: none; border-style: dashed }
+.card .ico { font-size: 26px; line-height: 1 }
+
+.why { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; padding: 0; margin: 0; list-style: none }
+.why li { border-left: 4px solid var(--done-lo); padding: 4px 0 4px 12px }
+
+.site-foot { max-width: 1100px; margin: 24px auto 0; padding: 14px 0 calc(20px + env(safe-area-inset-bottom, 0px)); border-top: 2px solid var(--ink); font-size: 13px; color: var(--muted) }
+.site-foot p { margin: 4px 0 }
+
+/* Full-height tool pages (bee planner): header, app, compact footer */
+body.app { height: 100dvh; display: flex; flex-direction: column; overflow: hidden }
+body.app .site-head, body.app .site-foot { max-width: none; width: 100% }
+body.app .site-foot { margin-top: 0; padding-top: 6px; padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)); display: flex; gap: 16px; flex-wrap: wrap }
+body.app main { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-top: 10px }
+@media (max-width: 600px) { body.app { height: auto; overflow: visible } body.app main { min-height: 85dvh } }

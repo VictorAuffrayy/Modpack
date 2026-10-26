@@ -1,0 +1,33 @@
+<main class="bees">
+<div class="top">
+  <h1>{{bees_heading}}</h1>
+  <div class="prog"><div class="bar" aria-hidden="true"><i id="barfill"></i></div><span id="count">0 / 0</span></div>
+  <div class="legend">
+    <span><i style="background:var(--done)"></i>{{js.legend_done}}</span>
+    <span><i style="background:var(--avail)"></i>{{js.legend_avail}}</span>
+    <span><i style="background:var(--slot)"></i>{{js.legend_lock}}</span>
+  </div>
+  <div class="tools">
+    <input id="q" type="search" placeholder="{{js.search}}" aria-label="{{js.search}}">
+    <button class="mc" type="button" id="zout" aria-label="{{js.zoom_out}}">−</button>
+    <button class="mc" type="button" id="zin" aria-label="{{js.zoom_in}}">+</button>
+    <button class="mc" type="button" id="links">{{js.links_all}}</button>
+    <button class="mc" type="button" id="reset">{{js.reset}}</button>
+  </div>
+</div>
+
+<div class="board" id="board"><svg id="svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<p class="foot">{{js.foot}}</p>
+
+<div class="tip" id="tip" hidden></div>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="d-title"></aside>
+<div class="toast" id="toast" hidden role="status"></div>
+</main>
+<script>
+const BEES = {{{bees_json}}};
+const T = {{{t_json}}};
+const LANG = "{{lang}}";
+const STORE_KEY = "{{store_key}}";
+</script>
+<script src="{{root}}static/bees.js"></script>

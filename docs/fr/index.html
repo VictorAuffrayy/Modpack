@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Modpack Companion · Planificateurs interactifs pour les gros modpacks Minecraft</title>
+<meta name="description" content="Arbres de croisement des abeilles, quêtes et chaînes de fabrication, extraits directement des fichiers du jeu et mis à jour à chaque version du pack. À ouvrir sur ton deuxième écran.">
+<link rel="alternate" hreflang="en" href="https://victorauffrayy.github.io/Modpack/en/">
+<link rel="alternate" hreflang="fr" href="https://victorauffrayy.github.io/Modpack/fr/">
+<link rel="alternate" hreflang="x-default" href="https://victorauffrayy.github.io/Modpack/en/">
+<meta property="og:title" content="Modpack Companion · Planificateurs interactifs pour les gros modpacks Minecraft">
+<meta property="og:description" content="Arbres de croisement des abeilles, quêtes et chaînes de fabrication, extraits directement des fichiers du jeu et mis à jour à chaque version du pack. À ouvrir sur ton deuxième écran.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="../static/site.css">
+
+</head>
+<body class="">
+<header class="site-head">
+  <a class="brand" href="../fr/"><img src="../static/favicon.svg" alt="" width="26" height="26">Modpack Companion</a>
+  <nav class="crumbs" aria-label="Breadcrumb"></nav>
+  <a class="lang" href="../en/" hreflang="en" lang="en" data-lang="en">English</a>
+</header>
+<main class="page">
+  <h1>Planifie ta partie sur les gros modpacks</h1>
+  <p class="lead">Arbres de croisement des abeilles, quêtes et chaînes de fabrication, extraits directement des fichiers du jeu et mis à jour à chaque version du pack. À ouvrir sur ton deuxième écran.</p>
+
+  <h2>Modpacks</h2>
+  <ul class="cards"><li class="card"><h3><span class="ico" aria-hidden="true">⛏️</span>All the Mods 10</h3><p>Planificateur d&#x27;abeilles</p><span class=meta>Minecraft 1.21.1 · NeoForge</span><a class="go" href="atm10/">Ouvrir →</a></li><li class="card off"><h3><span class="ico" aria-hidden="true">⛏️</span>All the Mods 11</h3><p>Prévu</p><span class=meta>Minecraft 1.21.x · NeoForge</span><span class="go">Prévu</span></li></ul>
+
+  <h2>Pourquoi s&#x27;y fier ?</h2>
+  <ul class="why">
+    <li>Lu dans les fichiers, pas de mémoire : chaque arbre et chaque recette vient des données des mods.</li>
+    <li>À jour avec le pack : un script relit chaque nouvelle version.</li>
+    <li>Ta progression reste dans ton navigateur, sans compte.</li>
+  </ul>
+</main>
+
+<footer class="site-foot">
+  <p>Site de fan, sans lien avec l&#x27;équipe All the Mods, Mojang ou les auteurs des mods. Les données viennent des fichiers des mods et du modpack.</p>
+  <p><a href="https://github.com/VictorAuffrayy/Modpack">Code source sur GitHub</a></p>
+</footer>
+<script>
+// Remember an explicit language choice so the root page sends people back to it
+document.querySelector('.lang').addEventListener('click', e => { try { localStorage.setItem('lang', e.currentTarget.dataset.lang) } catch (_) {} });
+</script>
+</body>
+</html>
